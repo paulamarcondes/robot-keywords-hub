@@ -96,18 +96,20 @@
             .then(keywords => {
                 allKeywords = keywords;
                 
-                fuse = new Fuse(allKeywords, { 
+                fuse = new Fuse(allKeywords, {
                     keys: [
-                        { name: "name", weight: 0.8 }, 
-                        { name: "library", weight: 0.1 }, 
+                        { name: "name", weight: 0.8 },
+                        { name: "library", weight: 0.1 },
                         { name: "doc", weight: 0.1 }
                     ],
-                    threshold: 0.4, 
-                    ignoreFieldNorm: true, 
+                    threshold: 0.3, 
+                    distance: 50,  
                     location: 0,
-                    distance: 1000,
                     tokenize: true,
-                    matchAllTokens: false 
+                    matchAllTokens: true,   
+                    useExtendedSearch: true, 
+                    ignoreFieldNorm: true,
+                    includeScore: true
                 });
             });
 
