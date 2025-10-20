@@ -34,7 +34,7 @@ To run this project on your local machine, follow these simple steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/paulamarcondes/robot-keywords-hub.git](https://github.com/paulamarcondes/robot-keywords-hub.git)
+    git clone https://github.com/paulamarcondes/robot-keywords-hub.git
     cd robot-keywords-hub
     ```
 
