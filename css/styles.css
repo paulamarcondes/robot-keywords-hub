@@ -3,7 +3,7 @@
 
 /* BASE STYLES */
 body, * {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;    
 }
 body {
   background-color: #FFFFFF;
@@ -11,6 +11,10 @@ body {
   margin: 0;
   padding: 0;
   font-weight: 400;
+
+/* FIX: Force the vertical scrollbar to always be visible */
+  overflow-y: scroll;
+
 }
 
 /* NAVBAR */
@@ -246,7 +250,7 @@ body {
   margin-top: 18px;
   margin-bottom: 2px;
   border-top: 1px solid #E9E2E1;
-  padding-top: 12px;
+  padding-top: 17px;
 }
 
 .modal-divider {

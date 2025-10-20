@@ -1,13 +1,13 @@
 {
   "specversion": 3,
   "name": "FakerLibrary",
-  "doc": "<p>Robot Framework keyword library wrapper for Faker.</p>\n<p>This set of keywords was generated using Faker version 37.1.0.</p>",
+  "doc": "<p>Robot Framework keyword library wrapper for Faker.</p>\n<p>This set of keywords was generated using Faker version 37.11.0.</p>",
   "version": "",
-  "generated": "2025-10-18T16:06:25+00:00",
+  "generated": "2025-10-20T00:06:35+00:00",
   "type": "LIBRARY",
   "scope": "GLOBAL",
   "docFormat": "HTML",
-  "source": "C:\\Python313\\Lib\\site-packages\\FakerLibrary\\__init__.py",
+  "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\FakerLibrary\\__init__.py",
   "lineno": 8,
   "tags": [],
   "inits": [
@@ -43,7 +43,7 @@
       "doc": "<p>Initialize self.  See help(type(self)) for accurate signature.</p>",
       "shortdoc": "Initialize self.  See help(type(self)) for accurate signature.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\FakerLibrary\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\FakerLibrary\\__init__.py",
       "lineno": 41
     }
   ],
@@ -60,7 +60,7 @@
       "doc": "<p>Generate an ABA routing transit number.</p>",
       "shortdoc": "Generate an ABA routing transit number.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
       "lineno": 34
     },
     {
@@ -112,7 +112,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\generator.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\generator.py",
       "lineno": 32
     },
     {
@@ -127,7 +127,7 @@
       "doc": "<p>:example: '791 Crist Parks, Sashabury, IL 86039-9874'</p>",
       "shortdoc": ":example: '791 Crist Parks, Sashabury, IL 86039-9874'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
       "lineno": 68
     },
     {
@@ -142,7 +142,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 498
     },
     {
@@ -157,8 +157,8 @@
       "doc": "<p>:sample:</p>",
       "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2495
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2496
     },
     {
       "name": "Android Platform Token",
@@ -172,7 +172,7 @@
       "doc": "<p>Generate an Android platform token used in user agent strings.</p>",
       "shortdoc": "Generate an Android platform token used in user agent strings.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 352
     },
     {
@@ -187,7 +187,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 277
     },
     {
@@ -202,7 +202,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 260
     },
     {
@@ -217,7 +217,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 271
     },
     {
@@ -232,7 +232,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 267
     },
     {
@@ -247,7 +247,7 @@
       "doc": "<p>Generate the bank provider's ISO 3166-1 alpha-2 country code.</p>",
       "shortdoc": "Generate the bank provider's ISO 3166-1 alpha-2 country code.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
       "lineno": 47
     },
     {
@@ -262,7 +262,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\phone_number\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\phone_number\\en_US\\__init__.py",
       "lineno": 48
     },
     {
@@ -277,7 +277,7 @@
       "doc": "<p>Generate a Basic Bank Account Number (BBAN).</p>",
       "shortdoc": "Generate a Basic Bank Account Number (BBAN).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
       "lineno": 51
     },
     {
@@ -306,8 +306,8 @@
       "doc": "<p>Generate a random binary blob of <code>length</code> bytes.</p>\n<p>If this faker instance has been seeded, performance will be signficiantly reduced, to conform to the seeding.</p>\n<p>:sample: length=64</p>",
       "shortdoc": "Generate a random binary blob of ``length`` bytes.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 47
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 48
     },
     {
       "name": "Boolean",
@@ -335,8 +335,8 @@
       "doc": "<p>Generate a random boolean value based on <code>chance_of_getting_true</code>.</p>\n<p>:sample: chance_of_getting_true=25 :sample: chance_of_getting_true=50 :sample: chance_of_getting_true=75</p>",
       "shortdoc": "Generate a random boolean value based on ``chance_of_getting_true``.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 29
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 30
     },
     {
       "name": "Bothify",
@@ -374,11 +374,11 @@
         "nested": [],
         "union": false
       },
-      "doc": "<p>Generate a string with each placeholder in <code>text</code> replaced according to the following rules:</p>\n<ul>\n<li>Number signs ('#') are replaced with a random digit (0 to 9).</li>\n<li>Question marks ('?') are replaced with a random character from <code>letters</code>.</li>\n</ul>\n<p>By default, <code>letters</code> contains all ASCII letters, uppercase and lowercase.</p>\n<p>Under the hood, this method uses :meth:<span class=\"name\">numerify() &lt;faker.providers.BaseProvider.numerify&gt;</span> and and :meth:<span class=\"name\">lexify() &lt;faker.providers.BaseProvider.lexify&gt;</span> to generate random values for number signs and question marks respectively.</p>\n<p>:sample: letters='ABCDE' :sample: text='Product Number: ????-########' :sample: text='Product Number: ????-########', letters='ABCDE'</p>",
+      "doc": "<p>Generate a string with each placeholder in <code>text</code> replaced according to the following rules:</p>\n<ul>\n<li>Number signs ('#') are replaced with a random digit (0 to 9).</li>\n<li>Percent signs ('%') are replaced with a random non-zero digit (1 to 9).</li>\n<li>Dollar signs ('$') are replaced with a random digit above two (2 to 9).</li>\n<li>Exclamation marks ('!') are replaced with a random digit or an empty string.</li>\n<li>At symbols ('@') are replaced with a random non-zero digit or an empty string.</li>\n<li>Question marks ('?') are replaced with a random character from <code>letters</code>.</li>\n</ul>\n<p>By default, <code>letters</code> contains all ASCII letters, uppercase and lowercase.</p>\n<p>Under the hood, this method uses :meth:<span class=\"name\">numerify() &lt;faker.providers.BaseProvider.numerify&gt;</span> and and :meth:<span class=\"name\">lexify() &lt;faker.providers.BaseProvider.lexify&gt;</span> to generate random values for number signs and question marks respectively.</p>\n<p>:sample: letters='ABCDE' :sample: text='Product Number: ????-########' :sample: text='Product Number: ????-########', letters='ABCDE' :sample: text='Order: ##??-$'</p>",
       "shortdoc": "Generate a string with each placeholder in ``text`` replaced according to the following rules:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 645
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 646
     },
     {
       "name": "Bs",
@@ -392,7 +392,7 @@
       "doc": "<p>:example: 'integrate extensible convergence'</p>",
       "shortdoc": ":example: 'integrate extensible convergence'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\company\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\company\\__init__.py",
       "lineno": 527
     },
     {
@@ -407,7 +407,7 @@
       "doc": "<p>:example: '791'</p>",
       "shortdoc": ":example: '791'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
       "lineno": 35
     },
     {
@@ -422,7 +422,7 @@
       "doc": "<p>:example: 'Robust full-range hub'</p>",
       "shortdoc": ":example: 'Robust full-range hub'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\company\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\company\\__init__.py",
       "lineno": 521
     },
     {
@@ -437,8 +437,8 @@
       "doc": "<p>:sample:</p>",
       "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2531
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2532
     },
     {
       "name": "Chrome",
@@ -505,7 +505,7 @@
       "doc": "<p>Generate a Chrome web browser user agent string.</p>",
       "shortdoc": "Generate a Chrome web browser user agent string.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 170
     },
     {
@@ -520,7 +520,7 @@
       "doc": "<p>:example: 'Sashabury'</p>",
       "shortdoc": ":example: 'Sashabury'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
       "lineno": 41
     },
     {
@@ -535,7 +535,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 492
     },
     {
@@ -550,7 +550,7 @@
       "doc": "<p>:example: 'town'</p>",
       "shortdoc": ":example: 'town'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
       "lineno": 23
     },
     {
@@ -656,8 +656,8 @@
       "doc": "<p>Generate a color in a human-friendly way.</p>\n<p>Under the hood, this method first creates a color represented in the HSV color model and then converts it to the desired <code>color_format</code>. The argument <code>hue</code> controls the H value according to the following rules:</p>\n<ul>\n<li>If the value is a number from <code>0</code> to <code>360</code>, it will serve as the H value of the generated color.</li>\n<li>If the value is a tuple/list of 2 numbers from 0 to 360, the color's H value will be randomly selected from that range.</li>\n<li>If the value is a valid string, the color's H value will be randomly selected from the H range corresponding to the supplied string. Valid values are <code>'monochrome'</code>, <code>'red'</code>, <code>'orange'</code>, <code>'yellow'</code>, <code>'green'</code>, <code>'blue'</code>, <code>'purple'</code>, and <code>'pink'</code>.</li>\n</ul>\n<p>The argument <code>luminosity</code> influences both S and V values and is partially affected by <code>hue</code> as well. The finer details of this relationship are somewhat involved, so please refer to the source code instead if you wish to dig deeper. To keep the interface simple, this argument either can be omitted or can accept the following string values:<span class=\"name\">`'bright'</span>`, <code>'dark'</code>, <code>'light'</code>, or <code>'random'</code>.</p>\n<p>The argument <code>color_format</code> controls in which color model the color is represented. Valid values are <code>'hsv'</code>, <code>'hsl'</code>, <code>'rgb'</code>, or <code>'hex'</code> (default).</p>\n<p>:sample: hue='red' :sample: luminosity='light' :sample: hue=(100, 200), color_format='rgb' :sample: hue='orange', luminosity='bright' :sample: hue=135, luminosity='dark', color_format='hsv' :sample: hue=(300, 20), luminosity='random', color_format='hsl'</p>",
       "shortdoc": "Generate a color in a human-friendly way.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
-      "lineno": 206
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
+      "lineno": 230
     },
     {
       "name": "Color Hsl",
@@ -765,11 +765,11 @@
         ],
         "union": false
       },
-      "doc": "<p>Generate a HSL color tuple in a human-friendly way.</p>",
-      "shortdoc": "Generate a HSL color tuple in a human-friendly way.",
+      "doc": "<p>Generate a HSL color tuple.</p>\n<p>:sample: :sample: hue='red', luminosity='dark' :sample: hue=(100, 200), luminosity='random'</p>",
+      "shortdoc": "Generate a HSL color tuple.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
-      "lineno": 268
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
+      "lineno": 304
     },
     {
       "name": "Color Hsv",
@@ -877,11 +877,11 @@
         ],
         "union": false
       },
-      "doc": "<p>Generate a HSV color tuple in a human-friendly way.</p>",
-      "shortdoc": "Generate a HSV color tuple in a human-friendly way.",
+      "doc": "<p>Generate a HSV color tuple.</p>\n<p>:sample: :sample: hue='red', luminosity='dark' :sample: hue=(100, 200), luminosity='random'</p>",
+      "shortdoc": "Generate a HSV color tuple.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
-      "lineno": 276
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
+      "lineno": 318
     },
     {
       "name": "Color Name",
@@ -892,10 +892,10 @@
         "nested": [],
         "union": false
       },
-      "doc": "<p>Generate a color name.</p>",
+      "doc": "<p>Generate a color name.</p>\n<p>:sample:</p>",
       "shortdoc": "Generate a color name.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
       "lineno": 178
     },
     {
@@ -1004,11 +1004,11 @@
         ],
         "union": false
       },
-      "doc": "<p>Generate a RGB color tuple of integers in a human-friendly way.</p>",
-      "shortdoc": "Generate a RGB color tuple of integers in a human-friendly way.",
+      "doc": "<p>Generate a RGB color tuple of integers.</p>\n<p>:sample: :sample: hue='red', luminosity='dark' :sample: hue=(100, 200), luminosity='random'</p>",
+      "shortdoc": "Generate a RGB color tuple of integers.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
-      "lineno": 252
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
+      "lineno": 276
     },
     {
       "name": "Color Rgb Float",
@@ -1116,11 +1116,11 @@
         ],
         "union": false
       },
-      "doc": "<p>Generate a RGB color tuple of floats in a human-friendly way.</p>",
-      "shortdoc": "Generate a RGB color tuple of floats in a human-friendly way.",
+      "doc": "<p>Generate a RGB color tuple of floats.</p>\n<p>:sample: :sample: hue='red', luminosity='dark' :sample: hue=(100, 200), luminosity='random'</p>",
+      "shortdoc": "Generate a RGB color tuple of floats.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
-      "lineno": 260
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
+      "lineno": 290
     },
     {
       "name": "Company",
@@ -1134,7 +1134,7 @@
       "doc": "<p>:example: 'Acme Ltd'</p>",
       "shortdoc": ":example: 'Acme Ltd'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\company\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\company\\__init__.py",
       "lineno": 508
     },
     {
@@ -1149,7 +1149,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 252
     },
     {
@@ -1164,7 +1164,7 @@
       "doc": "<p>:example: 'Ltd'</p>",
       "shortdoc": ":example: 'Ltd'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\company\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\company\\__init__.py",
       "lineno": 515
     },
     {
@@ -1232,7 +1232,7 @@
       "doc": "<p>Optionally center the coord and pick a point within radius.</p>",
       "shortdoc": "Optionally center the coord and pick a point within radius.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\geo\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\geo\\__init__.py",
       "lineno": 1005
     },
     {
@@ -1244,10 +1244,10 @@
         "nested": [],
         "union": false
       },
-      "doc": "",
-      "shortdoc": "",
+      "doc": "<p>:sample:</p>",
+      "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
       "lineno": 75
     },
     {
@@ -1262,7 +1262,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\phone_number\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\phone_number\\__init__.py",
       "lineno": 326
     },
     {
@@ -1288,11 +1288,11 @@
         "nested": [],
         "union": false
       },
-      "doc": "",
-      "shortdoc": "",
+      "doc": "<p>:sample: :sample: representation='alpha-2' :sample: representation='alpha-3'</p>",
+      "shortdoc": ":sample: :sample: representation='alpha-2' :sample: representation='alpha-3'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
-      "lineno": 78
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
+      "lineno": 81
     },
     {
       "name": "Credit Card Expire",
@@ -1408,7 +1408,7 @@
       "doc": "<p>Generate a credit card expiry date.</p>\n<p>This method uses |date_time_between| under the hood to generate the expiry date, so the <code>start</code> and <code>end</code> arguments work in the same way here as it would in that method. For the actual formatting of the expiry date, |strftime| is used and <code>date_format</code> is simply passed to that method.</p>",
       "shortdoc": "Generate a credit card expiry date.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\credit_card\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\credit_card\\__init__.py",
       "lineno": 125
     },
     {
@@ -1450,7 +1450,7 @@
       "doc": "<p>Generate a set of credit card details.</p>",
       "shortdoc": "Generate a set of credit card details.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\credit_card\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\credit_card\\__init__.py",
       "lineno": 142
     },
     {
@@ -1492,7 +1492,7 @@
       "doc": "<p>Generate a valid credit card number.</p>",
       "shortdoc": "Generate a valid credit card number.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\credit_card\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\credit_card\\__init__.py",
       "lineno": 118
     },
     {
@@ -1534,7 +1534,7 @@
       "doc": "<p>Generate a credit card provider name.</p>",
       "shortdoc": "Generate a credit card provider name.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\credit_card\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\credit_card\\__init__.py",
       "lineno": 112
     },
     {
@@ -1576,7 +1576,7 @@
       "doc": "<p>Generate a credit card security code.</p>",
       "shortdoc": "Generate a credit card security code.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\credit_card\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\credit_card\\__init__.py",
       "lineno": 159
     },
     {
@@ -1604,7 +1604,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
       "lineno": 414
     },
     {
@@ -1619,7 +1619,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
       "lineno": 417
     },
     {
@@ -1634,7 +1634,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
       "lineno": 420
     },
     {
@@ -1735,8 +1735,8 @@
       "doc": "<p>Generate random comma-separated values.</p>\n<p>For more information on the different arguments of this method, please refer to :meth:<span class=\"name\">dsv() &lt;faker.providers.misc.Provider.dsv&gt;</span> which is used under the hood.</p>\n<p>:sample: data_columns=('{{name}}', '{{address}}'), num_rows=10, include_row_ids=False :sample: header=('Name', 'Address', 'Favorite Color'), data_columns=('{{name}}', '{{address}}', '{{safe_color_name}}'), num_rows=10, include_row_ids=True</p>",
       "shortdoc": "Generate random comma-separated values.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 459
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 460
     },
     {
       "name": "Currency",
@@ -1763,7 +1763,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
       "lineno": 395
     },
     {
@@ -1778,7 +1778,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
       "lineno": 398
     },
     {
@@ -1793,7 +1793,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
       "lineno": 401
     },
     {
@@ -1835,7 +1835,7 @@
       "doc": "<p>:example: $</p>",
       "shortdoc": ":example: $",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\currency\\__init__.py",
       "lineno": 404
     },
     {
@@ -1847,11 +1847,11 @@
         "nested": [],
         "union": false
       },
-      "doc": "",
-      "shortdoc": "",
+      "doc": "<p>:sample:</p>",
+      "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
-      "lineno": 92
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
+      "lineno": 103
     },
     {
       "name": "Current Country Code",
@@ -1862,11 +1862,11 @@
         "nested": [],
         "union": false
       },
-      "doc": "",
-      "shortdoc": "",
+      "doc": "<p>:sample:</p>",
+      "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
-      "lineno": 86
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
+      "lineno": 94
     },
     {
       "name": "Date",
@@ -1944,8 +1944,8 @@
       "doc": "<p>Get a date string between January 1, 1970 and now.</p>\n<p>:param pattern: Format of the date (year-month-day by default) :param end_datetime: A <code>DateParseType</code>. Defaults to the current date and time</p>\n<p>:sample: :sample: pattern='%m/%d/%Y' :sample: end_datetime='+1w'</p>",
       "shortdoc": "Get a date string between January 1, 1970 and now.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 1956
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 1957
     },
     {
       "name": "Date Between",
@@ -2048,8 +2048,8 @@
       "doc": "<p>Get a Date object based on a random date between two given dates. Accepts date strings that can be recognized by strtotime().</p>\n<p>:param start_date: A <code>DateParseType</code>. Defaults to 30 years ago :param end_date: A <code>DateParseType</code>. Defaults to <code>\"today\"</code></p>\n<p>:sample: :sample: start_date='-1w' :sample: start_date=\"-1y\", end_date=\"+1w\"</p>",
       "shortdoc": "Get a Date object based on a random date between two given dates. Accepts date strings that can be recognized by strtotime().",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2113
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2114
     },
     {
       "name": "Date Between Dates",
@@ -2164,8 +2164,8 @@
       "doc": "<p>Get a random date between the two given dates.</p>\n<p>:param date_start: A <code>DateParseType</code>. Defaults to the UNIX epoch :param date_end: A <code>DateParseType</code>. Defaults to the current date and time</p>\n<p>:sample:</p>",
       "shortdoc": "Get a random date between the two given dates.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2227
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2228
     },
     {
       "name": "Date Object",
@@ -2206,8 +2206,8 @@
       "doc": "<p>Get a date object between January 1, 1970 and now</p>\n<p>:param end_datetime: A <code>DateParseType</code>. Defaults to the current date and time</p>\n<p>:sample: :sample: end_datetime='+1w'</p>",
       "shortdoc": "Get a date object between January 1, 1970 and now",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 1969
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 1970
     },
     {
       "name": "Date Of Birth",
@@ -2274,8 +2274,8 @@
       "doc": "<p>Generate a random date of birth represented as a Date object, constrained by optional miminimum_age and maximum_age parameters.</p>\n<p>:param tzinfo: Defaults to None. :param minimum_age: Defaults to <code>0</code>. :param maximum_age: Defaults to <code>115</code>.</p>\n<p>:sample: :sample: minimum_age=30, maximum_age=50</p>",
       "shortdoc": "Generate a random date of birth represented as a Date object, constrained by optional miminimum_age and maximum_age parameters.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2553
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2554
     },
     {
       "name": "Date This Century",
@@ -2316,8 +2316,8 @@
       "doc": "<p>Gets a Date object for the current century.</p>\n<p>:param before_today: include days in current century before today. Defaults to True :param after_today: include days in current century after today. Defaults to False</p>\n<p>:sample: :sample: before_today=False, after_today=True</p>",
       "shortdoc": "Gets a Date object for the current century.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2358
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2359
     },
     {
       "name": "Date This Decade",
@@ -2358,8 +2358,8 @@
       "doc": "<p>Gets a Date object for the decade year.</p>\n<p>:param before_today: include days in current decade before today. Defaults to True :param after_today: include days in current decade after today. Defaults to False</p>\n<p>:sample: :sample: before_today=False, after_today=True</p>",
       "shortdoc": "Gets a Date object for the decade year.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2381
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2382
     },
     {
       "name": "Date This Month",
@@ -2400,8 +2400,8 @@
       "doc": "<p>Gets a Date object for the current month.</p>\n<p>:param before_today: include days in current month before today. Defaults to True :param after_today: include days in current month after today. Defaults to False</p>\n<p>:sample: :sample: before_today=False, after_today=True</p>",
       "shortdoc": "Gets a Date object for the current month.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2427
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2428
     },
     {
       "name": "Date This Year",
@@ -2442,8 +2442,8 @@
       "doc": "<p>Gets a Date object for the current year.</p>\n<p>:param before_today: include days in current year before today. Defaults to True :param after_today: include days in current year after today. Defaults to False</p>\n<p>:sample: :sample: before_today=False, after_today=True</p>",
       "shortdoc": "Gets a Date object for the current year.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2404
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2405
     },
     {
       "name": "Date Time",
@@ -2534,8 +2534,8 @@
       "doc": "<p>Get a datetime object for a date between January 1, 1970 and a specified end_datetime</p>\n<p>:param tzinfo: timezone, instance of datetime.tzinfo subclass :param end_datetime: A <code>DateParseType</code>. Defaults to the current date and time</p>\n<p>:sample:</p>",
       "shortdoc": "Get a datetime object for a date between January 1, 1970 and a specified end_datetime",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 1883
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 1884
     },
     {
       "name": "Date Time Ad",
@@ -2676,8 +2676,8 @@
       "doc": "<p>Get a datetime object for a date between January 1, 0001 and now</p>\n<p>:param tzinfo: timezone, instance of datetime.tzinfo subclass :param end_datetime: A <code>DateParseType</code>. Defaults to the current date and time :param start_datetime: A <code>DateParseType</code>. Defaults to UNIX timestamp <code>-62135596800</code>, equivalent to 0001-01-01 00:00:00 UTC</p>\n<p>:sample:</p>",
       "shortdoc": "Get a datetime object for a date between January 1, 0001 and now",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 1901
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 1902
     },
     {
       "name": "Date Time Between",
@@ -2806,8 +2806,8 @@
       "doc": "<p>Get a datetime object based on a random date between two given dates. Accepts date strings that can be recognized by strtotime().</p>\n<p>:param start_date: A <code>DateParseType</code>. Defaults to 30 years ago :param end_date: A <code>DateParseType</code>. Defaults to <code>\"now\"</code> :param tzinfo: timezone, instance of datetime.tzinfo subclass</p>\n<p>:sample:</p>",
       "shortdoc": "Get a datetime object based on a random date between two given dates. Accepts date strings that can be recognized by strtotime().",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2086
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2087
     },
     {
       "name": "Date Time Between Dates",
@@ -2948,8 +2948,8 @@
       "doc": "<p>Get a random datetime between the two given datetimes.</p>\n<p>:param datetime_start: A <code>DateParseType</code>. Defaults to the UNIX epoch :param datetime_end: A <code>DateParseType</code>. Defaults to the current date and time :param tzinfo: timezone, instance of datetime.tzinfo subclass</p>\n<p>:sample: :sample: datetime_start='-30y', datetime_end='now' :sample: datetime_start='now', datetime_end='+1y'</p>",
       "shortdoc": "Get a random datetime between the two given datetimes.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2183
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2184
     },
     {
       "name": "Date Time This Century",
@@ -3016,8 +3016,8 @@
       "doc": "<p>Gets a datetime object for the current century.</p>\n<p>:param before_now: include days in current century before today. Defaults to True :param after_now: include days in current century after today. Defaults to False :param tzinfo: timezone, instance of datetime.tzinfo subclass</p>\n<p>:sample: :sample: before_now=False, after_now=True</p>",
       "shortdoc": "Gets a datetime object for the current century.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2242
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2243
     },
     {
       "name": "Date Time This Decade",
@@ -3084,8 +3084,8 @@
       "doc": "<p>Gets a datetime object for the decade year.</p>\n<p>:param before_now: include days in current decade before today. Defaults to True :param after_now: include days in current decade after today. Defaults to False :param tzinfo: timezone, instance of datetime.tzinfo subclass</p>\n<p>:sample: :sample: before_now=False, after_now=True</p>",
       "shortdoc": "Gets a datetime object for the decade year.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2271
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2272
     },
     {
       "name": "Date Time This Month",
@@ -3152,8 +3152,8 @@
       "doc": "<p>Gets a datetime object for the current month.</p>\n<p>:param before_now: include days in current month before today. Defaults to True :param after_now: include days in current month after today. Defaults to False :param tzinfo: timezone, instance of datetime.tzinfo subclass</p>\n<p>:sample: :sample: before_now=False, after_now=True</p>",
       "shortdoc": "Gets a datetime object for the current month.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2329
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2330
     },
     {
       "name": "Date Time This Year",
@@ -3220,8 +3220,8 @@
       "doc": "<p>Gets a datetime object for the current year.</p>\n<p>:param before_now: include days in current year before today. Defaults to True :param after_now: include days in current year after today. Defaults to False :param tzinfo: timezone, instance of datetime.tzinfo subclass</p>\n<p>:sample: :sample: before_now=False, after_now=True</p>",
       "shortdoc": "Gets a datetime object for the current year.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2300
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2301
     },
     {
       "name": "Day Of Month",
@@ -3235,8 +3235,8 @@
       "doc": "<p>:sample:</p>",
       "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2501
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2502
     },
     {
       "name": "Day Of Week",
@@ -3250,8 +3250,8 @@
       "doc": "<p>:sample:</p>",
       "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2507
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2508
     },
     {
       "name": "Del Arguments",
@@ -3313,7 +3313,7 @@
       "doc": "<p>Delete an argument from an argument group or the entire argument group. Used in conjunction with the set_arguments() method.</p>\n<p>generator.del_arguments('small') generator.del_arguments('small', 'max_value')</p>",
       "shortdoc": "Delete an argument from an argument group or the entire argument group. Used in conjunction with the set_arguments() method.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\generator.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\generator.py",
       "lineno": 143
     },
     {
@@ -3459,7 +3459,7 @@
       "doc": "<p>Generates a domain name by given date <a href=\"https://en.wikipedia.org/wiki/Domain_generation_algorithm\">https://en.wikipedia.org/wiki/Domain_generation_algorithm</a></p>\n<p>:type year: int :type month: int :type day: int :type tld: str :type length: int :rtype: str</p>",
       "shortdoc": "Generates a domain name by given date https://en.wikipedia.org/wiki/Domain_generation_algorithm",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 329
     },
     {
@@ -3474,7 +3474,7 @@
       "doc": "<p>Generate a valid Digital Object Identifier (DOI). Format: 10.{4-9 digits}/{alphanumeric string} Eg: 10.1000/xyz123</p>\n<p>:sample:</p>",
       "shortdoc": "Generate a valid Digital Object Identifier (DOI). Format: 10.{4-9 digits}/{alphanumeric string} Eg: 10.1000/xyz123",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\doi\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\doi\\__init__.py",
       "lineno": 10
     },
     {
@@ -3503,7 +3503,7 @@
       "doc": "<p>Produce an Internet domain name with the specified number of subdomain levels.</p>\n<p>&gt;&gt;&gt; domain_name() nichols-phillips.com &gt;&gt;&gt; domain_name(2) williamson-hopkins.jackson.com</p>",
       "shortdoc": "Produce an Internet domain name with the specified number of subdomain levels.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 306
     },
     {
@@ -3518,7 +3518,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 324
     },
     {
@@ -3645,8 +3645,8 @@
       "doc": "<p>Generate random delimiter-separated values.</p>\n<p>This method's behavior share some similarities with <code>csv.writer</code>. The <code>dialect</code> and <code>**fmtparams</code> arguments are the same arguments expected by <code>csv.writer</code> to control its behavior, and instead of expecting a file-like object to where output will be written, the output is controlled by additional keyword arguments and is returned as a string.</p>\n<p>The <code>dialect</code> argument defaults to <code>'faker-csv'</code> which is the name of a <code>csv.excel</code> subclass with full quoting enabled.</p>\n<p>The <code>header</code> argument expects a list or a tuple of strings that will serve as the header row if supplied. The <code>data_columns</code> argument expects a list or a tuple of string tokens, and these string tokens will be passed to  :meth:<span class=\"name\">pystr_format() &lt;faker.providers.python.Provider.pystr_format&gt;</span> for data generation. Argument Groups are used to pass arguments to the provider methods. Both <code>header</code> and <code>data_columns</code> must be of the same length.</p>\n<p>Example: fake.set_arguments('top_half', {'min_value': 50, 'max_value': 100}) fake.dsv(data_columns=('{{ name }}', '{{ pyint:top_half }}'))</p>\n<p>The <code>num_rows</code> argument controls how many rows of data to generate, and the <code>include_row_ids</code> argument may be set to <code>True</code> to include a sequential row ID column.</p>\n<p>:sample: dialect='excel', data_columns=('{{name}}', '{{address}}') :sample: dialect='excel-tab', data_columns=('{{name}}', '{{address}}'), include_row_ids=True :sample: data_columns=('{{name}}', '{{address}}'), num_rows=5, delimiter='$'</p>",
       "shortdoc": "Generate random delimiter-separated values.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 394
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 395
     },
     {
       "name": "Ean",
@@ -3745,7 +3745,7 @@
       "doc": "<p>Generate an EAN barcode of the specified <code>length</code>.</p>\n<p>The value of <code>length</code> can only be <code>8</code> or <code>13</code> (default) which will create an EAN-8 or an EAN-13 barcode respectively.</p>\n<p>If a value for <code>prefixes</code> is specified, the result will begin with one of the sequences in <code>prefixes</code>.</p>\n<p>:sample: length=13 :sample: length=8 :sample: prefixes=('00',) :sample: prefixes=('45', '49')</p>",
       "shortdoc": "Generate an EAN barcode of the specified ``length``.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\barcode\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\barcode\\__init__.py",
       "lineno": 41
     },
     {
@@ -3858,7 +3858,7 @@
       "doc": "<p>Generate an EAN-13 barcode.</p>\n<p>If <code>leading_zero</code> is <code>True</code>, the leftmost digit of the barcode will be set to <code>0</code>. If <code>False</code>, the leftmost digit cannot be <code>0</code>. If <code>None</code> (default), the leftmost digit can be any digit.</p>\n<p>If a value for <code>prefixes</code> is specified, the result will begin with one of the sequences in <code>prefixes</code> and will ignore <code>leading_zero</code>.</p>\n<p>This method uses the standard barcode provider's |ean13| under the hood with the <code>prefixes</code> argument set to the correct value to attain the behavior described above.</p>\n<p>.. note:: EAN-13 barcode that starts with a zero can be converted to UPC-A by dropping the leading zero. This may cause problems with readers that treat all of these code as UPC-A codes and drop the first digit when reading it.</p>\n<p>You can set the argument <code>prefixes</code> ( or <code>leading_zero</code> for convenience) explicitly to avoid or to force the generated barcode to start with a zero. You can also generate actual UPC-A barcode with |EnUsBarcodeProvider.upc_a|.</p>\n<p>:sample: :sample: leading_zero=False :sample: leading_zero=True :sample: prefixes=('00',) :sample: prefixes=('45', '49')</p>",
       "shortdoc": "Generate an EAN-13 barcode.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\barcode\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\barcode\\en_US\\__init__.py",
       "lineno": 48
     },
     {
@@ -3945,7 +3945,7 @@
       "doc": "<p>Generate an EAN-8 barcode.</p>\n<p>This method uses |ean| under the hood with the <code>length</code> argument explicitly set to <code>8</code>.</p>\n<p>If a value for <code>prefixes</code> is specified, the result will begin with one of the sequences in <code>prefixes</code>.</p>\n<p>:sample: :sample: prefixes=('00',) :sample: prefixes=('45', '49')</p>",
       "shortdoc": "Generate an EAN-8 barcode.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\barcode\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\barcode\\__init__.py",
       "lineno": 57
     },
     {
@@ -3960,7 +3960,7 @@
       "doc": "<p>Generate a random United States Employer Identification Number (EIN).</p>\n<p>An United States An Employer Identification Number (EIN) is also known as a Federal Tax Identification Number, and is used to identify a business entity. EINs follow a format of a two-digit prefix followed by a hyphen and a seven-digit sequence: ##-######</p>\n<p><a href=\"https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers\">https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers</a></p>",
       "shortdoc": "Generate a random United States Employer Identification Number (EIN).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\ssn\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\ssn\\en_US\\__init__.py",
       "lineno": 34
     },
     {
@@ -4015,7 +4015,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 229
     },
     {
@@ -4030,7 +4030,7 @@
       "doc": "<p>:example: '\ud83d\ude09'</p>",
       "shortdoc": ":example: '\ud83d\ude09'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\emoji\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\emoji\\__init__.py",
       "lineno": 3524
     },
     {
@@ -4066,8 +4066,8 @@
       "doc": "<p>Returns a random enum of the provided input <a href=\"#Enum\" class=\"name\">Enum</a> type.</p>\n<p>:param enum_cls: The <a href=\"#Enum\" class=\"name\">Enum</a> type to produce the value for. :returns: A randomly selected enum value.</p>",
       "shortdoc": "Returns a random enum of the provided input `Enum` type.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
-      "lineno": 542
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "lineno": 555
     },
     {
       "name": "File Extension",
@@ -4108,7 +4108,7 @@
       "doc": "<p>Generate a file extension under the specified <code>category</code>.</p>\n<p>If <code>category</code> is <code>None</code>, a random category will be used. The list of valid categories include: <code>'audio'</code>, <code>'image'</code>, <code>'office'</code>, <code>'text'</code>, and <code>'video'</code>.</p>\n<p>:sample: :sample: category='image'</p>",
       "shortdoc": "Generate a file extension under the specified ``category``.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\file\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\file\\__init__.py",
       "lineno": 257
     },
     {
@@ -4176,7 +4176,7 @@
       "doc": "<p>Generate a random file name with extension.</p>\n<p>If <code>extension</code> is <code>None</code>, a random extension will be created under the hood using |file_extension| with the specified <code>category</code>. If a value for <code>extension</code> is provided, the value will be used instead, and <code>category</code> will be ignored. The actual name part itself is generated using |word|. If extension is an empty string then no extension will be added, and file_name will be the same as |word|.</p>\n<p>:sample: size=10 :sample: category='audio' :sample: extension='abcdef' :sample: category='audio', extension='abcdef' :sample: extension=''</p>",
       "shortdoc": "Generate a random file name with extension.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\file\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\file\\__init__.py",
       "lineno": 235
     },
     {
@@ -4322,7 +4322,7 @@
       "doc": "<p>Generate an pathname to a file.</p>\n<p>This method uses |file_name| under the hood to generate the file name itself, and <code>depth</code> controls the depth of the directory path, and |word| is used under the hood to generate the different directory names.</p>\n<p>If <code>absolute</code> is <code>True</code> (default), the generated path starts with <code>/</code> and is absolute. Otherwise, the generated path is relative.</p>\n<p>If used, <code>extension</code> can be either a string, forcing that extension, a sequence of strings (one will be picked at random), or an empty sequence (the path will have no extension). Default behaviour is the same as |file_name|</p>\n<p>if <code>file_system</code> is set (default=\"linux\"), the generated path uses specified file system path standard, the list of valid file systems include: <code>'windows'</code>, <code>'linux'</code>.</p>\n<p>:sample: size=10 :sample: depth=3 :sample: depth=5, category='video' :sample: depth=5, category='video', extension='abcdef' :sample: extension=[] :sample: extension='' :sample: extension=[\"a\", \"bc\", \"def\"] :sample: depth=5, category='video', extension='abcdef', file_system='windows'</p>",
       "shortdoc": "Generate an pathname to a file.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\file\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\file\\__init__.py",
       "lineno": 271
     },
     {
@@ -4337,7 +4337,7 @@
       "doc": "<p>Generate a Mozilla Firefox web browser user agent string.</p>",
       "shortdoc": "Generate a Mozilla Firefox web browser user agent string.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 222
     },
     {
@@ -4352,7 +4352,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 208
     },
     {
@@ -4367,7 +4367,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 248
     },
     {
@@ -4382,7 +4382,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 238
     },
     {
@@ -4397,7 +4397,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 243
     },
     {
@@ -4530,8 +4530,8 @@
       "doc": "<p>Generate random fixed width values.</p>\n<p>Using a list of tuple records that is passed as <code>data_columns</code>, that defines the structure that will be generated. Arguments within the record are provider specific, and should be a dictionary that will be passed to the provider method.</p>\n<p>Data Column List format [('field width', 'definition', {'arguments'})]</p>\n<p>The definition can be 'provider', 'provider:argument_group', tokenized 'string {{ provider:argument_group }}' that is passed to the python provider method pystr_format() for generation, or a fixed '@word'. Using Lists, Tuples, and Dicts as a definition for structure.</p>\n<p>Argument Groups can be used to pass arguments to the provider methods, but will override the arguments supplied in the tuple record.</p>\n<p>Example: fake.set_arguments('top_half', {'min_value': 50, 'max_value': 100}) fake.fixed_width(data_columns=[(20, 'name'), (3, 'pyint:top_half')])</p>\n<p>:param data_columns: specification for the data structure :type data_columns: list :param num_rows: number of rows the generator will yield :type num_rows: int :param align: positioning of the value. (left, middle, right) :type align: str :return: Serialized Fixed Width data :rtype: str</p>\n<p>:sample: data_columns=[(20, 'name'), (3, 'pyint', {'min_value': 50, 'max_value': 100})], align='right', num_rows=2</p>",
       "shortdoc": "Generate random fixed width values.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 688
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 689
     },
     {
       "name": "Format",
@@ -4593,7 +4593,7 @@
       "doc": "<p>This is a secure way to make a fake from another Provider.</p>",
       "shortdoc": "This is a secure way to make a fake from another Provider.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\generator.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\generator.py",
       "lineno": 84
     },
     {
@@ -4608,7 +4608,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 248
     },
     {
@@ -4623,7 +4623,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 256
     },
     {
@@ -4683,8 +4683,8 @@
       "doc": "<p>Get a Date object based on a random date between 1 day from now and a given date.</p>\n<p>:param end_date: A <code>DateParseType</code>. Defaults to <code>\"+30d\"</code> :param tzinfo: timezone, instance of datetime.tzinfo subclass</p>\n<p>:sample: :sample: end_date='+1y'</p>",
       "shortdoc": "Get a Date object based on a random date between 1 day from now and a given date.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2143
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2144
     },
     {
       "name": "Future Datetime",
@@ -4769,8 +4769,8 @@
       "doc": "<p>Get a datetime object based on a random date between 1 second form now and a given date.</p>\n<p>:param end_date: A <code>DateParseType</code>. Defaults to <code>\"+30d\"</code> :param tzinfo: timezone, instance of datetime.tzinfo subclass</p>\n<p>:sample: :sample: end_date='+1y'</p>",
       "shortdoc": "Get a datetime object based on a random date between 1 second form now and a given date.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2130
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2131
     },
     {
       "name": "Generator Format Token",
@@ -4796,7 +4796,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\generator.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\generator.py",
       "lineno": 177
     },
     {
@@ -4859,7 +4859,7 @@
       "doc": "<p>Get the value of an argument configured within a argument group, or the entire group as a dictionary. Used in conjunction with the set_arguments() method.</p>\n<p>generator.get_arguments('small', 'max_value') generator.get_arguments('small')</p>",
       "shortdoc": "Get the value of an argument configured within a argument group, or the entire group as a dictionary. Used in conjunction with the set_arguments() method.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\generator.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\generator.py",
       "lineno": 127
     },
     {
@@ -4896,7 +4896,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\generator.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\generator.py",
       "lineno": 90
     },
     {
@@ -4927,7 +4927,7 @@
       "doc": "<p>Returns added providers.</p>",
       "shortdoc": "Returns added providers.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\generator.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\generator.py",
       "lineno": 56
     },
     {
@@ -5009,7 +5009,7 @@
       "doc": "<p>Get list of words.</p>\n<p><code>ext_word_list</code> is a parameter that allows the user to provide a list of words to be used instead of the built-in word list. If <code>ext_word_list</code> is provided, then the value of <code>part_of_speech</code> is ignored.</p>\n<p><code>part_of_speech</code> is a parameter that defines to what part of speech the returned word belongs. If <code>ext_word_list</code> is not <code>None</code>, then <code>part_of_speech</code> is ignored. If the value of <code>part_of_speech</code> does not correspond to an existent part of speech according to the set locale, then an exception is raised.</p>\n<p>:sample: part_of_speech=\"abc\", ext_word_list=['abc', 'def', 'ghi', 'jkl'] :sample: part_of_speech=\"abc\" :sample: ext_word_list=['abc', 'def', 'ghi', 'jkl']</p>\n<p>.. warning:: Depending on the length of a locale provider's built-in word list or on the length of <code>ext_word_list</code> if provided, a large <code>nb</code> can exhaust said lists if <code>unique</code> is <code>True</code>, raising an exception.</p>",
       "shortdoc": "Get list of words.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
       "lineno": 26
     },
     {
@@ -5021,11 +5021,11 @@
         "nested": [],
         "union": false
       },
-      "doc": "<p>Generate a color formatted as a hex triplet.</p>",
+      "doc": "<p>Generate a color formatted as a hex triplet.</p>\n<p>:sample:</p>",
       "shortdoc": "Generate a color formatted as a hex triplet.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
-      "lineno": 186
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
+      "lineno": 194
     },
     {
       "name": "Hexify",
@@ -5066,8 +5066,8 @@
       "doc": "<p>Generate a string with each circumflex ('^') in <code>text</code> replaced with a random hexadecimal character.</p>\n<p>By default, <code>upper</code> is set to False. If set to <code>True</code>, output will be formatted using uppercase hexadecimal characters.</p>\n<p>:sample: text='MAC Address: ^^:^^:^^:^^:^^:^^' :sample: text='MAC Address: ^^:^^:^^:^^:^^:^^', upper=True</p>",
       "shortdoc": "Generate a string with each circumflex ('^') in ``text`` replaced with a random hexadecimal character.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 663
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 669
     },
     {
       "name": "Hostname",
@@ -5095,7 +5095,7 @@
       "doc": "<p>Produce a hostname with specified number of subdomain levels.</p>\n<p>&gt;&gt;&gt; hostname() db-01.nichols-phillips.com &gt;&gt;&gt; hostname(0) laptop-56 &gt;&gt;&gt; hostname(2) web-12.williamson-hopkins.jackson.com</p>",
       "shortdoc": "Produce a hostname with specified number of subdomain levels.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 288
     },
     {
@@ -5110,7 +5110,7 @@
       "doc": "<p>Returns random HTTP method <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods\">https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods</a></p>\n<p>:rtype: str</p>",
       "shortdoc": "Returns random HTTP method https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 366
     },
     {
@@ -5139,7 +5139,7 @@
       "doc": "<p>Returns random HTTP status code <a href=\"https://www.rfc-editor.org/rfc/rfc9110#name-status-codes\">https://www.rfc-editor.org/rfc/rfc9110#name-status-codes</a> :param include_unassigned: Whether to include status codes which have not yet been assigned or are unused</p>\n<p>:return: a random three digit status code :rtype: int</p>\n<p>:example: 404</p>",
       "shortdoc": "Returns random HTTP status code https://www.rfc-editor.org/rfc/rfc9110#name-status-codes :param include_unassigned: Whether to include status codes which have     not yet been assigned or are unused",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 375
     },
     {
@@ -5154,7 +5154,7 @@
       "doc": "<p>Returns IANA Registrar ID <a href=\"https://www.iana.org/assignments/registrar-ids/registrar-ids.xhtml\">https://www.iana.org/assignments/registrar-ids/registrar-ids.xhtml</a></p>\n<p>:rtype: str</p>",
       "shortdoc": "Returns IANA Registrar ID https://www.iana.org/assignments/registrar-ids/registrar-ids.xhtml",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 762
     },
     {
@@ -5169,7 +5169,7 @@
       "doc": "<p>Generate an International Bank Account Number (IBAN).</p>",
       "shortdoc": "Generate an International Bank Account Number (IBAN).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
       "lineno": 56
     },
     {
@@ -5295,8 +5295,8 @@
       "doc": "<p>Generate an image and draw a random polygon on it using the Python Image Library. Without it installed, this provider won't be functional. Returns the bytes representing the image in a given format.</p>\n<p>The argument <code>size</code> must be a 2-tuple containing (width, height) in pixels. Defaults to 256x256.</p>\n<p>The argument <code>image_format</code> can be any valid format to the underlying library like <code>'tiff'</code>, <code>'jpeg'</code>, <code>'pdf'</code> or <code>'png'</code> (default). Note that some formats need present system libraries prior to building the Python Image Library. Refer to <a href=\"https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html\">https://pillow.readthedocs.io/en/stable/handbook/image-file-formats.html</a> for details.</p>\n<p>The arguments <code>hue</code> and <code>luminosity</code> are the same as in the color provider and are simply forwarded to it to generate both the background and the shape colors. Therefore, you can ask for a \"dark blue\" image, etc.</p>\n<p>:sample: size=(2, 2), hue='purple', luminosity='bright', image_format='pdf' :sample: size=(16, 16), hue=[90,270], image_format='ico'</p>",
       "shortdoc": "Generate an image and draw a random polygon on it using the Python Image Library. Without it installed, this provider won't be functional. Returns the bytes representing the image in a given format.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 351
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 352
     },
     {
       "name": "Image Url",
@@ -5389,7 +5389,7 @@
       "doc": "<p>Returns URL to placeholder image Example: <a href=\"http://placehold.it/640x480\">http://placehold.it/640x480</a></p>\n<p>:param width: Optional image width :param height: Optional image height :param placeholder_url: Optional template string of image URLs from custom placeholder service. String must contain <code>{width}</code> and <code>{height}</code> placeholders, eg: <code>https:/example.com/{width}/{height}</code>. :rtype: str</p>",
       "shortdoc": "Returns URL to placeholder image Example: http://placehold.it/640x480",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 739
     },
     {
@@ -5416,7 +5416,7 @@
       "doc": "<p>Initialize self.  See help(type(self)) for accurate signature.</p>",
       "shortdoc": "Initialize self.  See help(type(self)) for accurate signature.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\FakerLibrary\\keywords.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\FakerLibrary\\keywords.py",
       "lineno": 41
     },
     {
@@ -5431,7 +5431,7 @@
       "doc": "<p>Generate an IE web browser user agent string.</p>",
       "shortdoc": "Generate an IE web browser user agent string.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 329
     },
     {
@@ -5446,7 +5446,7 @@
       "doc": "<p>Generate a random invalid United States Social Security Identification Number (SSN).</p>\n<p>Invalid SSNs have the following characteristics: Cannot begin with the number 9 Cannot begin with 666 in positions 1 - 3 Cannot begin with 000 in positions 1 - 3 Cannot contain 00 in positions 4 - 5 Cannot contain 0000 in positions 6 - 9</p>\n<p><a href=\"https://www.ssa.gov/kc/SSAFactSheet--IssuingSSNs.pdf\">https://www.ssa.gov/kc/SSAFactSheet--IssuingSSNs.pdf</a></p>\n<p>Additionally, return an invalid SSN that is NOT a valid ITIN by excluding certain ITIN related \"group\" values</p>",
       "shortdoc": "Generate a random invalid United States Social Security Identification Number (SSN).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\ssn\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\ssn\\en_US\\__init__.py",
       "lineno": 142
     },
     {
@@ -5461,7 +5461,7 @@
       "doc": "<p>Generate an iOS platform token used in user agent strings.</p>",
       "shortdoc": "Generate an iOS platform token used in user agent strings.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 356
     },
     {
@@ -5542,7 +5542,7 @@
       "doc": "<p>Returns a random IPv4 address or network with a valid CIDR.</p>\n<p>:param network: Network address :param address_class: IPv4 address class (a, b, or c) :param private: Public or private :returns: IPv4</p>",
       "shortdoc": "Returns a random IPv4 address or network with a valid CIDR.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 614
     },
     {
@@ -5571,7 +5571,7 @@
       "doc": "<p>Produce a random IPv6 address or network with a valid CIDR</p>",
       "shortdoc": "Produce a random IPv6 address or network with a valid CIDR",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 658
     },
     {
@@ -5586,7 +5586,7 @@
       "doc": "<p>Returns a IPv4 network class 'a', 'b' or 'c'.</p>\n<p>:returns: IPv4 network class</p>",
       "shortdoc": "Returns a IPv4 network class 'a', 'b' or 'c'.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 606
     },
     {
@@ -5641,7 +5641,7 @@
       "doc": "<p>Returns a private IPv4.</p>\n<p>:param network: Network address :param address_class: IPv4 address class (a, b, or c) :returns: Private IPv4</p>",
       "shortdoc": "Returns a private IPv4.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 636
     },
     {
@@ -5696,7 +5696,7 @@
       "doc": "<p>Returns a public IPv4 excluding private blocks.</p>\n<p>:param network: Network address :param address_class: IPv4 address class (a, b, or c) :returns: Public IPv4</p>",
       "shortdoc": "Returns a public IPv4 excluding private blocks.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 647
     },
     {
@@ -5722,11 +5722,11 @@
         "nested": [],
         "union": false
       },
-      "doc": "",
-      "shortdoc": "",
+      "doc": "<p>:sample:</p>",
+      "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\isbn\\__init__.py",
-      "lineno": 66
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\isbn\\__init__.py",
+      "lineno": 69
     },
     {
       "name": "Isbn 13",
@@ -5751,10 +5751,10 @@
         "nested": [],
         "union": false
       },
-      "doc": "",
-      "shortdoc": "",
+      "doc": "<p>:sample:</p>",
+      "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\isbn\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\isbn\\__init__.py",
       "lineno": 61
     },
     {
@@ -5872,8 +5872,8 @@
       "doc": "<p>Get an ISO 8601 string for a datetime between the UNIX epoch and now.</p>\n<p>:param tzinfo: timezone, instance of datetime.tzinfo subclass :param end_datetime: A <code>DateParseType</code>. Defaults to the current date and time :param sep: separator between date and time, defaults to 'T' :param timespec: format specifier for the time part, defaults to 'auto' - see datetime.isoformat() documentation</p>\n<p>:sample:</p>",
       "shortdoc": "Get an ISO 8601 string for a datetime between the UNIX epoch and now.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 1937
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 1938
     },
     {
       "name": "Itin",
@@ -5887,7 +5887,7 @@
       "doc": "<p>Generate a random United States Individual Taxpayer Identification Number (ITIN).</p>\n<p>An United States Individual Taxpayer Identification Number (ITIN) is a tax processing number issued by the Internal Revenue Service. It is a nine-digit number that always begins with the number 9 and has a range of 70-88 in the fourth and fifth digit. Effective April 12, 2011, the range was extended to include 900-70-0000 through 999-88-9999, 900-90-0000 through 999-92-9999 and 900-94-0000 through 999-99-9999. <a href=\"https://www.irs.gov/individuals/international-taxpayers/general-itin-information\">https://www.irs.gov/individuals/international-taxpayers/general-itin-information</a></p>",
       "shortdoc": "Generate a random United States Individual Taxpayer Identification Number (ITIN).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\ssn\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\ssn\\en_US\\__init__.py",
       "lineno": 12
     },
     {
@@ -5902,7 +5902,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\job\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\job\\__init__.py",
       "lineno": 649
     },
     {
@@ -5917,7 +5917,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\job\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\job\\__init__.py",
       "lineno": 652
     },
     {
@@ -5932,7 +5932,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\job\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\job\\__init__.py",
       "lineno": 657
     },
     {
@@ -6046,8 +6046,8 @@
       "doc": "<p>Generate random JSON structure values.</p>\n<p>Using a dictionary or list of records that is passed as <code>data_columns</code>, define the structure that is used to build JSON structures.  For complex data structures it is recommended to use the dictionary format.</p>\n<p>Data Column Dictionary format: {'key name': 'definition'}</p>\n<p>The definition can be 'provider', 'provider:argument_group', tokenized 'string {{ provider:argument_group }}' that is passed to the python provider method pystr_format() for generation, or a fixed '@word'. Using Lists, Tuples, and Dicts as a definition for structure.</p>\n<p>Example: fake.set_arguments('top_half', {'min_value': 50, 'max_value': 100}) fake.json(data_columns={'Name': 'name', 'Score': 'pyint:top_half'})</p>\n<p>Data Column List format: [('key name', 'definition', {'arguments'})]</p>\n<p>With the list format the definition can be a list of records, to create a list within the structure data.  For literal entries within the list, set the 'field_name' to None.</p>\n<p>:param data_columns: specification for the data structure :type data_columns: dict :param num_rows: number of rows the returned :type num_rows: int :param indent: number of spaces to indent the fields :type indent: int :param cls: optional json encoder to use for non-standard objects such as datetimes :type cls: json.JSONEncoder :return: Serialized JSON data :rtype: str</p>\n<p>:sample: data_columns={'Spec': '@1.0.1', 'ID': 'pyint', 'Details': {'Name': 'name', 'Address': 'address'}}, num_rows=2 :sample: data_columns={'Candidates': ['name', 'name', 'name']}, num_rows=1 :sample: data_columns=[('Name', 'name'), ('Points', 'pyint', {'min_value': 50, 'max_value': 100})], num_rows=1</p>",
       "shortdoc": "Generate random JSON structure values.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 549
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 550
     },
     {
       "name": "Json Bytes",
@@ -6160,8 +6160,8 @@
       "doc": "<p>Generate random JSON structure and return as bytes.</p>\n<p>For more information on the different arguments of this method, refer to :meth:<span class=\"name\">json() &lt;faker.providers.misc.Provider.json&gt;</span> which is used under the hood.</p>",
       "shortdoc": "Generate random JSON structure and return as bytes.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 534
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 535
     },
     {
       "name": "Language Code",
@@ -6175,8 +6175,8 @@
       "doc": "<p>Generate a random i18n language code (e.g. en).</p>",
       "shortdoc": "Generate a random i18n language code (e.g. en).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 304
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 305
     },
     {
       "name": "Language Name",
@@ -6190,7 +6190,7 @@
       "doc": "<p>Generate a random i18n language name (e.g. English).</p>",
       "shortdoc": "Generate a random i18n language name (e.g. English).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 328
     },
     {
@@ -6205,7 +6205,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 211
     },
     {
@@ -6220,7 +6220,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 263
     },
     {
@@ -6235,7 +6235,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 253
     },
     {
@@ -6250,7 +6250,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 258
     },
     {
@@ -6265,7 +6265,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\geo\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\geo\\__init__.py",
       "lineno": 1019
     },
     {
@@ -6293,7 +6293,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\geo\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\geo\\__init__.py",
       "lineno": 1026
     },
     {
@@ -6335,8 +6335,8 @@
       "doc": "<p>Generate a string with each question mark ('?') in <code>text</code> replaced with a random character from <code>letters</code>.</p>\n<p>By default, <code>letters</code> contains all ASCII letters, uppercase and lowercase.</p>\n<p>:sample: text='Random Identifier: ??????????' :sample: text='Random Identifier: ??????????', letters='ABCDE'</p>",
       "shortdoc": "Generate a string with each question mark ('?') in ``text`` replaced with a random character from ``letters``.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 634
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 635
     },
     {
       "name": "License Plate",
@@ -6350,7 +6350,7 @@
       "doc": "<p>Generate a license plate.</p>",
       "shortdoc": "Generate a license plate.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\automotive\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\automotive\\__init__.py",
       "lineno": 45
     },
     {
@@ -6365,7 +6365,7 @@
       "doc": "<p>Generate a Linux platform token used in user agent strings.</p>",
       "shortdoc": "Generate a Linux platform token used in user agent strings.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 341
     },
     {
@@ -6380,7 +6380,7 @@
       "doc": "<p>Generate a Linux processor token used in user agent strings.</p>",
       "shortdoc": "Generate a Linux processor token used in user agent strings.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 161
     },
     {
@@ -6448,7 +6448,7 @@
       "doc": "<p>Returns a location known to exist on land in a country specified by <span class=\"name\">country_code</span>. Defaults to 'en_US'. See the <span class=\"name\">land_coords</span> list for available locations/countries.</p>",
       "shortdoc": "Returns a location known to exist on land in a country specified by `country_code`. Defaults to 'en_US'. See the `land_coords` list for available locations/countries.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\geo\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\geo\\__init__.py",
       "lineno": 1029
     },
     {
@@ -6463,8 +6463,8 @@
       "doc": "<p>Generate a random underscored i18n locale code (e.g. en_US).</p>",
       "shortdoc": "Generate a random underscored i18n locale code (e.g. en_US).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 292
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 293
     },
     {
       "name": "Localized Ean",
@@ -6492,7 +6492,7 @@
       "doc": "<p>Generate a localized EAN barcode of the specified <code>length</code>.</p>\n<p>The value of <code>length</code> can only be <code>8</code> or <code>13</code> (default) which will create an EAN-8 or an EAN-13 barcode respectively.</p>\n<p>This method uses the standard barcode provider's |ean| under the hood with the <code>prefixes</code> argument explicitly set to <code>local_prefixes</code> of a localized barcode provider implementation.</p>\n<p>:sample: :sample: length=13 :sample: length=8</p>",
       "shortdoc": "Generate a localized EAN barcode of the specified ``length``.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\barcode\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\barcode\\__init__.py",
       "lineno": 92
     },
     {
@@ -6507,7 +6507,7 @@
       "doc": "<p>Generate a localized EAN-13 barcode.</p>\n<p>This method uses |localized_ean| under the hood with the <code>length</code> argument explicitly set to <code>13</code>.</p>",
       "shortdoc": "Generate a localized EAN-13 barcode.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\barcode\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\barcode\\__init__.py",
       "lineno": 116
     },
     {
@@ -6522,7 +6522,7 @@
       "doc": "<p>Generate a localized EAN-8 barcode.</p>\n<p>This method uses |localized_ean| under the hood with the <code>length</code> argument explicitly set to <code>8</code>.</p>",
       "shortdoc": "Generate a localized EAN-8 barcode.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\barcode\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\barcode\\__init__.py",
       "lineno": 108
     },
     {
@@ -6564,7 +6564,7 @@
       "doc": "<p>Returns a random tuple specifying a coordinate set guaranteed to exist on land. Format is <span class=\"name\">(latitude, longitude, place name, two-letter country code, timezone)</span> Pass <span class=\"name\">coords_only</span> to return coordinates without metadata.</p>",
       "shortdoc": "Returns a random tuple specifying a coordinate set guaranteed to exist on land. Format is `(latitude, longitude, place name, two-letter country code, timezone)` Pass `coords_only` to return coordinates without metadata.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\geo\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\geo\\__init__.py",
       "lineno": 1043
     },
     {
@@ -6579,7 +6579,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\geo\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\geo\\__init__.py",
       "lineno": 1023
     },
     {
@@ -6608,7 +6608,7 @@
       "doc": "<p>Returns a random MAC address.</p>\n<p>:param multicast: Multicast address :returns: MAC Address</p>",
       "shortdoc": "Returns a random MAC address.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 666
     },
     {
@@ -6623,7 +6623,7 @@
       "doc": "<p>Generate a MacOS platform token used in user agent strings.</p>",
       "shortdoc": "Generate a MacOS platform token used in user agent strings.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 345
     },
     {
@@ -6638,7 +6638,7 @@
       "doc": "<p>Generate a MacOS processor token used in user agent strings.</p>",
       "shortdoc": "Generate a MacOS processor token used in user agent strings.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 157
     },
     {
@@ -6680,8 +6680,8 @@
       "doc": "<p>Generate a random MD5 hash.</p>\n<p>If <code>raw_output</code> is <code>False</code> (default), a hexadecimal string representation of the MD5 hash will be returned. If <code>True</code>, a <code>bytes</code> object representation will be returned instead.</p>\n<p>:sample: raw_output=False :sample: raw_output=True</p>",
       "shortdoc": "Generate a random MD5 hash.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 72
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 73
     },
     {
       "name": "Military Apo",
@@ -6695,7 +6695,7 @@
       "doc": "<p>:example: 'PSC 5394 Box 3492</p>",
       "shortdoc": ":example: 'PSC 5394 Box 3492",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 573
     },
     {
@@ -6710,7 +6710,7 @@
       "doc": "<p>:example: 'Unit 3333 Box 9342'</p>",
       "shortdoc": ":example: 'Unit 3333 Box 9342'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 579
     },
     {
@@ -6725,7 +6725,7 @@
       "doc": "<p>:example: 'USS'</p>",
       "shortdoc": ":example: 'USS'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 561
     },
     {
@@ -6740,7 +6740,7 @@
       "doc": "<p>:example: 'APO'</p>",
       "shortdoc": ":example: 'APO'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 567
     },
     {
@@ -6782,7 +6782,7 @@
       "doc": "<p>Generate a mime type under the specified <code>category</code>.</p>\n<p>If <code>category</code> is <code>None</code>, a random category will be used. The list of valid categories include <code>'application'</code>, <code>'audio'</code>, <code>'image'</code>, <code>'message'</code>, <code>'model'</code>, <code>'multipart'</code>, <code>'text'</code>, and <code>'video'</code>.</p>\n<p>:sample: :sample: category='application'</p>",
       "shortdoc": "Generate a mime type under the specified ``category``.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\file\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\file\\__init__.py",
       "lineno": 221
     },
     {
@@ -6797,8 +6797,8 @@
       "doc": "<p>:sample:</p>",
       "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2513
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2514
     },
     {
       "name": "Month Name",
@@ -6812,8 +6812,8 @@
       "doc": "<p>:sample:</p>",
       "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2519
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2520
     },
     {
       "name": "Msisdn",
@@ -6827,7 +6827,7 @@
       "doc": "<p><a href=\"https://en.wikipedia.org/wiki/MSISDN\">https://en.wikipedia.org/wiki/MSISDN</a></p>",
       "shortdoc": "https://en.wikipedia.org/wiki/MSISDN",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\phone_number\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\phone_number\\__init__.py",
       "lineno": 329
     },
     {
@@ -6842,7 +6842,7 @@
       "doc": "<p>:example: 'John Doe'</p>",
       "shortdoc": ":example: 'John Doe'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 201
     },
     {
@@ -6857,7 +6857,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 230
     },
     {
@@ -6872,7 +6872,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 214
     },
     {
@@ -6887,7 +6887,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 222
     },
     {
@@ -6916,7 +6916,7 @@
       "doc": "<p>Returns NIC Handle ID <a href=\"https://www.apnic.net/manage-ip/using-whois/guide/person/\">https://www.apnic.net/manage-ip/using-whois/guide/person/</a></p>\n<p>:rtype: str</p>",
       "shortdoc": "Returns NIC Handle ID https://www.apnic.net/manage-ip/using-whois/guide/person/",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 782
     },
     {
@@ -6965,7 +6965,7 @@
       "doc": "<p>Returns NIC Handle ID list</p>\n<p>:rtype: list[str]</p>",
       "shortdoc": "Returns NIC Handle ID list",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 796
     },
     {
@@ -6993,8 +6993,8 @@
       "doc": "<p>Generate <code>None</code>, <code>True</code>, or <code>False</code>, each with equal probability.</p>",
       "shortdoc": "Generate ``None``, ``True``, or ``False``, each with equal probability.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 38
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 39
     },
     {
       "name": "Numerify",
@@ -7022,8 +7022,8 @@
       "doc": "<p>Generate a string with each placeholder in <code>text</code> replaced according to the following rules:</p>\n<ul>\n<li>Number signs ('#') are replaced with a random digit (0 to 9).</li>\n<li>Percent signs ('%') are replaced with a random non-zero digit (1 to 9).</li>\n<li>Dollar signs ('$') are replaced with a random digit above two (2 to 9).</li>\n<li>Exclamation marks ('!') are replaced with a random digit or an empty string.</li>\n<li>At symbols ('@') are replaced with a random non-zero digit or an empty string.</li>\n</ul>\n<p>Under the hood, this method uses :meth:<span class=\"name\">random_digit() &lt;faker.providers.BaseProvider.random_digit&gt;</span>, :meth:<span class=\"name\">random_digit_not_null() &lt;faker.providers.BaseProvider.random_digit_not_null&gt;</span>, :meth:<span class=\"name\">random_digit_or_empty() &lt;faker.providers.BaseProvider.random_digit_or_empty&gt;</span>, and :meth:<span class=\"name\">random_digit_not_null_or_empty() &lt;faker.providers.BaseProvider.random_digit_not_null_or_empty&gt;</span> to generate the random values.</p>\n<p>:sample: text='Intel Core i%-%%##K vs AMD Ryzen % %%##X' :sample: text='!!! !!@ !@! !@@ @!! @!@ @@! @@@'</p>",
       "shortdoc": "Generate a string with each placeholder in ``text`` replaced according to the following rules:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 608
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 609
     },
     {
       "name": "Opera",
@@ -7037,7 +7037,7 @@
       "doc": "<p>Generate an Opera web browser user agent string.</p>",
       "shortdoc": "Generate an Opera web browser user agent string.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 317
     },
     {
@@ -7112,7 +7112,7 @@
       "doc": "<p>Generate a paragraph.</p>\n<p>The <code>nb_sentences</code> argument controls how many sentences the paragraph will contain, and setting <code>variable_nb_sentences</code> to <code>False</code> will generate the exact amount, while setting it to <code>True</code> (default) will generate a random amount (+/-40%, minimum of 1) using |randomize_nb_elements|.</p>\n<p>Under the hood, |sentences| is used to generate the sentences, so the argument <code>ext_word_list</code> works in the same way here as it would in that method.</p>\n<p>:sample: nb_sentences=5 :sample: nb_sentences=5, variable_nb_sentences=False :sample: nb_sentences=5, ext_word_list=['abc', 'def', 'ghi', 'jkl'] :sample: nb_sentences=5, variable_nb_sentences=False, ext_word_list=['abc', 'def', 'ghi', 'jkl']</p>",
       "shortdoc": "Generate a paragraph.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
       "lineno": 159
     },
     {
@@ -7181,7 +7181,7 @@
       "doc": "<p>Generate a list of paragraphs.</p>\n<p>This method uses |paragraph| under the hood to generate paragraphs, and the <code>nb</code> argument controls exactly how many sentences the list will contain. The <code>ext_word_list</code> argument works in exactly the same way as well.</p>\n<p>:sample: nb=5 :sample: nb=5, ext_word_list=['abc', 'def', 'ghi', 'jkl']</p>",
       "shortdoc": "Generate a list of paragraphs.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
       "lineno": 190
     },
     {
@@ -7218,7 +7218,7 @@
       "doc": "<p>Replaces tokens like '{{ tokenName }}' or '{{tokenName}}' in a string with the result from the token method call. Arguments can be parsed by using an argument group. For more information on the use of argument groups, please refer to the set_arguments() method.</p>\n<p>Example:</p>\n<p>generator.set_arguments('red_rgb', {'hue': 'red', 'color_format': 'rgb'}) generator.set_arguments('small', 'max_value', 10)</p>\n<p>generator.parse('{{ color:red_rgb }} - {{ pyint:small }}')</p>",
       "shortdoc": "Replaces tokens like '{{ tokenName }}' or '{{tokenName}}' in a string with the result from the token method call. Arguments can be parsed by using an argument group. For more information on the use of argument groups, please refer to the set_arguments() method.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\generator.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\generator.py",
       "lineno": 161
     },
     {
@@ -7232,10 +7232,10 @@
             "nested": [],
             "union": false
           },
-          "defaultValue": "2025-10-18",
+          "defaultValue": "2025-10-19",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "birthday: date = 2025-10-18"
+          "repr": "birthday: date = 2025-10-19"
         }
       ],
       "returnType": {
@@ -7266,7 +7266,7 @@
       "doc": "<p>Generates a formatted date of birth, issue, and expiration dates. issue and expiration dates are conditioned to fall within U.S. standards of 5 and 10 year expirations</p>\n<p>The <code>birthday</code> argument is a datetime.date object representing a date of birth.</p>\n<p>Sources:</p>\n<p>-https://travel.state.gov/content/travel/en/passports/passport-help/faqs.html</p>",
       "shortdoc": "Generates a formatted date of birth, issue, and expiration dates. issue and expiration dates are conditioned to fall within U.S. standards of 5 and 10 year expirations",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\passport\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\passport\\en_US\\__init__.py",
       "lineno": 27
     },
     {
@@ -7281,7 +7281,7 @@
       "doc": "<p>Generate a datetime date of birth.</p>",
       "shortdoc": "Generate a datetime date of birth.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\passport\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\passport\\__init__.py",
       "lineno": 19
     },
     {
@@ -7296,7 +7296,7 @@
       "doc": "<p>Generates a formatted sting with US Passport information</p>",
       "shortdoc": "Generates a formatted sting with US Passport information",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\passport\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\passport\\en_US\\__init__.py",
       "lineno": 83
     },
     {
@@ -7344,7 +7344,7 @@
       "doc": "<p>Generates a string representing the gender displayed on a passport</p>\n<p>Sources:</p>\n<ul>\n<li><a href=\"https://williamsinstitute.law.ucla.edu/publications/x-gender-markers-passports/\">https://williamsinstitute.law.ucla.edu/publications/x-gender-markers-passports/</a></li>\n</ul>",
       "shortdoc": "Generates a string representing the gender displayed on a passport",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\passport\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\passport\\en_US\\__init__.py",
       "lineno": 69
     },
     {
@@ -7359,7 +7359,7 @@
       "doc": "<p>Generate a passport number by replacing tokens to be alphanumeric</p>",
       "shortdoc": "Generate a passport number by replacing tokens to be alphanumeric",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\passport\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\passport\\__init__.py",
       "lineno": 40
     },
     {
@@ -7420,7 +7420,7 @@
       "doc": "<p>Generate a given_name and surname for a passport owner The <code>gender</code> argument is the gender marker of a passport owner, which is a one character string that is either male, female, or non-binary.</p>",
       "shortdoc": "Generate a given_name and surname for a passport owner The ``gender`` argument is the gender marker of a passport owner, which is a one character string that is either male, female, or non-binary.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\passport\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\passport\\__init__.py",
       "lineno": 24
     },
     {
@@ -7501,8 +7501,8 @@
       "doc": "<p>Generate a random password of the specified <code>length</code>.</p>\n<p>The arguments <code>special_chars</code>, <code>digits</code>, <code>upper_case</code>, and <code>lower_case</code> control what category of characters will appear in the generated password. If set to <code>True</code> (default), at least one character from the corresponding category is guaranteed to appear. Special characters are characters from <code>!@#$%^&amp;*()_+</code>, digits are characters from <code>0123456789</code>, and uppercase and lowercase characters are characters from the ASCII set of letters.</p>\n<p>:sample: length=12 :sample: length=40, special_chars=False, upper_case=False</p>",
       "shortdoc": "Generate a random password of the specified ``length``.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 163
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 164
     },
     {
       "name": "Past Date",
@@ -7587,8 +7587,8 @@
       "doc": "<p>Get a Date object based on a random date between a given date and 1 day ago.</p>\n<p>:param start_date: A <code>DateParseType</code>. Defaults to <code>\"-30d\"</code> :param tzinfo: timezone, instance of datetime.tzinfo subclass</p>\n<p>:sample: :sample: start_date='-1y'</p>",
       "shortdoc": "Get a Date object based on a random date between a given date and 1 day ago.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2170
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2171
     },
     {
       "name": "Past Datetime",
@@ -7673,8 +7673,8 @@
       "doc": "<p>Get a datetime object based on a random date between a given date and 1 second ago.</p>\n<p>:param start_date: A <code>DateParseType</code>. Defaults to <code>\"-30d\"</code> :param tzinfo: timezone, instance of datetime.tzinfo subclass :example: datetime('1999-02-02 11:42:52')</p>\n<p>:sample: :sample: end_date='+1y'</p>",
       "shortdoc": "Get a datetime object based on a random date between a given date and 1 second ago.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2156
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2157
     },
     {
       "name": "Phone Number",
@@ -7688,7 +7688,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\phone_number\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\phone_number\\__init__.py",
       "lineno": 323
     },
     {
@@ -7743,7 +7743,7 @@
       "doc": "<p>Returns a network port number <a href=\"https://tools.ietf.org/html/rfc6335\">https://tools.ietf.org/html/rfc6335</a></p>\n<p>:param is_system: System or well-known ports :param is_user: User or registered ports :param is_dynamic: Dynamic / private / ephemeral ports :rtype: int</p>",
       "shortdoc": "Returns a network port number https://tools.ietf.org/html/rfc6335",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 680
     },
     {
@@ -7758,7 +7758,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 592
     },
     {
@@ -7800,7 +7800,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 595
     },
     {
@@ -7815,7 +7815,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 598
     },
     {
@@ -7830,7 +7830,7 @@
       "doc": "<p>:example: 86039-9874</p>",
       "shortdoc": ":example: 86039-9874",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 526
     },
     {
@@ -7872,7 +7872,7 @@
       "doc": "<p>:returns: A random postcode within the provided state abbreviation</p>\n<p>:param state_abbr: A state abbreviation</p>",
       "shortdoc": ":returns: A random postcode within the provided state abbreviation",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 532
     },
     {
@@ -7887,7 +7887,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 268
     },
     {
@@ -7902,7 +7902,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 293
     },
     {
@@ -7917,7 +7917,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 283
     },
     {
@@ -7932,7 +7932,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 288
     },
     {
@@ -7947,7 +7947,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\currency\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\currency\\en_US\\__init__.py",
       "lineno": 7
     },
     {
@@ -8099,7 +8099,7 @@
       "doc": "<p>Generates a complete profile. If \"fields\" is not empty, only the fields in the list will be returned</p>",
       "shortdoc": "Generates a complete profile. If \"fields\" is not empty, only the fields in the list will be returned",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\profile\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\profile\\__init__.py",
       "lineno": 35
     },
     {
@@ -8149,7 +8149,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\generator.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\generator.py",
       "lineno": 49
     },
     {
@@ -8250,8 +8250,8 @@
       "doc": "<p>Generate random pipe-separated values.</p>\n<p>For more information on the different arguments of this method, please refer to :meth:<span class=\"name\">dsv() &lt;faker.providers.misc.Provider.dsv&gt;</span> which is used under the hood.</p>\n<p>:sample: data_columns=('{{name}}', '{{address}}'), num_rows=10, include_row_ids=False :sample: header=('Name', 'Address', 'Favorite Color'), data_columns=('{{name}}', '{{address}}', '{{safe_color_name}}'), num_rows=10, include_row_ids=True</p>",
       "shortdoc": "Generate random pipe-separated values.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 509
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 510
     },
     {
       "name": "Pybool",
@@ -8279,7 +8279,7 @@
       "doc": "<p>Generates a random boolean, optionally biased towards <span class=\"name\">True</span> or <span class=\"name\">False</span>.</p>\n<p>:truth_probability: Probability of generating a <span class=\"name\">True</span> value. Must be between <span class=\"name\">0</span> and <span class=\"name\">100</span> inclusive'. :return: Random boolean. :raises ValueError: If invalid <span class=\"name\">truth_probability</span> is provided.</p>",
       "shortdoc": "Generates a random boolean, optionally biased towards `True` or `False`.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
       "lineno": 94
     },
     {
@@ -8382,6 +8382,12 @@
                 "union": false
               },
               {
+                "name": "Decimal",
+                "typedoc": "decimal",
+                "nested": [],
+                "union": false
+              },
+              {
                 "name": "None",
                 "typedoc": "None",
                 "nested": [],
@@ -8393,7 +8399,7 @@
           "defaultValue": "None",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "min_value: float | int | None = None"
+          "repr": "min_value: float | int | Decimal | None = None"
         },
         {
           "name": "max_value",
@@ -8414,6 +8420,12 @@
                 "union": false
               },
               {
+                "name": "Decimal",
+                "typedoc": "decimal",
+                "nested": [],
+                "union": false
+              },
+              {
                 "name": "None",
                 "typedoc": "None",
                 "nested": [],
@@ -8425,7 +8437,7 @@
           "defaultValue": "None",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "max_value: float | int | None = None"
+          "repr": "max_value: float | int | Decimal | None = None"
         }
       ],
       "returnType": {
@@ -8437,7 +8449,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
       "lineno": 284
     },
     {
@@ -8596,8 +8608,8 @@
       "doc": "<p>Returns a dictionary.</p>\n<p>:nb_elements: number of elements for dictionary :variable_nb_elements: is use variable number of elements for dictionary :value_types: type of dictionary values</p>",
       "shortdoc": "Returns a dictionary.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
-      "lineno": 458
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "lineno": 471
     },
     {
       "name": "Pyfloat",
@@ -8647,7 +8659,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
       "lineno": 143
     },
     {
@@ -8702,7 +8714,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
       "lineno": 266
     },
     {
@@ -8745,8 +8757,8 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
-      "lineno": 410
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "lineno": 423
     },
     {
       "name": "Pylist",
@@ -8898,8 +8910,8 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
-      "lineno": 393
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "lineno": 406
     },
     {
       "name": "Pyobject",
@@ -9063,7 +9075,7 @@
       "doc": "<p>Generates a random object passing the type desired.</p>\n<p>:object_type: the type of the object to generate. :return: the random object generated. :raises ValueError: if the object type passed is not supported</p>",
       "shortdoc": "Generates a random object passing the type desired.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
       "lineno": 60
     },
     {
@@ -9216,8 +9228,8 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
-      "lineno": 377
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "lineno": 390
     },
     {
       "name": "Pystr",
@@ -9297,7 +9309,7 @@
       "doc": "<p>Generates a random string of upper and lowercase letters.</p>\n<p>:param min_chars: minimum length of the random part. :param max_chars: maximum length of the random part. :param prefix: an optional prefix to prepend to the random string. :param suffix: an optional suffix to append to the random string. :return: Random of random length between min and max characters.</p>",
       "shortdoc": "Generates a random string of upper and lowercase letters.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
       "lineno": 107
     },
     {
@@ -9339,7 +9351,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
       "lineno": 135
     },
     {
@@ -9491,8 +9503,8 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
-      "lineno": 498
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "lineno": 511
     },
     {
       "name": "Pytimezone",
@@ -9546,8 +9558,8 @@
       "doc": "<p>Generate a random timezone (see <code>faker.timezone</code> for any args) and return a Python object usable as a <code>tzinfo</code> for <code>datetime</code> or other fakers.</p>\n<p>:sample:</p>",
       "shortdoc": "Generate a random timezone (see ``faker.timezone`` for any args) and return a Python object usable as a ``tzinfo`` for ``datetime`` or other fakers.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2543
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2544
     },
     {
       "name": "Pytuple",
@@ -9705,8 +9717,8 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
-      "lineno": 361
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\python\\__init__.py",
+      "lineno": 374
     },
     {
       "name": "Random Choices",
@@ -9800,8 +9812,8 @@
       "doc": "<p>Generate a list of objects randomly sampled from <code>elements</code> with replacement.</p>\n<p>For information on the <code>elements</code> and <code>length</code> arguments, please refer to :meth:<span class=\"name\">random_elements() &lt;faker.providers.BaseProvider.random_elements&gt;</span> which is used under the hood with the <code>unique</code> argument explicitly set to <code>False</code>.</p>\n<p>:sample: elements=('a', 'b', 'c', 'd') :sample: elements=('a', 'b', 'c', 'd'), length=10 :sample: elements=OrderedDict([ (\"a\", 0.45), (\"b\", 0.35), (\"c\", 0.15), (\"d\", 0.05), ]) :sample: elements=OrderedDict([ (\"a\", 0.45), (\"b\", 0.35), (\"c\", 0.15), (\"d\", 0.05), ]), length=20</p>",
       "shortdoc": "Generate a list of objects randomly sampled from ``elements`` with replacement.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 508
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 509
     },
     {
       "name": "Random Digit",
@@ -9815,8 +9827,8 @@
       "doc": "<p>Generate a random digit (0 to 9).</p>",
       "shortdoc": "Generate a random digit (0 to 9).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 321
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 322
     },
     {
       "name": "Random Digit Above Two",
@@ -9830,8 +9842,8 @@
       "doc": "<p>Generate a random digit above value two (2 to 9).</p>",
       "shortdoc": "Generate a random digit above value two (2 to 9).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 331
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 332
     },
     {
       "name": "Random Digit Not Null",
@@ -9845,8 +9857,8 @@
       "doc": "<p>Generate a random non-zero digit (1 to 9).</p>",
       "shortdoc": "Generate a random non-zero digit (1 to 9).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 326
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 327
     },
     {
       "name": "Random Digit Not Null Or Empty",
@@ -9873,8 +9885,8 @@
       "doc": "<p>Generate a random non-zero digit (1 to 9) or an empty string.</p>\n<p>This method will return an empty string 50% of the time, and each digit has a 1/18 chance of being generated.</p>",
       "shortdoc": "Generate a random non-zero digit (1 to 9) or an empty string.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 348
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 349
     },
     {
       "name": "Random Digit Or Empty",
@@ -9901,8 +9913,8 @@
       "doc": "<p>Generate a random digit (0 to 9) or an empty string.</p>\n<p>This method will return an empty string 50% of the time, and each digit has a 1/20 chance of being generated.</p>",
       "shortdoc": "Generate a random digit (0 to 9) or an empty string.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 336
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 337
     },
     {
       "name": "Random Element",
@@ -9963,8 +9975,8 @@
       "doc": "<p>Generate a randomly sampled object from <code>elements</code>.</p>\n<p>For information on the <code>elements</code> argument, please refer to :meth:<span class=\"name\">random_elements() &lt;faker.providers.BaseProvider.random_elements&gt;</span> which is used under the hood with the <code>unique</code> argument set to <code>False</code> and the <code>length</code> argument set to <code>1</code>.</p>\n<p>:sample: elements=('a', 'b', 'c', 'd') :sample size=10: elements=OrderedDict([ (\"a\", 0.45), (\"b\", 0.35), (\"c\", 0.15), (\"d\", 0.05), ])</p>",
       "shortdoc": "Generate a randomly sampled object from ``elements``.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 536
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 537
     },
     {
       "name": "Random Elements",
@@ -10097,8 +10109,8 @@
       "doc": "<p>Generate a list of randomly sampled objects from <code>elements</code>.</p>\n<p>Set <code>unique</code> to <code>False</code> for random sampling with replacement, and set <code>unique</code> to <code>True</code> for random sampling without replacement.</p>\n<p>If <code>length</code> is set to <code>None</code> or is omitted, <code>length</code> will be set to a random integer from 1 to the size of <code>elements</code>.</p>\n<p>The value of <code>length</code> cannot be greater than the number of objects in <code>elements</code> if <code>unique</code> is set to <code>True</code>.</p>\n<p>The value of <code>elements</code> can be any sequence type (<code>list</code>, <code>tuple</code>, <code>set</code>, <code>string</code>, etc) or an <code>OrderedDict</code> type. If it is the latter, the keys will be used as the objects for sampling, and the values will be used as weighted probabilities if <code>unique</code> is set to <code>False</code>. For example:</p>\n<p>.. code-block:: python</p>\n<p># Random sampling with replacement fake.random_elements( elements=OrderedDict([ (\"variable_1\", 0.5),        # Generates \"variable_1\" 50% of the time (\"variable_2\", 0.2),        # Generates \"variable_2\" 20% of the time (\"variable_3\", 0.2),        # Generates \"variable_3\" 20% of the time (\"variable_4\": 0.1),        # Generates \"variable_4\" 10% of the time ]), unique=False )</p>\n<p># Random sampling without replacement (defaults to uniform distribution) fake.random_elements( elements=OrderedDict([ (\"variable_1\", 0.5), (\"variable_2\", 0.2), (\"variable_3\", 0.2), (\"variable_4\": 0.1), ]), unique=True )</p>\n<p>:sample: elements=('a', 'b', 'c', 'd'), unique=False :sample: elements=('a', 'b', 'c', 'd'), unique=True :sample: elements=('a', 'b', 'c', 'd'), length=10, unique=False :sample: elements=('a', 'b', 'c', 'd'), length=4, unique=True :sample: elements=OrderedDict([ (\"a\", 0.45), (\"b\", 0.35), (\"c\", 0.15), (\"d\", 0.05), ]), length=20, unique=False :sample: elements=OrderedDict([ (\"a\", 0.45), (\"b\", 0.35), (\"c\", 0.15), (\"d\", 0.05), ]), unique=True</p>",
       "shortdoc": "Generate a list of randomly sampled objects from ``elements``.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 413
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 414
     },
     {
       "name": "Random Int",
@@ -10152,8 +10164,8 @@
       "doc": "<p>Generate a random integer between two integers <code>min</code> and <code>max</code> inclusive while observing the provided <code>step</code> value.</p>\n<p>This method is functionally equivalent to randomly sampling an integer from the sequence <code>range(min, max + 1, step)</code>.</p>\n<p>:sample: min=0, max=15 :sample: min=0, max=15, step=3</p>",
       "shortdoc": "Generate a random integer between two integers ``min`` and ``max`` inclusive while observing the provided ``step`` value.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 309
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 310
     },
     {
       "name": "Random Letter",
@@ -10167,8 +10179,8 @@
       "doc": "<p>Generate a random ASCII letter (a-z and A-Z).</p>",
       "shortdoc": "Generate a random ASCII letter (a-z and A-Z).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 388
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 389
     },
     {
       "name": "Random Letters",
@@ -10203,8 +10215,8 @@
       "doc": "<p>Generate a list of random ASCII letters (a-z and A-Z) of the specified <code>length</code>.</p>\n<p>:sample: length=10</p>",
       "shortdoc": "Generate a list of random ASCII letters (a-z and A-Z) of the specified ``length``.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 393
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 394
     },
     {
       "name": "Random Lowercase Letter",
@@ -10218,8 +10230,8 @@
       "doc": "<p>Generate a random lowercase ASCII letter (a-z).</p>",
       "shortdoc": "Generate a random lowercase ASCII letter (a-z).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 403
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 404
     },
     {
       "name": "Random Number",
@@ -10273,8 +10285,8 @@
       "doc": "<p>Generate a random integer according to the following rules:</p>\n<ul>\n<li>If <code>digits</code> is <code>None</code> (default), its value will be set to a random integer from 1 to 9.</li>\n<li>If <code>fix_len</code> is <code>False</code> (default), all integers that do not exceed the number of <code>digits</code> can be generated.</li>\n<li>If <code>fix_len</code> is <code>True</code>, only integers with the exact number of <code>digits</code> can be generated.</li>\n</ul>\n<p>:sample: fix_len=False :sample: fix_len=True :sample: digits=3 :sample: digits=3, fix_len=False :sample: digits=3, fix_len=True</p>",
       "shortdoc": "Generate a random integer according to the following rules:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 360
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 361
     },
     {
       "name": "Random Sample",
@@ -10368,8 +10380,8 @@
       "doc": "<p>Generate a list of objects randomly sampled from <code>elements</code> without replacement.</p>\n<p>For information on the <code>elements</code> and <code>length</code> arguments, please refer to :meth:<span class=\"name\">random_elements() &lt;faker.providers.BaseProvider.random_elements&gt;</span> which is used under the hood with the <code>unique</code> argument explicitly set to <code>True</code>.</p>\n<p>:sample: elements=('a', 'b', 'c', 'd', 'e', 'f') :sample: elements=('a', 'b', 'c', 'd', 'e', 'f'), length=3</p>",
       "shortdoc": "Generate a list of objects randomly sampled from ``elements`` without replacement.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 555
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 556
     },
     {
       "name": "Random Uppercase Letter",
@@ -10383,8 +10395,8 @@
       "doc": "<p>Generate a random uppercase ASCII letter (A-Z).</p>",
       "shortdoc": "Generate a random uppercase ASCII letter (A-Z).",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 408
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 409
     },
     {
       "name": "Randomize Nb Elements",
@@ -10490,8 +10502,8 @@
       "doc": "<p>Generate a random integer near <code>number</code> according to the following rules:</p>\n<ul>\n<li>If <code>le</code> is <code>False</code> (default), allow generation up to 140% of <code>number</code>. If <code>True</code>, upper bound generation is capped at 100%.</li>\n<li>If <code>ge</code> is <code>False</code> (default), allow generation down to 60% of <code>number</code>. If <code>True</code>, lower bound generation is capped at 100%.</li>\n<li>If a numerical value for <code>min</code> is provided, generated values less than <code>min</code> will be clamped at <code>min</code>.</li>\n<li>If a numerical value for <code>max</code> is provided, generated values greater than <code>max</code> will be clamped at <code>max</code>.</li>\n<li>If both <code>le</code> and <code>ge</code> are <code>True</code>, the value of <code>number</code> will automatically be returned, regardless of the values supplied for <code>min</code> and <code>max</code>.</li>\n</ul>\n<p>:sample: number=100 :sample: number=100, ge=True :sample: number=100, ge=True, min=120 :sample: number=100, le=True :sample: number=100, le=True, max=80 :sample: number=79, le=True, ge=True, min=80</p>",
       "shortdoc": "Generate a random integer near ``number`` according to the following rules:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\__init__.py",
-      "lineno": 569
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\__init__.py",
+      "lineno": 570
     },
     {
       "name": "Rgb Color",
@@ -10502,11 +10514,11 @@
         "nested": [],
         "union": false
       },
-      "doc": "<p>Generate a color formatted as a comma-separated RGB value.</p>",
+      "doc": "<p>Generate a color formatted as a comma-separated RGB value.</p>\n<p>:sample:</p>",
       "shortdoc": "Generate a color formatted as a comma-separated RGB value.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
-      "lineno": 194
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
+      "lineno": 210
     },
     {
       "name": "Rgb Css Color",
@@ -10517,11 +10529,11 @@
         "nested": [],
         "union": false
       },
-      "doc": "<p>Generate a color formatted as a CSS rgb() function.</p>",
+      "doc": "<p>Generate a color formatted as a CSS rgb() function.</p>\n<p>:sample:</p>",
       "shortdoc": "Generate a color formatted as a CSS rgb() function.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
-      "lineno": 198
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
+      "lineno": 218
     },
     {
       "name": "Ripe Id",
@@ -10535,7 +10547,7 @@
       "doc": "<p>Returns RIPE Organization ID <a href=\"https://www.ripe.net/manage-ips-and-asns/db/support/organisation-object-in-the-ripe-database\">https://www.ripe.net/manage-ips-and-asns/db/support/organisation-object-in-the-ripe-database</a></p>\n<p>:rtype: str</p>",
       "shortdoc": "Returns RIPE Organization ID https://www.ripe.net/manage-ips-and-asns/db/support/organisation-object-in-the-ripe-database",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 771
     },
     {
@@ -10550,7 +10562,7 @@
       "doc": "<p>Generate a Safari web browser user agent string.</p>",
       "shortdoc": "Generate a Safari web browser user agent string.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 272
     },
     {
@@ -10562,11 +10574,11 @@
         "nested": [],
         "union": false
       },
-      "doc": "<p>Generate a web-safe color name.</p>",
+      "doc": "<p>Generate a web-safe color name.</p>\n<p>:sample:</p>",
       "shortdoc": "Generate a web-safe color name.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
-      "lineno": 182
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
+      "lineno": 186
     },
     {
       "name": "Safe Domain Name",
@@ -10580,7 +10592,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 240
     },
     {
@@ -10595,7 +10607,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 244
     },
     {
@@ -10607,11 +10619,11 @@
         "nested": [],
         "union": false
       },
-      "doc": "<p>Generate a web-safe color formatted as a hex triplet.</p>",
+      "doc": "<p>Generate a web-safe color formatted as a hex triplet.</p>\n<p>:sample:</p>",
       "shortdoc": "Generate a web-safe color formatted as a hex triplet.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
-      "lineno": 190
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\color\\__init__.py",
+      "lineno": 202
     },
     {
       "name": "Sbn 9",
@@ -10639,7 +10651,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\sbn\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\sbn\\__init__.py",
       "lineno": 50
     },
     {
@@ -10654,7 +10666,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 495
     },
     {
@@ -10673,7 +10685,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\FakerLibrary\\keywords.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\FakerLibrary\\keywords.py",
       "lineno": 66
     },
     {
@@ -10747,7 +10759,7 @@
       "doc": "<p>Calls random.seed</p>",
       "shortdoc": "Calls random.seed",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\generator.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\generator.py",
       "lineno": 68
     },
     {
@@ -10822,7 +10834,7 @@
       "doc": "<p>Generate a sentence.</p>\n<p>The <code>nb_words</code> argument controls how many words the sentence will contain, and setting <code>variable_nb_words</code> to <code>False</code> will generate the exact amount, while setting it to <code>True</code> (default) will generate a random amount (+/-40%, minimum of 1) using |randomize_nb_elements|.</p>\n<p>Under the hood, |words| is used to generate the words, so the argument <code>ext_word_list</code> works in the same way here as it would in that method.</p>\n<p>:sample: nb_words=10 :sample: nb_words=10, variable_nb_words=False :sample: nb_words=10, ext_word_list=['abc', 'def', 'ghi', 'jkl'] :sample: nb_words=10, variable_nb_words=True, ext_word_list=['abc', 'def', 'ghi', 'jkl']</p>",
       "shortdoc": "Generate a sentence.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
       "lineno": 114
     },
     {
@@ -10891,7 +10903,7 @@
       "doc": "<p>Generate a list of sentences.</p>\n<p>This method uses |sentence| under the hood to generate sentences, and the <code>nb</code> argument controls exactly how many sentences the list will contain. The <code>ext_word_list</code> argument works in exactly the same way as well.</p>\n<p>:sample: :sample: nb=5 :sample: nb=5, ext_word_list=['abc', 'def', 'ghi', 'jkl']</p>",
       "shortdoc": "Generate a list of sentences.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
       "lineno": 145
     },
     {
@@ -10962,7 +10974,7 @@
       "doc": "<p>Creates an argument group, with an individual argument or a dictionary of arguments. The argument groups is used to apply arguments to tokens, when using the generator.parse() method. To further manage argument groups, use get_arguments() and del_arguments() methods.</p>\n<p>generator.set_arguments('small', 'max_value', 10) generator.set_arguments('small', {'min_value': 5, 'max_value': 10})</p>",
       "shortdoc": "Creates an argument group, with an individual argument or a dictionary of arguments. The argument groups is used to apply arguments to tokens, when using the generator.parse() method. To further manage argument groups, use get_arguments() and del_arguments() methods.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\generator.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\generator.py",
       "lineno": 107
     },
     {
@@ -11007,7 +11019,7 @@
       "doc": "<p>This method adds a provider method to generator. Override this method to add some decoration or logging stuff.</p>",
       "shortdoc": "This method adds a provider method to generator. Override this method to add some decoration or logging stuff.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\generator.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\generator.py",
       "lineno": 100
     },
     {
@@ -11049,8 +11061,8 @@
       "doc": "<p>Generate a random SHA-1 hash.</p>\n<p>If <code>raw_output</code> is <code>False</code> (default), a hexadecimal string representation of the SHA-1 hash will be returned. If <code>True</code>, a <code>bytes</code> object representation will be returned instead.</p>\n<p>:sample: raw_output=False :sample: raw_output=True</p>",
       "shortdoc": "Generate a random SHA-1 hash.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 95
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 96
     },
     {
       "name": "Sha 256",
@@ -11091,8 +11103,8 @@
       "doc": "<p>Generate a random SHA-256 hash.</p>\n<p>If <code>raw_output</code> is <code>False</code> (default), a hexadecimal string representation of the SHA-256 hash will be returned. If <code>True</code>, a <code>bytes</code> object representation will be returned instead.</p>\n<p>:sample: raw_output=False :sample: raw_output=True</p>",
       "shortdoc": "Generate a random SHA-256 hash.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 118
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 119
     },
     {
       "name": "Simple Profile",
@@ -11200,10 +11212,10 @@
         ],
         "union": false
       },
-      "doc": "<p>Generates a basic profile with personal informations</p>",
-      "shortdoc": "Generates a basic profile with personal informations",
+      "doc": "<p>Generates a basic profile with personal information</p>",
+      "shortdoc": "Generates a basic profile with personal information",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\profile\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\profile\\__init__.py",
       "lineno": 17
     },
     {
@@ -11245,7 +11257,7 @@
       "doc": "<p>Django algorithm</p>",
       "shortdoc": "Django algorithm",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 729
     },
     {
@@ -11274,7 +11286,7 @@
       "doc": "<p>Generate a random United States Taxpayer Identification Number of the specified type.</p>\n<p>If no type is specified, a US SSN is returned.</p>",
       "shortdoc": "Generate a random United States Taxpayer Identification Number of the specified type.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\ssn\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\ssn\\en_US\\__init__.py",
       "lineno": 205
     },
     {
@@ -11289,7 +11301,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 498
     },
     {
@@ -11331,7 +11343,7 @@
       "doc": "<p>:returns: A random two-letter USPS postal code</p>\n<p>By default, the resulting code may abbreviate any of the fifty states, five US territories, or three freely-associating sovereign states.</p>\n<p>:param include_territories: If True, territories will be included. If False, US territories will be excluded. :param include_freely_associated_states: If True, freely-associated states will be included. If False, sovereign states in free association with the US will be excluded.</p>",
       "shortdoc": ":returns: A random two-letter USPS postal code",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 503
     },
     {
@@ -11346,7 +11358,7 @@
       "doc": "<p>:example: '791 Crist Parks'</p>",
       "shortdoc": ":example: '791 Crist Parks'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
       "lineno": 55
     },
     {
@@ -11361,7 +11373,7 @@
       "doc": "<p>:example: 'Crist Parks'</p>",
       "shortdoc": ":example: 'Crist Parks'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
       "lineno": 48
     },
     {
@@ -11376,7 +11388,7 @@
       "doc": "<p>:example: 'Avenue'</p>",
       "shortdoc": ":example: 'Avenue'",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\__init__.py",
       "lineno": 29
     },
     {
@@ -11391,7 +11403,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 298
     },
     {
@@ -11406,7 +11418,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 323
     },
     {
@@ -11421,7 +11433,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 313
     },
     {
@@ -11436,7 +11448,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\person\\__init__.py",
       "lineno": 318
     },
     {
@@ -11504,7 +11516,7 @@
       "doc": "<p>Generate a SWIFT code.</p>\n<p>SWIFT codes, reading from left to right, are composed of a 4 alphabet character bank code, a 2 alphabet character country code, a 2 alphanumeric location code, and an optional 3 alphanumeric branch code. This means SWIFT codes can only have 8 or 11 characters, so the value of <code>length</code> can only be <code>None</code> or the integers <code>8</code> or <code>11</code>. If the value is <code>None</code>, then a value of <code>8</code> or <code>11</code> will randomly be assigned.</p>\n<p>Because all 8-digit SWIFT codes already refer to the primary branch or office, the <code>primary</code> argument only has an effect if the value of <code>length</code> is <code>11</code>. If <code>primary</code> is <code>True</code> and <code>length</code> is <code>11</code>, the 11-digit SWIFT codes generated will always end in <code>'XXX'</code> to denote that they belong to primary branches/offices.</p>\n<p>For extra authenticity, localized providers may opt to include SWIFT bank codes, location codes, and branch codes used in their respective locales. If <code>use_dataset</code> is <code>True</code>, this method will generate SWIFT codes based on those locale-specific codes if included. If those codes were not included, then it will behave as if <code>use_dataset</code> were <code>False</code>, and in that mode, all those codes will just be randomly generated as per the specification.</p>\n<p>:sample: :sample: length=8 :sample: length=8, use_dataset=True :sample: length=11 :sample: length=11, primary=True :sample: length=11, use_dataset=True :sample: length=11, primary=True, use_dataset=True</p>",
       "shortdoc": "Generate a SWIFT code.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
       "lineno": 92
     },
     {
@@ -11546,7 +11558,7 @@
       "doc": "<p>Generate an 11-digit SWIFT code.</p>\n<p>This method uses |swift| under the hood with the <code>length</code> argument set to <code>11</code>. If <code>primary</code> is set to <code>True</code>, the SWIFT code will always end with <code>'XXX'</code>. All 11-digit SWIFT codes use this convention to refer to the primary branch/office.</p>\n<p>:sample: :sample: use_dataset=True</p>",
       "shortdoc": "Generate an 11-digit SWIFT code.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
       "lineno": 79
     },
     {
@@ -11575,7 +11587,7 @@
       "doc": "<p>Generate an 8-digit SWIFT code.</p>\n<p>This method uses |swift| under the hood with the <code>length</code> argument set to <code>8</code> and with the <code>primary</code> argument omitted. All 8-digit SWIFT codes already refer to the primary branch/office.</p>\n<p>:sample: :sample: use_dataset=True</p>",
       "shortdoc": "Generate an 8-digit SWIFT code.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\bank\\__init__.py",
       "lineno": 67
     },
     {
@@ -11656,8 +11668,8 @@
       "doc": "<p>Generate a bytes object containing a random valid tar file.</p>\n<p>The number and sizes of files contained inside the resulting archive can be controlled using the following arguments:</p>\n<ul>\n<li><code>uncompressed_size</code> - the total size of files before compression, 16 KiB by default</li>\n<li><code>num_files</code> - the number of files archived in resulting zip file, 1 by default</li>\n<li><code>min_file_size</code> - the minimum size of each file before compression, 4 KiB by default</li>\n</ul>\n<p>No compression is used by default, but setting <code>compression</code> to one of the values listed below will use the corresponding compression type.</p>\n<ul>\n<li><code>'bzip2'</code> or <code>'bz2'</code> for BZIP2</li>\n<li><code>'lzma'</code> or <code>'xz'</code> for LZMA</li>\n<li><code>'gzip'</code> or <code>'gz'</code> for GZIP</li>\n</ul>\n<p>:sample: uncompressed_size=256, num_files=4, min_file_size=32 :sample: uncompressed_size=256, num_files=32, min_file_size=4, compression='bz2'</p>",
       "shortdoc": "Generate a bytes object containing a random valid tar file.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 280
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 281
     },
     {
       "name": "Text",
@@ -11718,7 +11730,7 @@
       "doc": "<p>Generate a text string.</p>\n<p>The <code>max_nb_chars</code> argument controls the approximate number of characters the text string will have, and depending on its value, this method may use either |words|, |sentences|, or |paragraphs| for text generation. The <code>ext_word_list</code> argument works in exactly the same way it would in any of those methods.</p>\n<p>:sample: max_nb_chars=20 :sample: max_nb_chars=80 :sample: max_nb_chars=160 :sample: ext_word_list=['abc', 'def', 'ghi', 'jkl']</p>",
       "shortdoc": "Generate a text string.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
       "lineno": 203
     },
     {
@@ -11800,7 +11812,7 @@
       "doc": "<p>Generate a list of text strings.</p>\n<p>The <code>nb_texts</code> argument controls how many text strings the list will contain, and this method uses |text| under the hood for text generation, so the two remaining arguments, <code>max_nb_chars</code> and <code>ext_word_list</code> will work in exactly the same way as well.</p>\n<p>:sample: nb_texts=5 :sample: nb_texts=5, max_nb_chars=50 :sample: nb_texts=5, max_nb_chars=50, ext_word_list=['abc', 'def', 'ghi', 'jkl']</p>",
       "shortdoc": "Generate a list of text strings.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
       "lineno": 260
     },
     {
@@ -11879,8 +11891,8 @@
       "doc": "<p>Get a time string (24h format by default)</p>\n<p>:param pattern: format :param end_datetime: A <code>DateParseType</code>. Defaults to the current date and time</p>\n<p>:sample: :sample: pattern='%I:%M %p'</p>",
       "shortdoc": "Get a time string (24h format by default)",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 1980
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 1981
     },
     {
       "name": "Time Delta",
@@ -11945,8 +11957,8 @@
       "doc": "<p>Get a random timedelta object of duration between the current date and time and <span class=\"name\">end_datetime</span></p>\n<p>:param end_datetime: A <code>DateParseType</code>. Defaults to the current date and time</p>\n<p>:sample: :sample: end_datetime='+30h'</p>",
       "shortdoc": "Get a random timedelta object of duration between the current date and time and `end_datetime`",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 1867
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 1868
     },
     {
       "name": "Time Object",
@@ -12011,8 +12023,8 @@
       "doc": "<p>Get a time object</p>\n<p>:param end_datetime: A <code>DateParseType</code>. Defaults to the current date and time</p>\n<p>:sample: :sample: end_datetime='+1h'</p>",
       "shortdoc": "Get a time object",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 1992
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 1993
     },
     {
       "name": "Time Series",
@@ -12226,8 +12238,8 @@
       "doc": "<p>Returns a generator yielding tuples of <code>(&lt;datetime&gt;, &lt;value&gt;)</code>.</p>\n<p>The data points will start at <code>start_date</code>, and be at every time interval specified by <code>precision</code>.</p>\n<p>:param start_date: A <code>DateParseType</code>. Defaults to <code>\"-30d\"</code> :param end_date: A <code>DateParseType</code>. Defaults to <code>\"now\"</code> :param precision: A float representing the time interval between data points. Defaults to 1/30th of the time :param distrib: A callable that accepts a datetime object and returns a value. Defaults to a uniform distribution :param tzinfo: timezone, instance of datetime.tzinfo subclass</p>\n<p>:sample:</p>",
       "shortdoc": "Returns a generator yielding tuples of ``(<datetime>, <value>)``.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2450
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2451
     },
     {
       "name": "Timezone",
@@ -12241,8 +12253,8 @@
       "doc": "<p>:sample:</p>",
       "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2537
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2538
     },
     {
       "name": "Tld",
@@ -12256,7 +12268,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 363
     },
     {
@@ -12357,8 +12369,8 @@
       "doc": "<p>Generate random tab-separated values.</p>\n<p>For more information on the different arguments of this method, please refer to :meth:<span class=\"name\">dsv() &lt;faker.providers.misc.Provider.dsv&gt;</span> which is used under the hood.</p>\n<p>:sample: data_columns=('{{name}}', '{{address}}'), num_rows=10, include_row_ids=False :sample: header=('Name', 'Address', 'Favorite Color'), data_columns=('{{name}}', '{{address}}', '{{safe_color_name}}'), num_rows=10, include_row_ids=True</p>",
       "shortdoc": "Generate random tab-separated values.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 484
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 485
     },
     {
       "name": "Unix Device",
@@ -12399,7 +12411,7 @@
       "doc": "<p>Generate a Unix device file name.</p>\n<p>If <code>prefix</code> is <code>None</code>, a random prefix will be used. The list of valid prefixes include: <code>'sd'</code>, <code>'vd'</code>, and <code>'xvd'</code>.</p>\n<p>:sample: :sample: prefix='mmcblk'</p>",
       "shortdoc": "Generate a Unix device file name.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\file\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\file\\__init__.py",
       "lineno": 328
     },
     {
@@ -12441,7 +12453,7 @@
       "doc": "<p>Generate a Unix partition name.</p>\n<p>This method uses |unix_device| under the hood to create a device file name with the specified <code>prefix</code>.</p>\n<p>:sample: :sample: prefix='mmcblk'</p>",
       "shortdoc": "Generate a Unix partition name.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\file\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\file\\__init__.py",
       "lineno": 343
     },
     {
@@ -12557,8 +12569,8 @@
       "doc": "<p>Get a timestamp between January 1, 1970 and now, unless passed explicit <code>start_datetime</code> or <span class=\"name\">end_datetime</span> values.</p>\n<p>On Windows, the decimal part is always 0.</p>\n<p>:param end_datetime: A <code>DateParseType</code>. Defaults to the UNIX epoch :param start_datetime: A <code>DateParseType</code>. Defaults to the current date and time</p>\n<p>:sample:</p>",
       "shortdoc": "Get a timestamp between January 1, 1970 and now, unless passed explicit ``start_datetime`` or `end_datetime` values.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 1847
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 1848
     },
     {
       "name": "Upc A",
@@ -12638,7 +12650,7 @@
       "doc": "<p>Generate a 12-digit UPC-A barcode.</p>\n<p>The value of <code>upc_ae_mode</code> controls how barcodes will be generated. If <code>False</code> (default), barcodes are not guaranteed to have a UPC-E equivalent. In this mode, the method uses |EnUsBarcodeProvider.ean13| under the hood, and the values of <code>base</code> and <code>number_system_digit</code> will be ignored.</p>\n<p>If <code>upc_ae_mode</code> is <code>True</code>, the resulting barcodes are guaranteed to have a UPC-E equivalent, and the values of <code>base</code> and <code>number_system_digit</code> will be used to control what is generated.</p>\n<p>Under this mode, <code>base</code> is expected to have a 6-digit string value. If any other value is supplied, a random 6-digit string will be used instead. As for <code>number_system_digit</code>, the expected value is a <code>0</code> or a <code>1</code>. If any other value is provided, this method will randomly choose from the two.</p>\n<p>.. important:: When <code>upc_ae_mode</code> is enabled, you might encounter instances where different values of <code>base</code> (e.g. <code>'120003'</code> and <code>'120004'</code>) produce the same UPC-A barcode. This is normal, and the reason lies within the whole conversion process. To learn more about this and what <code>base</code> and <code>number_system_digit</code> actually represent, please refer to |EnUsBarcodeProvider.upc_e|.</p>\n<p>:sample: :sample: upc_ae_mode=True, number_system_digit=0 :sample: upc_ae_mode=True, number_system_digit=1 :sample: upc_ae_mode=True, base='123456', number_system_digit=0 :sample: upc_ae_mode=True, base='120003', number_system_digit=0 :sample: upc_ae_mode=True, base='120004', number_system_digit=0</p>",
       "shortdoc": "Generate a 12-digit UPC-A barcode.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\barcode\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\barcode\\en_US\\__init__.py",
       "lineno": 149
     },
     {
@@ -12719,7 +12731,7 @@
       "doc": "<p>Generate an 8-digit UPC-E barcode.</p>\n<p>UPC-E barcodes can be expressed in 6, 7, or 8-digit formats, but this method uses the 8 digit format, since it is trivial to convert to the other two formats. The first digit (starting from the left) is controlled by <code>number_system_digit</code>, and it can only be a <code>0</code> or a <code>1</code>. The last digit is the check digit that is inherited from the UPC-E barcode's UPC-A equivalent. The middle six digits are collectively referred to as the <code>base</code> (for a lack of a better term).</p>\n<p>On that note, this method uses <code>base</code> and <code>number_system_digit</code> to first generate a UPC-A barcode for the check digit, and what happens next depends on the value of <code>safe_mode</code>. The argument <code>safe_mode</code> exists, because there are some UPC-E values that share the same UPC-A equivalent. For example, any UPC-E barcode of the form <code>abc0000d</code>, <code>abc0003d</code>, and <code>abc0004d</code> share the same UPC-A value <code>abc00000000d</code>, but that UPC-A value will only convert to <code>abc0000d</code> because of (a) how UPC-E is just a zero-suppressed version of UPC-A and (b) the rules around the conversion.</p>\n<p>If <code>safe_mode</code> is <code>True</code> (default), this method performs another set of conversions to guarantee that the UPC-E barcodes generated can be converted to UPC-A, and that UPC-A barcode can be converted back to the original UPC-E barcode. Using the example above, even if the bases <code>120003</code> or <code>120004</code> are used, the resulting UPC-E barcode will always use the base <code>120000</code>.</p>\n<p>If <code>safe_mode</code> is <code>False</code>, then the <code>number_system_digit</code>, <code>base</code>, and the computed check digit will just be concatenated together to produce the UPC-E barcode, and attempting to convert the barcode to UPC-A and back again to UPC-E will exhibit the behavior described above.</p>\n<p>:sample: :sample: base='123456' :sample: base='123456', number_system_digit=0 :sample: base='123456', number_system_digit=1 :sample: base='120000', number_system_digit=0 :sample: base='120003', number_system_digit=0 :sample: base='120004', number_system_digit=0 :sample: base='120000', number_system_digit=0, safe_mode=False :sample: base='120003', number_system_digit=0, safe_mode=False :sample: base='120004', number_system_digit=0, safe_mode=False</p>",
       "shortdoc": "Generate an 8-digit UPC-E barcode.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\barcode\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\barcode\\en_US\\__init__.py",
       "lineno": 194
     },
     {
@@ -12794,7 +12806,7 @@
       "doc": "<p>:param schemes: a list of strings to use as schemes, one will chosen randomly. If None, it will generate http and https uris. Passing an empty list will result in schemeless uri generation like \"://domain.com/index.html\". :param deep: an integer specifying how many path components the URI should have.. :return: a random url string.</p>",
       "shortdoc": ":param schemes: a list of strings to use as schemes, one will chosen randomly.     If None, it will generate http and https uris.     Passing an empty list will result in schemeless uri generation like \"://domain.com/index.html\". :param deep: an integer specifying how many path components the URI should have.. :return: a random url string.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 711
     },
     {
@@ -12809,7 +12821,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 708
     },
     {
@@ -12824,7 +12836,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 699
     },
     {
@@ -12866,7 +12878,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 702
     },
     {
@@ -12915,7 +12927,7 @@
       "doc": "<p>:param schemes: a list of strings to use as schemes, one will chosen randomly. If None, it will generate http and https urls. Passing an empty list will result in schemeless url generation like \"://domain.com\". :return: a random url string.</p>",
       "shortdoc": ":param schemes: a list of strings to use as schemes, one will chosen randomly.     If None, it will generate http and https urls.     Passing an empty list will result in schemeless url generation like \"://domain.com\". :return: a random url string.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 392
     },
     {
@@ -12930,7 +12942,7 @@
       "doc": "<p>Generate a random web browser user agent string.</p>",
       "shortdoc": "Generate a random web browser user agent string.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 165
     },
     {
@@ -12945,7 +12957,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\internet\\__init__.py",
       "lineno": 283
     },
     {
@@ -13038,8 +13050,8 @@
       "doc": "<p>Generate a random UUID4 object and cast it to another type if specified using a callable <code>cast_to</code>.</p>\n<p>By default, <code>cast_to</code> is set to <code>str</code>.</p>\n<p>May be called with <code>cast_to=None</code> to return a full-fledged <code>UUID</code>.</p>\n<p>:sample: :sample: cast_to=None</p>",
       "shortdoc": "Generate a random UUID4 object and cast it to another type if specified using a callable ``cast_to``.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 144
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 145
     },
     {
       "name": "Vin",
@@ -13053,7 +13065,7 @@
       "doc": "<p>Generate vin number.</p>",
       "shortdoc": "Generate vin number.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\automotive\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\automotive\\__init__.py",
       "lineno": 54
     },
     {
@@ -13068,7 +13080,7 @@
       "doc": "<p>Generate a Windows platform token used in user agent strings.</p>",
       "shortdoc": "Generate a Windows platform token used in user agent strings.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\user_agent\\__init__.py",
       "lineno": 337
     },
     {
@@ -13143,7 +13155,7 @@
       "doc": "<p>Generate a word.</p>\n<p>This method uses |words| under the hood with the <code>nb</code> argument set to <code>1</code> to generate the result.</p>\n<p>:sample: :sample: ext_word_list=['abc', 'def', 'ghi', 'jkl']</p>",
       "shortdoc": "Generate a word.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
       "lineno": 101
     },
     {
@@ -13251,7 +13263,7 @@
       "doc": "<p>Generate a tuple of words.</p>\n<p>The <code>nb</code> argument controls the number of words in the resulting list, and if <code>ext_word_list</code> is provided, words from that list will be used instead of those from the locale provider's built-in word list.</p>\n<p>if <code>word_list</code> is not provided, the method will use a default value of None, which will result in the method calling the <code>get_words_list</code> method to get the word list. If <code>word_list</code> is provided, the method will use the provided list.</p>\n<p>If <code>unique</code> is <code>True</code>, this method will return a list containing unique words. Under the hood, |random_sample| will be used for sampling without replacement. If <code>unique</code> is <code>False</code>, |random_choices| is used instead, and the list returned may contain duplicates.</p>\n<p>:sample: :sample: nb=5 :sample: nb=5, ext_word_list=['abc', 'def', 'ghi', 'jkl'] :sample: nb=4, ext_word_list=['abc', 'def', 'ghi', 'jkl'], unique=True</p>",
       "shortdoc": "Generate a tuple of words.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\lorem\\__init__.py",
       "lineno": 65
     },
     {
@@ -13397,8 +13409,8 @@
       "doc": "<p>Returns some XML.</p>\n<p>:nb_elements: number of elements for dictionary :variable_nb_elements: is use variable number of elements for dictionary :value_types: type of dictionary values</p>\n<p>Note: this provider required xmltodict library installed</p>",
       "shortdoc": "Returns some XML.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 659
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 660
     },
     {
       "name": "Year",
@@ -13412,8 +13424,8 @@
       "doc": "<p>:sample:</p>",
       "shortdoc": ":sample:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
-      "lineno": 2525
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\date_time\\__init__.py",
+      "lineno": 2526
     },
     {
       "name": "Zip",
@@ -13493,8 +13505,8 @@
       "doc": "<p>Generate a bytes object containing a random valid zip archive file.</p>\n<p>The number and sizes of files contained inside the resulting archive can be controlled using the following arguments:</p>\n<ul>\n<li><code>uncompressed_size</code> - the total size of files before compression, 16 KiB by default</li>\n<li><code>num_files</code> - the number of files archived in resulting zip file, 1 by default</li>\n<li><code>min_file_size</code> - the minimum size of each file before compression, 4 KiB by default</li>\n</ul>\n<p>No compression is used by default, but setting <code>compression</code> to one of the values listed below will use the corresponding compression type.</p>\n<ul>\n<li><code>'bzip2'</code> or <code>'bz2'</code> for BZIP2</li>\n<li><code>'lzma'</code> or <code>'xz'</code> for LZMA</li>\n<li><code>'deflate'</code>, <code>'gzip'</code>, or <code>'gz'</code> for GZIP</li>\n</ul>\n<p>:sample: uncompressed_size=256, num_files=4, min_file_size=32 :sample: uncompressed_size=256, num_files=32, min_file_size=4, compression='bz2'</p>",
       "shortdoc": "Generate a bytes object containing a random valid zip archive file.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
-      "lineno": 214
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\misc\\__init__.py",
+      "lineno": 215
     },
     {
       "name": "Zipcode",
@@ -13508,7 +13520,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 586
     },
     {
@@ -13550,7 +13562,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 589
     },
     {
@@ -13565,7 +13577,7 @@
       "doc": "",
       "shortdoc": "",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\faker\\providers\\address\\en_US\\__init__.py",
       "lineno": 529
     }
   ],

@@ -2,12 +2,12 @@
   "specversion": 3,
   "name": "Browser",
   "doc": "<p>Browser library is a browser automation library for Robot Framework.</p>\n<p>This is the keyword documentation for Browser library. For information about installation, support, and more please visit the <a href=\"https://github.com/MarketSquare/robotframework-playwright\">project pages</a>. For more information about Robot Framework itself, see <a href=\"https://robotframework.org\">robotframework.org</a>.</p>\n<p>Browser library uses <a href=\"https://github.com/microsoft/playwright\">Playwright Node module</a> to automate <a href=\"https://www.chromium.org/Home\">Chromium</a>, <a href=\"https://www.mozilla.org/en-US/firefox/new/\">Firefox</a> and <a href=\"https://webkit.org/\">WebKit</a> with a single library.</p>\n<h3 id=\"Table of contents\">Table of contents</h3>\n<ul>\n<li><a href=\"#Browser%2C%20Context%20and%20Page\" class=\"name\">Browser, Context and Page</a></li>\n<li><a href=\"#Automatic%20page%20and%20context%20closing\" class=\"name\">Automatic page and context closing</a></li>\n<li><a href=\"#Finding%20elements\" class=\"name\">Finding elements</a></li>\n<li><a href=\"#Assertions\" class=\"name\">Assertions</a></li>\n<li><a href=\"#Implicit%20waiting\" class=\"name\">Implicit waiting</a></li>\n<li><a href=\"#Experimental%3A%20Re-using%20same%20node%20process\" class=\"name\">Experimental: Re-using same node process</a></li>\n<li><a href=\"#Experimental%3A%20Provide%20parameters%20to%20node%20process\" class=\"name\">Experimental: Provide parameters to node process</a></li>\n<li><a href=\"#Scope%20Setting\" class=\"name\">Scope Setting</a></li>\n<li><a href=\"#Extending%20Browser%20library%20with%20a%20JavaScript%20module\" class=\"name\">Extending Browser library with a JavaScript module</a></li>\n<li><a href=\"#Plugins\" class=\"name\">Plugins</a></li>\n<li><a href=\"#Language\" class=\"name\">Language</a></li>\n<li><a href=\"#Importing\" class=\"name\">Importing</a></li>\n<li><a href=\"#Keywords\" class=\"name\">Keywords</a></li>\n</ul>\n<h2 id=\"Browser, Context and Page\">Browser, Context and Page</h2>\n<p>Browser library works with three different layers that build on each other: <b>Browser</b>, <b>Context</b> and <b>Page</b>.</p>\n<h3 id=\"Browsers\">Browsers</h3>\n<p>A <b>browser</b> can be started with one of the three different engines Chromium, Firefox or Webkit.</p>\n<h4 id=\"Supported Browsers\">Supported Browsers</h4>\n<table border=\"1\">\n<tr>\n<td>Browser</td>\n<td>Browser with this engine</td>\n</tr>\n<tr>\n<td><code>chromium</code></td>\n<td>Google Chrome, Microsoft Edge (since 2020), Opera</td>\n</tr>\n<tr>\n<td><code>firefox</code></td>\n<td>Mozilla Firefox</td>\n</tr>\n<tr>\n<td><code>webkit</code></td>\n<td>Apple Safari, Mail, AppStore on MacOS and iOS</td>\n</tr>\n</table>\n<p>Since <a href=\"https://github.com/microsoft/playwright\">Playwright</a> comes with a pack of builtin binaries for all browsers, no additional drivers e.g. geckodriver are needed.</p>\n<p>All these browsers that cover more than 85% of the world wide used browsers, can be tested on Windows, Linux and MacOS. There is no need for dedicated machines anymore.</p>\n<p>A browser process is started <code>headless</code> (without a GUI) by default. Run <a href=\"#New%20Browser\" class=\"name\">New Browser</a> with specified arguments if a browser with a GUI is requested or if a proxy has to be configured. A browser process can contain several contexts.</p>\n<h3 id=\"Contexts\">Contexts</h3>\n<p>A <b>context</b> corresponds to a set of independent incognito pages in a browser that share cookies, sessions or profile settings. Pages in two separate contexts do not share cookies, sessions or profile settings. Compared to Selenium, these do <b>not</b> require their own browser process. To get a clean environment a test can just open a new context. Due to this new independent browser sessions can be opened with Robot Framework Browser about 10 times faster than with Selenium by just opening a <a href=\"#New%20Context\" class=\"name\">New Context</a> within the opened browser.</p>\n<p>To make pages in the same suite share state, use the same context by opening the context with <a href=\"#New%20Context\" class=\"name\">New Context</a> on suite setup.</p>\n<p>The context layer is useful e.g. for testing different user sessions on the same webpage without opening a whole new browser context. Contexts can also have detailed configurations, such as geo-location, language settings, the viewport size or color scheme. Contexts do also support http credentials to be set, so that basic authentication can also be tested. To be able to download files within the test, the <code>acceptDownloads</code> argument must be set to <code>True</code> in <a href=\"#New%20Context\" class=\"name\">New Context</a> keyword. A context can contain different pages.</p>\n<h3 id=\"Pages\">Pages</h3>\n<p>A <b>page</b> does contain the content of the loaded web site and has a browsing history. Pages and browser tabs are the same.</p>\n<p>Typical usage could be:</p>\n<pre>\n<b>*</b> Test Cases <b>*</b>\nStarting a browser with a page\n    New Browser    chromium    headless=false\n    New Context    viewport={'width': 1920, 'height': 1080}\n    New Page       <a href=\"https://marketsquare.github.io/robotframework-browser/Browser.html\">https://marketsquare.github.io/robotframework-browser/Browser.html</a>\n    Get Title      ==    Browser\n</pre>\n<p>The <a href=\"#Open%20Browser\" class=\"name\">Open Browser</a> keyword opens a new browser, a new context and a new page. This keyword is useful for quick experiments or debugging sessions.</p>\n<p>When a <a href=\"#New%20Page\" class=\"name\">New Page</a> is called without an open browser, <a href=\"#New%20Browser\" class=\"name\">New Browser</a> and <a href=\"#New%20Context\" class=\"name\">New Context</a> are executed with default values first.</p>\n<p>Each Browser, Context and Page has a unique ID with which they can be addressed. A full catalog of what is open can be received by <a href=\"#Get%20Browser%20Catalog\" class=\"name\">Get Browser Catalog</a> as a dictionary.</p>\n<h2 id=\"Automatic page and context closing\">Automatic page and context closing</h2>\n<p>Controls when contexts and pages are closed during the test execution.</p>\n<p>If automatic closing level is <span class=\"name\">TEST</span>, contexts and pages that are created during a single test are automatically closed when the test ends. Contexts and pages that are created during suite setup are closed when the suite teardown ends.</p>\n<p>If automatic closing level is <span class=\"name\">SUITE</span>, all contexts and pages that are created during the test suite are closed when the suite teardown ends.</p>\n<p>If automatic closing level is <span class=\"name\">MANUAL</span>, nothing is closed automatically while the test execution is ongoing. All browsers, context and pages are automatically closed when test execution ends.</p>\n<p>If automatic closing level is <span class=\"name\">KEEP</span>, nothing is closed automatically while the test execution is ongoing. Also, nothing is closed when test execution ends, including the node process. Therefore, it is users responsibility to close all browsers, context and pages and ensure that all process that are left running after the test execution end are closed. This level is only intended for test case development and must not be used when running tests in CI or similar environments.</p>\n<p>Automatic closing can be configured or switched off with the auto_closing_level library import parameter.</p>\n<p>See: <a href=\"#Importing\" class=\"name\">Importing</a></p>\n<h2 id=\"Finding elements\">Finding elements</h2>\n<p>All keywords in the library that need to interact with an element on a web page take an argument typically named <code>selector</code> that specifies how to find the element. Keywords can find elements with strict mode. If strict mode is true and locator finds multiple elements from the page, keyword will fail. If keyword finds one element, keyword does not fail because of strict mode. If strict mode is false, keyword does not fail if selector points many elements. Strict mode is enabled by default, but can be changed in library <a href=\"#Importing\" class=\"name\">importing</a> or <a href=\"#Set%20Strict%20Mode\" class=\"name\">Set Strict Mode</a> keyword. Keyword documentation states if keyword uses strict mode. If keyword does not state that strict mode is used, then strict mode is not applied for the keyword. For more details, see Playwright <a href=\"https://playwright.dev/docs/api/class-page#page-query-selector\">strict documentation</a>.</p>\n<p>Selector strategies that are supported by default are listed in the table below.</p>\n<table border=\"1\">\n<tr>\n<th>Strategy</th>\n<th>Match based on</th>\n<th>Example</th>\n</tr>\n<tr>\n<td><code>css</code></td>\n<td>CSS selector.</td>\n<td><code>css=.class &gt; \\#login_btn</code></td>\n</tr>\n<tr>\n<td><code>xpath</code></td>\n<td>XPath expression.</td>\n<td><code>xpath=//input[@id=\"login_btn\"]</code></td>\n</tr>\n<tr>\n<td><code>text</code></td>\n<td>Browser text engine.</td>\n<td><code>text=Login</code></td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>Element ID Attribute.</td>\n<td><code>id=login_btn</code></td>\n</tr>\n</table>\n<p>CSS Selectors can also be recorded with <a href=\"#Record%20Selector\" class=\"name\">Record selector</a> keyword.</p>\n<h3 id=\"Explicit Selector Strategy\">Explicit Selector Strategy</h3>\n<p>The explicit selector strategy is specified with a prefix using syntax <code>strategy=value</code>. Spaces around the separator are ignored, so <code>css=foo</code>, <code>css= foo</code> and <code>css = foo</code> are all equivalent.</p>\n<h3 id=\"Implicit Selector Strategy\">Implicit Selector Strategy</h3>\n<p><b>The default selector strategy is <a href=\"#CSS\" class=\"name\">css</a>.</b></p>\n<p>If selector does not contain one of the know explicit selector strategies, it is assumed to contain css selector.</p>\n<p>Selectors that are starting with <code>//</code> or <code>..</code> are considered as xpath selectors.</p>\n<p>Selectors that are in quotes are considered as text selectors.</p>\n<p>Examples:</p>\n<pre>\n# CSS selectors are default.\n<a href=\"#Click\" class=\"name\">Click</a>  span &gt; button.some_class         # This is equivalent\n<a href=\"#Click\" class=\"name\">Click</a>  css=span &gt; button.some_class     # to this.\n\n# // or .. leads to xpath selector strategy\n<a href=\"#Click\" class=\"name\">Click</a>  //span/button[@class=\"some_class\"]\n<a href=\"#Click\" class=\"name\">Click</a>  xpath=//span/button[@class=\"some_class\"]\n\n# \"text\" in quotes leads to exact text selector strategy\n<a href=\"#Click\" class=\"name\">Click</a>  \"Login\"\n<a href=\"#Click\" class=\"name\">Click</a>  text=\"Login\"\n</pre>\n<h3 id=\"CSS\">CSS</h3>\n<p>As written before, the default selector strategy is <a href=\"#CSS\" class=\"name\">css</a>. See <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors\">css selector</a> for more information.</p>\n<p>Any malformed selector not starting with <code>//</code> or <code>..</code> nor starting and ending with a quote is assumed to be a css selector.</p>\n<p>Note that <code>#</code> is a comment character in <a href=\"https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#ignored-data\">Robot Framework syntax</a> and needs to be escaped like <code>\\#</code> to work as a <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors\">css ID selector</a>.</p>\n<p>Examples:</p>\n<pre>\n<a href=\"#Click\" class=\"name\">Click</a>  span &gt; button.some_class\n<a href=\"#Get%20Text\" class=\"name\">Get Text</a>  \\#username_field  ==  George\n</pre>\n<h3 id=\"XPath\">XPath</h3>\n<p>XPath engine is equivalent to <a href=\"https://developer.mozilla.org/en/docs/Web/API/Document/evaluate\">Document.evaluate</a>. Example: <code>xpath=//html/body//span[text()=\"Hello World\"]</code>.</p>\n<p>Malformed selector starting with <code>//</code> or <code>..</code> is assumed to be an xpath selector. For example, <code>//html/body</code> is converted to <code>xpath=//html/body</code>. More examples are displayed in <a href=\"#Examples\" class=\"name\">Examples</a>.</p>\n<p>Note that xpath does not pierce <a href=\"https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM\">shadow_roots</a>.</p>\n<h3 id=\"Text\">Text</h3>\n<p>Text engine finds an element that contains a text node with the passed text. For example, <code>Click    text=Login</code> clicks on a login button, and <code>Wait For Elements State   text=\"lazy loaded text\"</code> waits for the \"lazy loaded text\" to appear in the page.</p>\n<p>Text engine finds fields based on their labels in text inserting keywords.</p>\n<p>Malformed selector starting and ending with a quote (either <code>\"</code> or <code>'</code>) is assumed to be a text selector. For example, <code>Click    \"Login\"</code> is converted to <code>Click    text=\"Login\"</code>. Be aware that these leads to exact matches only! More examples are displayed in <a href=\"#Examples\" class=\"name\">Examples</a>.</p>\n<h4 id=\"Insensitive match\">Insensitive match</h4>\n<p>By default, the match is case-insensitive, ignores leading/trailing whitespace and searches for a substring. This means <code>text= Login</code> matches <code>&lt;button&gt;Button loGIN (click me)&lt;/button&gt;</code>.</p>\n<h4 id=\"Exact match\">Exact match</h4>\n<p>Text body can be escaped with single or double quotes for precise matching, insisting on exact match, including specified whitespace and case. This means <code>text=\"Login \"</code> will only match <code>&lt;button&gt;Login &lt;/button&gt;</code> with exactly one space after \"Login\". Quoted text follows the usual escaping rules, e.g. use <code>\\\"</code> to escape double quote in a double-quoted string: <code>text=\"foo\\\"bar\"</code>.</p>\n<h4 id=\"RegEx\">RegEx</h4>\n<p>Text body can also be a JavaScript-like regex wrapped in / symbols. This means <code>text=/^hello .*!$/i</code> or <code>text=/^Hello .*!$/</code> will match <code>&lt;span&gt;Hello Peter Parker!&lt;/span&gt;</code> with any name after <code>Hello</code>, ending with <code>!</code>. The first one flagged with <code>i</code> for case-insensitive. See <a href=\"https://regex101.com/\">https://regex101.com</a> for more information about RegEx.</p>\n<h4 id=\"Button and Submit Values\">Button and Submit Values</h4>\n<p>Input elements of the type button and submit are rendered with their value as text, and text engine finds them. For example, <code>text=Login</code> matches <code>&lt;input type=button value=\"Login\"&gt;</code>.</p>\n<h3 id=\"Cascaded selector syntax\">Cascaded selector syntax</h3>\n<p>Browser library supports the same selector strategies as the underlying Playwright node module: xpath, css, id and text. The strategy can either be explicitly specified with a prefix or the strategy can be implicit.</p>\n<p>A major advantage of Browser is that multiple selector engines can be used within one selector. It is possible to mix XPath, CSS and Text selectors while selecting a single element.</p>\n<p>Selectors are strings that consists of one or more clauses separated by <code>&gt;&gt;</code> token, e.g. <code>clause1 &gt;&gt; clause2 &gt;&gt; clause3</code>. When multiple clauses are present, next one is queried relative to the previous one's result. Browser library supports concatenation of different selectors separated by <code>&gt;&gt;</code>.</p>\n<p>For example:</p>\n<pre>\n<a href=\"#Highlight%20Elements\" class=\"name\">Highlight Elements</a>    \"Hello\" &gt;&gt; ../.. &gt;&gt; .select_button\n<a href=\"#Highlight%20Elements\" class=\"name\">Highlight Elements</a>    text=Hello &gt;&gt; xpath=../.. &gt;&gt; css=.select_button\n</pre>\n<p>Each clause contains a selector engine name and selector body, e.g. <code>engine=body</code>. Here <code>engine</code> is one of the supported engines (e.g. css or a custom one). Selector <code>body</code> follows the format of the particular engine, e.g. for css engine it should be a <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors\">css selector</a>. Body format is assumed to ignore leading and trailing white spaces, so that extra whitespace can be added for readability. If the selector engine needs to include <code>&gt;&gt;</code> in the body, it should be escaped inside a string to not be confused with clause separator, e.g. <code>text=\"some &gt;&gt; text\"</code>.</p>\n<p>Selector engine name can be prefixed with <code>*</code> to capture an element that matches the particular clause instead of the last one. For example, <code>css=article &gt;&gt; text=Hello</code> captures the element with the text <code>Hello</code>, and <code>*css=article &gt;&gt; text=Hello</code> (note the *) captures the article element that contains some element with the text Hello.</p>\n<p>For convenience, selectors in the wrong format are heuristically converted to the right format. See <a href=\"#Implicit%20Selector%20Strategy\" class=\"name\">Implicit Selector Strategy</a></p>\n<h3 id=\"Examples\">Examples</h3>\n<pre>\n# queries 'div' css selector\nGet Element    css=div\n\n# queries '//html/body/div' xpath selector\nGet Element    //html/body/div\n\n# queries '\"foo\"' text selector\nGet Element    text=foo\n\n# queries 'span' css selector inside the result of '//html/body/div' xpath selector\nGet Element    xpath=//html/body/div &gt;&gt; css=span\n\n# converted to 'css=div'\nGet Element    div\n\n# converted to 'xpath=//html/body/div'\nGet Element    //html/body/div\n\n# converted to 'text=\"foo\"'\nGet Element    \"foo\"\n\n# queries the div element of every 2nd span element inside an element with the id foo\nGet Element    \\#foo &gt;&gt; css=span:nth-child(2n+1) &gt;&gt; div\nGet Element    id=foo &gt;&gt; css=span:nth-child(2n+1) &gt;&gt; div\n</pre>\n<p>Be aware that using <code>#</code> as a starting character in Robot Framework would be interpreted as comment. Due to that fact a <code>#id</code> must be escaped as <code>\\#id</code>.</p>\n<h3 id=\"iFrames\">iFrames</h3>\n<p>By default, selector chains do not cross frame boundaries. It means that a simple CSS selector is not able to select an element located inside an iframe or a frameset. For this use case, there is a special selector <code>&gt;&gt;&gt;</code> which can be used to combine a selector for the frame and a selector for an element inside a frame.</p>\n<p>Given this simple pseudo html snippet:</p>\n<pre>\n&lt;iframe id=\"iframe\" src=\"src.html\"&gt;\n  #document\n    &lt;!DOCTYPE html&gt;\n    &lt;html&gt;\n      &lt;head&gt;&lt;/head&gt;\n      &lt;body&gt;\n        &lt;button id=\"btn\"&gt;Click Me&lt;/button&gt;\n      &lt;/body&gt;\n    &lt;/html&gt;\n&lt;/iframe&gt;\n</pre>\n<p>Here's a keyword call that clicks the button inside the frame.</p>\n<pre>\nClick   id=iframe &gt;&gt;&gt; id=btn\n</pre>\n<p>The selectors on the left and right side of <code>&gt;&gt;&gt;</code> can be any valid selectors. The selector clause directly before the frame opener <code>&gt;&gt;&gt;</code> must select the frame element itself. Frame selection is the only place where Browser Library modifies the selector, as explained in above. In all cases, the library does not alter the selector in any way, instead it is passed as is to the Playwright side.</p>\n<p>If multiple keyword shall be performed inside a frame, it is possible to define a selector prefix with <a href=\"#Set%20Selector%20Prefix\" class=\"name\">Set Selector Prefix</a>. If this prefix is set to a frame/iframe it has similar behavior as SeleniumLibrary keyword <span class=\"name\">Select Frame</span>.</p>\n<h3 id=\"WebComponents and Shadow DOM\">WebComponents and Shadow DOM</h3>\n<p>Playwright and so also Browser are able to do automatic piercing of Shadow DOMs and therefore are the best automation technology when working with WebComponents.</p>\n<p>Also other technologies claim that they can handle <a href=\"https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM\">Shadow DOM and Web Components</a>. However, none of them do pierce shadow roots automatically, which may be inconvenient when working with Shadow DOM and Web Components.</p>\n<p>For that reason, the css engine pierces shadow roots. More specifically, every <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator\">Descendant combinator</a> pierces an arbitrary number of open shadow roots, including the implicit descendant combinator at the start of the selector.</p>\n<p>That means, it is not necessary to select each shadow host, open its shadow root and select the next shadow host until you reach the element that should be controlled.</p>\n<h4 id=\"CSS:light\">CSS:light</h4>\n<p><code>css:light</code> engine is equivalent to <a href=\"https://developer.mozilla.org/en/docs/Web/API/Document/querySelector\">Document.querySelector</a> and behaves according to the CSS spec. However, it does not pierce shadow roots.</p>\n<p><code>css</code> engine first searches for elements in the light dom in the iteration order, and then recursively inside open shadow roots in the iteration order. It does not search inside closed shadow roots or iframes.</p>\n<p>Examples:</p>\n<pre>\n&lt;article&gt;\n  &lt;div&gt;In the light dom&lt;/div&gt;\n  &lt;div slot='myslot'&gt;In the light dom, but goes into the shadow slot&lt;/div&gt;\n  &lt;open mode shadow root&gt;\n      &lt;div class='in-the-shadow'&gt;\n          &lt;span class='content'&gt;\n              In the shadow dom\n              &lt;open mode shadow root&gt;\n                  &lt;li id='target'&gt;Deep in the shadow&lt;/li&gt;\n              &lt;/open mode shadow root&gt;\n          &lt;/span&gt;\n      &lt;/div&gt;\n      &lt;slot name='myslot'&gt;&lt;/slot&gt;\n  &lt;/open mode shadow root&gt;\n&lt;/article&gt;\n</pre>\n<p>Note that <code>&lt;open mode shadow root&gt;</code> is not an html element, but rather a shadow root created with <code>element.attachShadow({mode: 'open'})</code>.</p>\n<ul>\n<li>Both <code>\"css=article div\"</code> and <code>\"css:light=article div\"</code> match the first <code>&lt;div&gt;In the light dom&lt;/div&gt;</code>.</li>\n<li>Both <code>\"css=article &gt; div\"</code> and <code>\"css:light=article &gt; div\"</code> match two <code>div</code> elements that are direct children of the <code>article</code>.</li>\n<li><code>\"css=article .in-the-shadow\"</code> matches the <code>&lt;div class='in-the-shadow'&gt;</code>, piercing the shadow root, while <code>\"css:light=article .in-the-shadow\"</code> does not match anything.</li>\n<li><code>\"css:light=article div &gt; span\"</code> does not match anything, because both light-dom <code>div</code> elements do not contain a <code>span</code>.</li>\n<li><code>\"css=article div &gt; span\"</code> matches the <code>&lt;span class='content'&gt;</code>, piercing the shadow root.</li>\n<li><code>\"css=article &gt; .in-the-shadow\"</code> does not match anything, because <code>&lt;div class='in-the-shadow'&gt;</code> is not a direct child of <code>article</code></li>\n<li><code>\"css:light=article &gt; .in-the-shadow\"</code> does not match anything.</li>\n<li><code>\"css=article li#target\"</code> matches the <code>&lt;li id='target'&gt;Deep in the shadow&lt;/li&gt;</code>, piercing two shadow roots.</li>\n</ul>\n<h4 id=\"text:light\">text:light</h4>\n<p><code>text</code> engine open pierces shadow roots similarly to <code>css</code>, while <code>text:light</code> does not. Text engine first searches for elements in the light dom in the iteration order, and then recursively inside open shadow roots in the iteration order. It does not search inside closed shadow roots or iframes.</p>\n<h4 id=\"id, data-testid, data-test-id, data-test and their :light counterparts\">id, data-testid, data-test-id, data-test and their :light counterparts</h4>\n<p>Attribute engines are selecting based on the corresponding attribute value. For example: <code>data-test-id=foo</code> is equivalent to <code>css=[data-test-id=\"foo\"]</code>, and <code>id:light=foo</code> is equivalent to <code>css:light=[id=\"foo\"]</code>.</p>\n<h3 id=\"Element reference syntax\">Element reference syntax</h3>\n<p>It is possible to get a reference to a Locator by using <a href=\"#Get%20Element\" class=\"name\">Get Element</a> and <a href=\"#Get%20Elements\" class=\"name\">Get Elements</a> keywords. Keywords do not save reference to an element in the HTML document, instead it saves reference to a Playwright <a href=\"https://playwright.dev/docs/api/class-locator\">Locator</a>. In nutshell Locator captures the logic of how to retrieve that element from the page. Each time an action is performed, the locator re-searches the elements in the page. This reference can be used as a <b>first</b> part of a selector by using a special selector syntax <span class=\"name\">element=</span>. like this:</p>\n<pre>\n${ref}=    Get Element    .some_class\n           Click          ${ref} &gt;&gt; .some_child     # Locator searches an element from the page.\n           Click          ${ref} &gt;&gt; .other_child    # Locator searches again an element from the page.\n</pre>\n<p>The <span class=\"name\">.some_child</span> and <span class=\"name\">.other_child</span> selectors in the example are relative to the element referenced by ${ref}. Please note that frame piercing is not possible with element reference.</p>\n<h2 id=\"Assertions\">Assertions</h2>\n<p>Keywords that accept arguments <code>assertion_operator</code> &lt;<a href=\"#type-AssertionOperator\" class=\"name\">AssertionOperator</a>&gt; and <code>assertion_expected</code> can optionally assert that a specified condition holds. Keywords will return the value even when the assertion is performed by the keyword.</p>\n<p>Assert will retry and fail only after a specified timeout. See <a href=\"#Importing\" class=\"name\">Importing</a> and <code>retry_assertions_for</code> (default is 1 second) for configuring this timeout.</p>\n<p>Currently supported assertion operators are:</p>\n<table border=\"1\">\n<tr>\n<th>Operator</th>\n<th>Alternative Operators</th>\n<th>Description</th>\n<th>Validate Equivalent</th>\n</tr>\n<tr>\n<td><code>==</code></td>\n<td><code>equal</code>, <code>equals</code>, <code>should be</code></td>\n<td>Checks if returned value is equal to expected value.</td>\n<td><code>value == expected</code></td>\n</tr>\n<tr>\n<td><code>!=</code></td>\n<td><code>inequal</code>, <code>should not be</code></td>\n<td>Checks if returned value is not equal to expected value.</td>\n<td><code>value != expected</code></td>\n</tr>\n<tr>\n<td><code>&gt;</code></td>\n<td><code>greater than</code></td>\n<td>Checks if returned value is greater than expected value.</td>\n<td><code>value &gt; expected</code></td>\n</tr>\n<tr>\n<td><code>&gt;=</code></td>\n<td></td>\n<td>Checks if returned value is greater than or equal to expected value.</td>\n<td><code>value &gt;= expected</code></td>\n</tr>\n<tr>\n<td><code>&lt;</code></td>\n<td><code>less than</code></td>\n<td>Checks if returned value is less than expected value.</td>\n<td><code>value &lt; expected</code></td>\n</tr>\n<tr>\n<td><code>&lt;=</code></td>\n<td></td>\n<td>Checks if returned value is less than or equal to expected value.</td>\n<td><code>value &lt;= expected</code></td>\n</tr>\n<tr>\n<td><code>*=</code></td>\n<td><code>contains</code></td>\n<td>Checks if returned value contains expected value as substring.</td>\n<td><code>expected in value</code></td>\n</tr>\n<tr>\n<td></td>\n<td><code>not contains</code></td>\n<td>Checks if returned value does not contain expected value as substring.</td>\n<td><code>expected in value</code></td>\n</tr>\n<tr>\n<td><code>^=</code></td>\n<td><code>should start with</code>, <code>starts</code></td>\n<td>Checks if returned value starts with expected value.</td>\n<td><code>re.search(f\"^{expected}\", value)</code></td>\n</tr>\n<tr>\n<td><code>$=</code></td>\n<td><code>should end with</code>, <code>ends</code></td>\n<td>Checks if returned value ends with expected value.</td>\n<td><code>re.search(f\"{expected}$\", value)</code></td>\n</tr>\n<tr>\n<td><code>matches</code></td>\n<td></td>\n<td>Checks if given RegEx matches minimum once in returned value.</td>\n<td><code>re.search(expected, value)</code></td>\n</tr>\n<tr>\n<td><code>validate</code></td>\n<td></td>\n<td>Checks if given Python expression evaluates to <code>True</code>.</td>\n<td></td>\n</tr>\n<tr>\n<td><code>evaluate</code></td>\n<td><code>then</code></td>\n<td>When using this operator, the keyword does return the evaluated Python expression.</td>\n<td></td>\n</tr>\n</table>\n<p>Currently supported formatters for assertions are:</p>\n<table border=\"1\">\n<tr>\n<th>Formatter</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>normalize spaces</code></td>\n<td>Substitutes multiple spaces to single space from the value</td>\n</tr>\n<tr>\n<td><code>strip</code></td>\n<td>Removes spaces from the beginning and end of the value</td>\n</tr>\n<tr>\n<td><code>case insensitive</code></td>\n<td>Converts value to lower case before comparing</td>\n</tr>\n<tr>\n<td><code>apply to expected</code></td>\n<td>Applies rules also for the expected value</td>\n</tr>\n</table>\n<p>Formatters are applied to the value before assertion is performed and keywords returns a value where rule is applied. Formatter is only applied to the value which keyword returns and not all rules are valid for all assertion operators. If <code>apply to expected</code> formatter is defined, then formatters are then formatter are also applied to expected value.</p>\n<p>By default, keywords will provide an error message if an assertion fails. Default error messages can be overwritten with a <code>message</code> argument. The <code>message</code> argument accepts <span class=\"name\">{value}</span>, <span class=\"name\">{value_type}</span>, <span class=\"name\">{expected}</span> and <span class=\"name\">{expected_type}</span> <a href=\"https://docs.python.org/3/library/stdtypes.html#str.format\">format</a> options. The <span class=\"name\">{value}</span> is the value returned by the keyword and the <span class=\"name\">{expected}</span> is the expected value defined by the user, usually the value in the <code>assertion_expected</code> argument. The <span class=\"name\">{value_type}</span> and <span class=\"name\">{expected_type}</span> are the type definitions from <span class=\"name\">{value}</span> and <span class=\"name\">{expected}</span> arguments. In similar fashion as Python <a href=\"https://docs.python.org/3/library/functions.html#type\">type</a> returns type definition. Assertions will retry until <code>timeout</code> has expired if they do not pass.</p>\n<p>The assertion <code>assertion_expected</code> value is not converted by the library and is used as is. Therefore when assertion is made, the <code>assertion_expected</code> argument value and value returned the keyword must have the same type. If types are not the same, assertion will fail. Example <a href=\"#Get%20Text\" class=\"name\">Get Text</a> always returns a string and has to be compared with a string, even the returned value might look like a number.</p>\n<p>Other Keywords have other specific types they return. <a href=\"#Get%20Element%20Count\" class=\"name\">Get Element Count</a> always returns an integer. <a href=\"#Get%20BoundingBox\" class=\"name\">Get Bounding Box</a> and <a href=\"#Get%20Viewport%20Size\" class=\"name\">Get Viewport Size</a> can be filtered. They return a dictionary without a filter and a number when filtered. These Keywords do automatic conversion for the expected value if a number is returned.</p>\n<p>* &lt; less or greater &gt; With Strings* Comparisons of strings with <code>greater than</code> or <code>less than</code> compares each character, starting from 0 regarding where it stands in the code page. Example: <code>A &lt; Z</code>, <code>Z &lt; a</code>, <code>ac &lt; dc<span class=\"name\"> It does never compare the length of elements. Neither lists nor strings. The comparison stops at the first character that is different. Examples: </span>`'abcde' &lt; 'abd'</code>, <code>'100.000' &lt; '2'</code> In Python 3 and therefore also in Browser it is not possible to compare numbers with strings with a greater or less operator. On keywords that return numbers, the given expected value is automatically converted to a number before comparison.</p>\n<p>The getters <span class=\"name\">Get Page State</span> and <a href=\"#Get%20Browser%20Catalog\" class=\"name\">Get Browser Catalog</a> return a dictionary. Values of the dictionary can directly asserted. Pay attention of possible types because they are evaluated in Python. For example:</p>\n<pre>\nGet Page State    validate    2020 &gt;= value['year']                     # Comparison of numbers\nGet Page State    validate    \"IMPORTANT MESSAGE!\" == value['message']  # Comparison of strings\n</pre>\n<h3 id=\"The 'then' or 'evaluate' closure\">The 'then' or 'evaluate' closure</h3>\n<p>Keywords that accept arguments <code>assertion_operator</code> and <code>assertion_expected</code> can optionally also use <code>then</code> or <code>evaluate</code> closure to modify the returned value with BuiltIn Evaluate. Actual value can be accessed with <code>value</code>.</p>\n<p>For example <code>Get Title  then  'TITLE: '+value</code>. See <a href=\"https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#Evaluating%20expressions\">Builtin Evaluating expressions</a> for more info on the syntax.</p>\n<h3 id=\"Examples\">Examples</h3>\n<pre>\n# <b>Keyword</b>    <b>Selector</b>                    <b>Key</b>        <b>Assertion Operator</b>    <b>Assertion Expected</b>\nGet Title                                           equal                 Page Title\nGet Title                                           ^=                    Page\nGet Style    //*[@id=\"div-element\"]      width      &gt;                     100\nGet Title                                           matches               \\\\w+\\\\s\\\\w+\nGet Title                                           validate              value == \"Login Page\"\nGet Title                                           evaluate              value if value == \"some value\" else \"something else\"\n</pre>\n<h2 id=\"Implicit waiting\">Implicit waiting</h2>\n<p>Browser library and Playwright have many mechanisms to help in waiting for elements. Playwright will auto-wait before performing actions on elements. Please see <a href=\"https://playwright.dev/docs/actionability/\">Auto-waiting on Playwright documentation</a> for more information.</p>\n<p>On top of Playwright auto-waiting Browser assertions will wait and retry for specified time before failing any <a href=\"#Assertions\" class=\"name\">Assertions</a>. Time is specified in Browser library initialization with <code>retry_assertions_for</code>.</p>\n<p>Browser library also includes explicit waiting keywords such as <a href=\"#Wait%20For%20Elements%20State\" class=\"name\">Wait for Elements State</a> if more control for waiting is needed.</p>\n<h2 id=\"Experimental: Re-using same node process\">Experimental: Re-using same node process</h2>\n<p>Browser library integrated nodejs and python. The NodeJS side can be also executed as a standalone process. Browser libraries running on the same machine can talk to that instead of starting new node processes. This can speed execution when running tests parallel. To start node side run on the directory when the Browser package is <code>PLAYWRIGHT_BROWSERS_PATH=0 node Browser/wrapper/index.js PORT</code>.</p>\n<p><code>PORT</code> is the port you want to use for the node process. To execute tests then with pabot for example do <code>ROBOT_FRAMEWORK_BROWSER_NODE_PORT=PORT pabot ..</code>.</p>\n<h2 id=\"Experimental: Provide parameters to node process\">Experimental: Provide parameters to node process</h2>\n<p>Browser library is integrated with NodeJSand and Python. Browser library starts a node process, to communicate Playwright API in NodeJS side. It is possible to provide parameters for the started node process by defining ROBOT_FRAMEWORK_BROWSER_NODE_DEBUG_OPTIONS environment variable, before starting the test execution. Example: <code>ROBOT_FRAMEWORK_BROWSER_NODE_DEBUG_OPTIONS=--inspect;robot path/to/tests</code>. There can be multiple arguments defined in the environment variable and arguments must be separated with comma.</p>\n<h2 id=\"Scope Setting\">Scope Setting</h2>\n<p>Some keywords which manipulates library settings have a scope argument. With that scope argument one can set the \"live time\" of that setting. Available Scopes are: <span class=\"name\">Global</span>, <span class=\"name\">Suite</span> and <span class=\"name\">Test</span>/<span class=\"name\">Task</span> See <a href=\"#type-Scope\" class=\"name\">Scope</a>. Is a scope finished, this scoped setting, like timeout, will no longer be used.</p>\n<p>Live Times:</p>\n<ul>\n<li>A <span class=\"name\">Global</span> scope will live forever until it is overwritten by another <span class=\"name\">Global</span> scope. Or locally temporarily overridden by a more narrow scope.</li>\n<li>A <span class=\"name\">Suite</span> scope will locally override the <span class=\"name\">Global</span> scope and live until the end of the Suite within it is set, or if it is overwritten by a later setting with <span class=\"name\">Global</span> or same scope. Children suite does inherit the setting from the parent suite but also may have its own local <span class=\"name\">Suite</span> setting that then will be inherited to its children suites.</li>\n<li>A <span class=\"name\">Test</span> or <span class=\"name\">Task</span> scope will be inherited from its parent suite but when set, lives until the end of that particular test or task.</li>\n</ul>\n<p>A new set higher order scope will always remove the lower order scope which may be in charge. So the setting of a <span class=\"name\">Suite</span> scope from a test, will set that scope to the robot file suite where that test is and removes the <span class=\"name\">Test</span> scope that may have been in place.</p>\n<h2 id=\"Extending Browser library with a JavaScript module\">Extending Browser library with a JavaScript module</h2>\n<p>Browser library can be extended with JavaScript. The module must be in CommonJS format that Node.js uses. You can translate your ES6 module to Node.js CommonJS style with Babel. Many other languages can be also translated to modules that can be used from Node.js. For example TypeScript, PureScript and ClojureScript just to mention few.</p>\n<pre>\nasync function myGoToKeyword(url, args, page, logger, playwright) {\n  logger(args.toString())\n  playwright.coolNewFeature()\n  return await page.goto(url);\n}\n</pre>\n<p>Functions can contain any number of arguments and arguments may have default values.</p>\n<p>There are some reserved arguments that are not accessible from Robot Framework side. They are injected to the function if they are in the arguments:</p>\n<p><code>page</code>: <a href=\"https://playwright.dev/docs/api/class-page\">the playwright Page object</a>.</p>\n<p><code>context</code>: <a href=\"https://playwright.dev/docs/api/class-browsercontext\">the playwright BrowserContext object</a>.</p>\n<p><code>browser</code>: <a href=\"https://playwright.dev/docs/api/class-browser\">the playwright Browser object</a>.</p>\n<p><code>args</code>: the rest of values from Robot Framework keyword call <code>*args</code>.</p>\n<p><code>logger</code>: callback function that takes strings as arguments and writes them to robot log. Can be called multiple times.</p>\n<p><code>playwright</code>: playwright module (* from 'playwright'). Useful for integrating with Playwright features that Browser library doesn't support with it's own keywords. <a href=\"https://playwright.dev/docs/api/class-playwright\">API docs</a></p>\n<p>also argument name <code>self</code> can not be used.</p>\n<h3 id=\"Example module.js\">Example module.js</h3>\n<pre>\nasync function myGoToKeyword(pageUrl, page) {\n  await page.goto(pageUrl);\n  return await page.title();\n}\nexports.__esModule = true;\nexports.myGoToKeyword = myGoToKeyword;\n</pre>\n<h3 id=\"Example Robot Framework side\">Example Robot Framework side</h3>\n<pre>\n<b>*</b> Settings <b>*</b>\nLibrary   Browser  jsextension=${CURDIR}/module.js\n\n<b>*</b> Test Cases <b>*</b>\nHello\n  New Page\n  ${title}=  myGoToKeyword  <a href=\"https://playwright.dev\">https://playwright.dev</a>\n  Should be equal  ${title}  Playwright\n</pre>\n<p>Also selector syntax can be extended with a custom selector using a js module</p>\n<h3 id=\"Example module keyword for custom selector registering\">Example module keyword for custom selector registering</h3>\n<pre>\nasync function registerMySelector(playwright) {\nplaywright.selectors.register(\"myselector\", () =&gt; ({\n   // Returns the first element matching given selector in the root's subtree.\n   query(root, selector) {\n      return root.querySelector(<span class=\"name\">a[data-title=\"${selector}\"]</span>);\n    },\n\n    // Returns all elements matching given selector in the root's subtree.\n    queryAll(root, selector) {\n      return Array.from(root.querySelectorAll(<span class=\"name\">a[data-title=\"${selector}\"]</span>));\n    }\n}));\nreturn 1;\n}\nexports.__esModule = true;\nexports.registerMySelector = registerMySelector;\n</pre>\n<h2 id=\"Plugins\">Plugins</h2>\n<p>Browser library offers plugins as a way to modify and add library keywords and modify some of the internal functionality without creating a new library or hacking the source code. See plugin API <a href=\"https://github.com/MarketSquare/robotframework-browser/blob/main/docs/plugins/README.md\">documentation</a> for further details.</p>\n<h2 id=\"Language\">Language</h2>\n<p>Browser library offers possibility to translate keyword names and documentation to new language. If language is defined, Browser library will search from <a href=\"https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#module-search-path\">module search path</a> Python packages starting with <span class=\"name\">robotframework_browser_translation</span> by using <a href=\"https://packaging.python.org/en/latest/guides/creating-and-discovering-plugins/\">Python pluging API</a>. Library is using naming convention to find Python plugins.</p>\n<p>The package must implement single API call, <code>get_language</code> without any arguments. Method must return a dictionary containing two keys: <code>language</code> and <code>path</code>. The language key value defines which language the package contains. Also value should match (case insensitive) the library <code>language</code> import parameter. The path parameter value should be full path to the translation file.</p>\n<h3 id=\"Translation file\">Translation file</h3>\n<p>The file name or extension is not important, but data must be in <a href=\"https://www.json.org/json-en.html\">json</a> format. The keys of json are the methods names, not the keyword names, which implements keywords. Value of key is json object which contains two keys: <code>name</code> and <code>doc</code>. The <code>name</code> key contains the keyword translated name and <span class=\"name\">doc</span> contains translated documentation. Providing doc and name are optional, example translation json file can only provide translations to keyword names or only to documentation. But it is always recommended to provide translation to both name and doc. Special key <code>__intro__</code> is for class level documentation and <code>__init__</code> is for init level documentation. These special values <code>name</code> can not be translated, instead <code>name</code> should be kept the same.</p>\n<h3 id=\"Generating template translation file\">Generating template translation file</h3>\n<p>Template translation file, with English language can be created by running: <span class=\"name\">rfbrowser translation /path/to/translation.json</span> command. Command does not provide translations to other languages, it only provides easy way to create full list keywords and their documentation in correct format. It is also possible to add keywords from library plugins and js extensions by providing <span class=\"name\">--plugings</span> and <span class=\"name\">--jsextension</span> arguments to command. Example: <span class=\"name\">rfbrowser translation --plugings myplugin.SomePlugin --jsextension /path/ot/jsplugin.js /path/to/translation.json</span></p>\n<p>Example project for translation can be found from <a href=\"https://github.com/MarketSquare/robotframework-browser-translation-fi\">robotframework-browser-translation-fi</a> repository.</p>",
-  "version": "19.7.2",
-  "generated": "2025-10-18T15:39:31+00:00",
+  "version": "19.10.1",
+  "generated": "2025-10-20T01:33:31+00:00",
   "type": "LIBRARY",
   "scope": "GLOBAL",
   "docFormat": "HTML",
-  "source": "C:\\Python313\\Lib\\site-packages\\Browser\\browser.py",
+  "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\browser.py",
   "lineno": 121,
   "tags": [
     "Assertion",
@@ -443,7 +443,7 @@
       "doc": "<p>Browser library can be taken into use with optional arguments:</p>\n<table border=\"1\">\n<tr>\n<th>Argument</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>auto_closing_level</code></td>\n<td>Configure context and page automatic closing. Default is <code>TEST</code>, for more details, see <a href=\"#type-AutoClosingLevel\" class=\"name\">AutoClosingLevel</a></td>\n</tr>\n<tr>\n<td><code>auto_delete_passed_tracing</code></td>\n<td>If <code>auto_closing_level</code> is set to <code>SUITE</code> or <code>TEST</code> and <code>tracing</code> of <a href=\"#New%20Context\" class=\"name\">New Context</a> active, traces of passed tests or suites, depending on the context scope, not be saved. Also temp files will all be deleted after the whole execution ends.</td>\n</tr>\n<tr>\n<td><code>enable_playwright_debug</code></td>\n<td>Enable low level debug information from the playwright to playwright-log.txt file. For more details, see <a href=\"#type-PlaywrightLogTypes\" class=\"name\">PlaywrightLogTypes</a>.</td>\n</tr>\n<tr>\n<td><code>enable_presenter_mode</code></td>\n<td>Automatic highlights the interacted components, slowMo and a small pause at the end. Can be enabled by giving True or can be customized by giving a dictionary: <span class=\"name\">{\"duration\": \"2 seconds\", \"width\": \"2px\", \"style\": \"dotted\", \"color\": \"blue\"}</span> Where <span class=\"name\">duration</span> is time format in Robot Framework format, defaults to 2 seconds. <span class=\"name\">width</span> is width of the marker in pixels, defaults the <span class=\"name\">2px</span>. <span class=\"name\">style</span> is the style of border, defaults to <span class=\"name\">dotted</span>. <span class=\"name\">color</span> is the color of the marker, defaults to <span class=\"name\">blue</span>. By default, the call banner keyword is also enabled unless explicitly disabled.</td>\n</tr>\n<tr>\n<td><code>external_browser_executable</code></td>\n<td>Dict mapping name of browser to path of executable of a browser. Will make opening new browsers of the given type use the set executablePath. Currently only configuring of <span class=\"name\">chromium</span> to a separate executable (chrome, chromium and Edge executables all work with recent versions) works.</td>\n</tr>\n<tr>\n<td><code>highlight_on_failure</code></td>\n<td>If set to <code>True</code>, will highlight the element in the screenshot when a keyword fails, by highlighting the selector used in the failed keyword. If set to <code>False</code>, will not highlight the element.</td>\n</tr>\n<tr>\n<td><code>jsextension</code></td>\n<td>Path to Javascript modules exposed as extra keywords. The modules must be in CommonJS. It can either be a single path, a comma-separated lists of path or a real list of strings</td>\n</tr>\n<tr>\n<td><code>language</code></td>\n<td>Defines language which is used to translate keyword names and documentation.</td>\n</tr>\n<tr>\n<td><code>playwright_process_host</code></td>\n<td>Hostname / Host address which should be used when spawning the Playwright process. Defaults to 127.0.0.1.</td>\n</tr>\n<tr>\n<td><code>playwright_process_port</code></td>\n<td>Experimental reusing of playwright process. <code>playwright_process_port</code> is preferred over environment variable <code>ROBOT_FRAMEWORK_BROWSER_NODE_PORT</code>. See <a href=\"#Experimental%3A%20Re-using%20same%20node%20process\" class=\"name\">Experimental: Re-using same node process</a> for more details.</td>\n</tr>\n<tr>\n<td><code>plugins</code></td>\n<td>Allows extending the Browser library with external Python classes. Can either be a single class/module, a comma-separated list or a real list of strings</td>\n</tr>\n<tr>\n<td><code>retry_assertions_for</code></td>\n<td>Timeout for retrying assertions on keywords before failing the keywords. This timeout starts counting from the first failure. Global <code>timeout</code> will still be in effect. This allows stopping execution faster to assertion failure when element is found fast.</td>\n</tr>\n<tr>\n<td><code>run_on_failure</code></td>\n<td>Sets the keyword to execute in case of a failing Browser keyword. It can be the name of any keyword. If the keyword has arguments those must be separated with two spaces for example <code>My keyword \\ arg1 \\ arg2</code>. If no extra action should be done after a failure, set it to <code>None</code> or any other robot falsy value. Run on failure is not applied when library methods are executed directly from Python.</td>\n</tr>\n<tr>\n<td><code>selector_prefix</code></td>\n<td>Prefix for all selectors. This is useful when you need to use add an iframe selector before each selector.</td>\n</tr>\n<tr>\n<td><code>show_keyword_call_banner</code></td>\n<td>If set to <code>True</code>, will show a banner with the keyword name and arguments before the keyword is executed at the bottom of the page. If set to <code>False</code>, will not show the banner. If set to None, which is the default, will show the banner only if the presenter mode is enabled. <a href=\"#Get%20Page%20Source\" class=\"name\">Get Page Source</a> and <a href=\"#Take%20Screenshot\" class=\"name\">Take Screenshot</a> will not show the banner, because that could negatively affect your test cases/tasks. This feature may be super helpful when you are debugging your tests and using tracing from <a href=\"#New%20Context\" class=\"name\">New Context</a> or <span class=\"name\">Video recording</span> features.</td>\n</tr>\n<tr>\n<td><code>strict</code></td>\n<td>If keyword selector points multiple elements and keywords should interact with one element, keyword will fail if <code>strict</code> mode is true. Strict mode can be changed individually in keywords or by <code>Set Strict Mode</code> keyword.</td>\n</tr>\n<tr>\n<td><code>timeout</code></td>\n<td>Timeout for keywords that operate on elements. The keywords will wait for this time for the element to appear into the page. Defaults to \"10s\" =&gt; 10 seconds.</td>\n</tr>\n<tr>\n<td><code>tracing_group_mode</code></td>\n<td>Defines how Robot Framework keyword calls are logged in Playwright trace log. Default is <span class=\"name\">Full</span>. For more details, see <a href=\"#type-TracingGroupMode\" class=\"name\">TracingGroupMode</a>.</td>\n</tr>\n</table>",
       "shortdoc": "Browser library can be taken into use with optional arguments:",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\browser.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\browser.py",
       "lineno": 796
     }
   ],
@@ -673,8 +673,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\cookie.py",
-      "lineno": 91
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\cookie.py",
+      "lineno": 90
     },
     {
       "name": "Add Locator Handler Click",
@@ -799,8 +799,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\locator_handler.py",
-      "lineno": 25
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\locator_handler.py",
+      "lineno": 24
     },
     {
       "name": "Add Locator Handler Custom",
@@ -885,8 +885,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\locator_handler.py",
-      "lineno": 100
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\locator_handler.py",
+      "lineno": 99
     },
     {
       "name": "Add Style Tag",
@@ -912,7 +912,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\evaluation.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\evaluation.py",
       "lineno": 138
     },
     {
@@ -952,7 +952,7 @@
         "Clock",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\clock.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\clock.py",
       "lineno": 95
     },
     {
@@ -992,8 +992,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 1648
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 1713
     },
     {
       "name": "Check Checkbox",
@@ -1032,8 +1032,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 650
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 668
     },
     {
       "name": "Clear Permissions",
@@ -1045,8 +1045,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 628
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 632
     },
     {
       "name": "Clear Text",
@@ -1072,7 +1072,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
       "lineno": 118
     },
     {
@@ -1112,8 +1112,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 293
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 305
     },
     {
       "name": "Click With Options",
@@ -1295,8 +1295,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 321
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 333
     },
     {
       "name": "Close Browser",
@@ -1335,8 +1335,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 124
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 117
     },
     {
       "name": "Close Browser Server",
@@ -1362,8 +1362,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 519
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 543
     },
     {
       "name": "Close Context",
@@ -1449,8 +1449,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 169
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 162
     },
     {
       "name": "Close Page",
@@ -1468,6 +1468,12 @@
                 "union": false
               },
               {
+                "name": "NewPageDetails",
+                "typedoc": "NewPageDetails",
+                "nested": [],
+                "union": false
+              },
+              {
                 "name": "str",
                 "typedoc": "string",
                 "nested": [],
@@ -1479,7 +1485,7 @@
           "defaultValue": "CURRENT",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "page: SelectionType | str = CURRENT"
+          "repr": "page: SelectionType | NewPageDetails | str = CURRENT"
         },
         {
           "name": "context",
@@ -1547,15 +1553,27 @@
           "repr": "runBeforeUnload: bool = False"
         }
       ],
-      "returnType": null,
+      "returnType": {
+        "name": "list",
+        "typedoc": "list",
+        "nested": [
+          {
+            "name": "dict",
+            "typedoc": "dictionary",
+            "nested": [],
+            "union": false
+          }
+        ],
+        "union": false
+      },
       "doc": "<p>Closes the <code>page</code> in <code>context</code> in <code>browser</code>.</p>\n<p>Defaults to current for all three. Active page is set to the page that was active before this one. See <a href=\"#Browser%2C%20Context%20and%20Page\" class=\"name\">Browser, Context and Page</a> for more information about Page and related concepts.</p>\n<p><code>runBeforeUnload</code> defines where to run the <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event\">before unload</a> page handlers. Defaults to false.</p>\n<table border=\"1\">\n<tr>\n<th>Argument</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>page</code></td>\n<td>Page to close. <code>CURRENT</code> selects the active page. <code>ALL</code> closes all pages. When a page id is provided, that page is closed.</td>\n</tr>\n<tr>\n<td><code>context</code></td>\n<td>Context where to close page. <code>CURRENT</code> selects the active context. <code>ALL</code> closes all contexts. When a context id is provided, that context is closed.</td>\n</tr>\n<tr>\n<td><code>browser</code></td>\n<td>Browser where to close page. <code>CURRENT</code> selects the active browser. <code>ALL</code> closes all browsers. When a browser id is provided, that browser is closed.</td>\n</tr>\n</table>\n<p>Returns a list of dictionaries containing id, errors and console messages from the page.</p>\n<p>Example</p>\n<pre>\n<a href=\"#Close%20Page\" class=\"name\">Close Page</a>                                       # Closes current page, within the current context and browser\n<a href=\"#Close%20Page\" class=\"name\">Close Page</a>    CURRENT     CURRENT     CURRENT    # Closes current page, within the current context and browser\n<a href=\"#Close%20Page\" class=\"name\">Close Page</a>    ALL         ALL         ALL        # Closes all pages, within all contexts and browsers\n</pre>\n<p><a href=\"https://forum.robotframework.org/t//4241\">Comment &gt;&gt;</a></p>",
       "shortdoc": "Closes the ``page`` in ``context`` in ``browser``.",
       "tags": [
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 265
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 264
     },
     {
       "name": "Connect To Browser",
@@ -1628,8 +1646,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 351
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 375
     },
     {
       "name": "Crawl Site",
@@ -1701,8 +1719,8 @@
       "tags": [
         "Crawling"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\crawling.py",
-      "lineno": 14
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\crawling.py",
+      "lineno": 13
     },
     {
       "name": "Delete All Cookies",
@@ -1714,8 +1732,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\cookie.py",
-      "lineno": 152
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\cookie.py",
+      "lineno": 151
     },
     {
       "name": "Deselect Options",
@@ -1741,8 +1759,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 766
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 784
     },
     {
       "name": "Download",
@@ -1824,7 +1842,7 @@
       "tags": [
         "Page Content"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\evaluation.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\evaluation.py",
       "lineno": 154
     },
     {
@@ -1877,8 +1895,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 1054
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 1072
     },
     {
       "name": "Drag And Drop By Coordinates",
@@ -1956,8 +1974,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 1093
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 1117
     },
     {
       "name": "Drag And Drop Relative To",
@@ -2022,8 +2040,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 1127
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 1151
     },
     {
       "name": "Eat All Cookies",
@@ -2032,8 +2050,8 @@
       "doc": "<p>Eat all cookies for all easter.</p>\n<p><a href=\"https://forum.robotframework.org/t//4250\">Comment &gt;&gt;</a></p>",
       "shortdoc": "Eat all cookies for all easter.",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\cookie.py",
-      "lineno": 162
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\cookie.py",
+      "lineno": 161
     },
     {
       "name": "Emulate Media",
@@ -2150,8 +2168,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\pdf.py",
-      "lineno": 153
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\pdf.py",
+      "lineno": 152
     },
     {
       "name": "Evaluate JavaScript",
@@ -2235,7 +2253,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\evaluation.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\evaluation.py",
       "lineno": 28
     },
     {
@@ -2288,7 +2306,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
       "lineno": 201
     },
     {
@@ -2341,7 +2359,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
       "lineno": 88
     },
     {
@@ -2368,8 +2386,145 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 534
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 546
+    },
+    {
+      "name": "Get Aria Snapshot",
+      "args": [
+        {
+          "name": "selector",
+          "type": {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "selector: str"
+        },
+        {
+          "name": "return_type",
+          "type": {
+            "name": "AriaSnapshotReturnType",
+            "typedoc": "AriaSnapshotReturnType",
+            "nested": [],
+            "union": false
+          },
+          "defaultValue": "yaml",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "return_type: AriaSnapshotReturnType = yaml"
+        },
+        {
+          "name": "assertion_operator",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "AssertionOperator",
+                "typedoc": "AssertionOperator",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "assertion_operator: AssertionOperator | None = None"
+        },
+        {
+          "name": "assertion_expected",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "Any",
+                "typedoc": "Any",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "assertion_expected: Any | None = None"
+        },
+        {
+          "name": "message",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "message: str | None = None"
+        }
+      ],
+      "returnType": {
+        "name": "Union",
+        "typedoc": null,
+        "nested": [
+          {
+            "name": "str",
+            "typedoc": "string",
+            "nested": [],
+            "union": false
+          },
+          {
+            "name": "dict",
+            "typedoc": "dictionary",
+            "nested": [],
+            "union": false
+          }
+        ],
+        "union": true
+      },
+      "doc": "<p>Returns the aria snapshot of the element found by <code>selector</code>.</p>\n<table border=\"1\">\n<tr>\n<th>Arguments</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>selector</code></td>\n<td>Selector from which the info is to be retrieved. See the <a href=\"#Finding%20elements\" class=\"name\">Finding elements</a> section for details about the selectors.</td>\n</tr>\n<tr>\n<td><code>return_type</code></td>\n<td>Defines the return type. Possible values are <code>yaml</code> (default) and <code>dict</code>. If <code>yaml</code> is selected, the returned value is a string in YAML format. If <code>dict</code> is selected, the returned value is a dictionary.</td>\n</tr>\n<tr>\n<td><code>assertion_operator</code></td>\n<td>See <a href=\"#Assertions\" class=\"name\">Assertions</a> for further details. Defaults to None.</td>\n</tr>\n<tr>\n<td><code>assertion_expected</code></td>\n<td>Expected value for the state</td>\n</tr>\n<tr>\n<td><code>message</code></td>\n<td>overrides the default error message for assertion.</td>\n</tr>\n</table>\n<p>Keyword uses strict mode, see <a href=\"#Finding%20elements\" class=\"name\">Finding elements</a> for more details about strict mode.</p>\n<p>Optionally asserts that the state matches the specified assertion. See <a href=\"#Assertions\" class=\"name\">Assertions</a> for further details for the assertion arguments. By default assertion is not done.</p>\n<p>Example:</p>\n<pre>\n${aria} =    <a href=\"#Get%20Aria%20Snapshot\" class=\"name\">Get Aria Snapshot</a>    id=main   # returns YAML string\nLog Many    ${aria}\n${aria_dict} =    <a href=\"#Get%20Aria%20Snapshot\" class=\"name\">Get Aria Snapshot</a>    id=main    dict   # returns dictionary\nLog Many    ${aria_dict}\n</pre>\n<p><a href=\"https://forum.robotframework.org/t//4303\">Comment &gt;&gt;</a></p>",
+      "shortdoc": "Returns the aria snapshot of the element found by ``selector``.",
+      "tags": [
+        "Assertion",
+        "Getter",
+        "PageContent"
+      ],
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 62
     },
     {
       "name": "Get Attribute",
@@ -2505,8 +2660,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 277
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 333
     },
     {
       "name": "Get Attribute Names",
@@ -2605,8 +2760,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 340
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 396
     },
     {
       "name": "Get BoundingBox",
@@ -2775,8 +2930,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 1132
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 1188
     },
     {
       "name": "Get Browser Catalog",
@@ -2880,8 +3035,8 @@
         "BrowserControl",
         "Getter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 1010
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 1032
     },
     {
       "name": "Get Browser Ids",
@@ -2898,6 +3053,84 @@
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
           "repr": "browser: SelectionType = ALL"
+        },
+        {
+          "name": "assertion_operator",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "AssertionOperator",
+                "typedoc": "AssertionOperator",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "assertion_operator: AssertionOperator | None = None"
+        },
+        {
+          "name": "assertion_expected",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "Any",
+                "typedoc": "Any",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": null,
+          "kind": "VAR_POSITIONAL",
+          "required": false,
+          "repr": "*assertion_expected: Any | None"
+        },
+        {
+          "name": "message",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": "None",
+          "kind": "NAMED_ONLY",
+          "required": false,
+          "repr": "message: str | None = None"
         }
       ],
       "returnType": {
@@ -2916,11 +3149,12 @@
       "doc": "<p>Returns a list of ids from open browsers. See <a href=\"#Browser%2C%20Context%20and%20Page\" class=\"name\">Browser, Context and Page</a> for more information about Browser and related concepts.</p>\n<p><code>browser</code> Defaults to <code>ALL</code></p>\n<ul>\n<li><code>ALL</code> / <code>ANY</code> Returns all ids as a list.</li>\n<li><code>ACTIVE</code> / <code>CURRENT</code> Returns the id of the currently active browser as list.</li>\n</ul>\n<table border=\"1\">\n<tr>\n<th>Arguments</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>browser</code></td>\n<td>The browser to get the ids from. <code>ALL</code> for all open browsers, <code>ACTIVE</code> for the currently active browser or the id of the browser to get the ids from.</td>\n</tr>\n</table>\n<p>The ACTIVE browser is a synonym for the CURRENT Browser.</p>\n<p><a href=\"https://forum.robotframework.org/t//4260\">Comment &gt;&gt;</a></p>",
       "shortdoc": "Returns a list of ids from open browsers. See `Browser, Context and Page` for more information about Browser and related concepts.",
       "tags": [
+        "Assertion",
         "BrowserControl",
         "Getter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 1429
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 1467
     },
     {
       "name": "Get Checkbox State",
@@ -3030,8 +3264,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 561
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 617
     },
     {
       "name": "Get Classes",
@@ -3130,8 +3364,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 393
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 449
     },
     {
       "name": "Get Client Size",
@@ -3267,8 +3501,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 1327
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 1383
     },
     {
       "name": "Get Console Log",
@@ -3425,8 +3659,8 @@
         "BrowserControl",
         "Getter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 1112
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 1134
     },
     {
       "name": "Get Context Ids",
@@ -3447,15 +3681,106 @@
         {
           "name": "browser",
           "type": {
-            "name": "SelectionType",
-            "typedoc": "SelectionType",
-            "nested": [],
-            "union": false
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "SelectionType",
+                "typedoc": "SelectionType",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
           },
           "defaultValue": "ALL",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "browser: SelectionType = ALL"
+          "repr": "browser: SelectionType | str = ALL"
+        },
+        {
+          "name": "assertion_operator",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "AssertionOperator",
+                "typedoc": "AssertionOperator",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "assertion_operator: AssertionOperator | None = None"
+        },
+        {
+          "name": "assertion_expected",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "Any",
+                "typedoc": "Any",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": null,
+          "kind": "VAR_POSITIONAL",
+          "required": false,
+          "repr": "*assertion_expected: Any | None"
+        },
+        {
+          "name": "message",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": "None",
+          "kind": "NAMED_ONLY",
+          "required": false,
+          "repr": "message: str | None = None"
         }
       ],
       "returnType": {
@@ -3467,11 +3792,12 @@
       "doc": "<p>Returns a list of context ids based on the browser selection. See <a href=\"#Browser%2C%20Context%20and%20Page\" class=\"name\">Browser, Context and Page</a> for more information about Context and related concepts.</p>\n<p><code>ALL</code> and <code>ANY</code> are synonyms. <code>ACTIVE</code> and <code>CURRENT</code> are also synonyms.</p>\n<table border=\"1\">\n<tr>\n<th>Arguments</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>context</code></td>\n<td>The context to get the ids from. <code>ALL</code> will return all ids from selected browser(s), <code>ACTIVE</code> for the one active context of each selected browser.</td>\n</tr>\n<tr>\n<td><code>browser</code></td>\n<td>The browser to get the context ids from. <code>ALL</code> Context ids from all open browsers shall be fetched. <code>ACTIVE</code> Only context ids from the active browser shall be fetched.</td>\n</tr>\n</table>\n<p>The ACTIVE context of the ACTIVE Browser is the <code>Current</code> Context.</p>\n<p><a href=\"https://forum.robotframework.org/t//4264\">Comment &gt;&gt;</a></p>",
       "shortdoc": "Returns a list of context ids based on the browser selection. See `Browser, Context and Page` for more information about Context and related concepts.",
       "tags": [
+        "Assertion",
         "BrowserControl",
         "Getter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 1459
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 1499
     },
     {
       "name": "Get Cookie",
@@ -3528,8 +3854,8 @@
         "BrowserControl",
         "Getter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\cookie.py",
-      "lineno": 181
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\cookie.py",
+      "lineno": 180
     },
     {
       "name": "Get Cookies",
@@ -3580,8 +3906,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\cookie.py",
-      "lineno": 29
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\cookie.py",
+      "lineno": 28
     },
     {
       "name": "Get Device",
@@ -3612,7 +3938,7 @@
         "BrowserControl",
         "Getter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\device_descriptors.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\device_descriptors.py",
       "lineno": 39
     },
     {
@@ -3630,7 +3956,7 @@
         "BrowserControl",
         "Getter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\device_descriptors.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\device_descriptors.py",
       "lineno": 24
     },
     {
@@ -3754,8 +4080,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 1463
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 1519
     },
     {
       "name": "Get Element",
@@ -3786,8 +4112,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 843
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 899
     },
     {
       "name": "Get Element By",
@@ -3870,8 +4196,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 999
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 1055
     },
     {
       "name": "Get Element By Role",
@@ -4163,8 +4489,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 904
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 960
     },
     {
       "name": "Get Element Count",
@@ -4274,8 +4600,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 611
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 667
     },
     {
       "name": "Get Element States",
@@ -4413,8 +4739,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 1377
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 1433
     },
     {
       "name": "Get Elements",
@@ -4452,8 +4778,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 870
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 926
     },
     {
       "name": "Get Page Errors",
@@ -4603,8 +4929,8 @@
         "BrowserControl",
         "Getter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 1184
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 1206
     },
     {
       "name": "Get Page Ids",
@@ -4625,28 +4951,132 @@
         {
           "name": "context",
           "type": {
-            "name": "SelectionType",
-            "typedoc": "SelectionType",
-            "nested": [],
-            "union": false
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "SelectionType",
+                "typedoc": "SelectionType",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
           },
           "defaultValue": "ALL",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "context: SelectionType = ALL"
+          "repr": "context: SelectionType | str = ALL"
         },
         {
           "name": "browser",
           "type": {
-            "name": "SelectionType",
-            "typedoc": "SelectionType",
-            "nested": [],
-            "union": false
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "SelectionType",
+                "typedoc": "SelectionType",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
           },
           "defaultValue": "ALL",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "browser: SelectionType = ALL"
+          "repr": "browser: SelectionType | str = ALL"
+        },
+        {
+          "name": "assertion_operator",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "AssertionOperator",
+                "typedoc": "AssertionOperator",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "assertion_operator: AssertionOperator | None = None"
+        },
+        {
+          "name": "assertion_expected",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "Any",
+                "typedoc": "Any",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": null,
+          "kind": "VAR_POSITIONAL",
+          "required": false,
+          "repr": "*assertion_expected: Any | None"
+        },
+        {
+          "name": "message",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": "None",
+          "kind": "NAMED_ONLY",
+          "required": false,
+          "repr": "message: str | None = None"
         }
       ],
       "returnType": {
@@ -4655,14 +5085,15 @@
         "nested": [],
         "union": false
       },
-      "doc": "<p>Returns a list of page ids based on the context and browser selection. See <a href=\"#Browser%2C%20Context%20and%20Page\" class=\"name\">Browser, Context and Page</a> for more information about Page and related concepts.</p>\n<p><code>ALL</code> and <code>ANY</code> are synonyms. <code>ACTIVE</code> and <code>CURRENT</code> are also synonyms.</p>\n<table border=\"1\">\n<tr>\n<th>Arguments</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>page</code></td>\n<td>The page to get the ids from. <code>ALL</code> Returns all page ids as a list. <code>ACTIVE</code> Returns the id of the active page as a list.</td>\n</tr>\n<tr>\n<td><code>context</code></td>\n<td>The context to get the page ids from. <code>ALL</code> Page ids from all contexts shall be fetched. <code>ACTIVE</code> Only page ids from the active context shall be fetched.</td>\n</tr>\n<tr>\n<td><code>browser</code></td>\n<td>The browser to get the page ids from. <code>ALL</code> Page ids from all open browsers shall be fetched. <code>ACTIVE</code> Only page ids from the active browser shall be fetched.</td>\n</tr>\n</table>\n<p>Example:</p>\n<pre>\nTest Case\n    <a href=\"#New%20Page\" class=\"name\">New Page</a>    <a href=\"http://www.imbus.de\">http://www.imbus.de</a>\n    <a href=\"#New%20Page\" class=\"name\">New Page</a>    <a href=\"http://www.reaktor.com\">http://www.reaktor.com</a>\n    ${current_page}=   <a href=\"#Get%20Page%20Ids\" class=\"name\">Get Page IDs</a>    ACTIVE    ACTIVE    ACTIVE\n    Log                Current page ID is: ${current_page}[0]\n    ${all_pages}=      <a href=\"#Get%20Page%20Ids\" class=\"name\">Get Page IDs</a>    CURRENT   CURRENT   ALL\n    Log Many           These are all Page IDs    @{all_pages}\n</pre>\n<p>The ACTIVE page of the ACTIVE context of the ACTIVE Browser is the <code>Current</code> Page.</p>\n<p><a href=\"https://forum.robotframework.org/t//4274\">Comment &gt;&gt;</a></p>",
+      "doc": "<p>Returns a list of page ids based on the context and browser selection. See <a href=\"#Browser%2C%20Context%20and%20Page\" class=\"name\">Browser, Context and Page</a> for more information about Page and related concepts.</p>\n<p><code>ALL</code> and <code>ANY</code> are synonyms. <code>ACTIVE</code> and <code>CURRENT</code> are also synonyms.</p>\n<table border=\"1\">\n<tr>\n<th>Arguments</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>page</code></td>\n<td>The page to get the ids from. <code>ALL</code> Returns all page ids as a list. <code>ACTIVE</code> Returns the id of the active page as a list.</td>\n</tr>\n<tr>\n<td><code>context</code></td>\n<td>The context id or selection to get the page ids from. <code>ALL</code> Page ids from all contexts shall be fetched. <code>ACTIVE</code> Only page ids from the active context shall be fetched.</td>\n</tr>\n<tr>\n<td><code>browser</code></td>\n<td>The browser id or selection to get the page ids from. <code>ALL</code> Page ids from all open browsers shall be fetched. <code>ACTIVE</code> Only page ids from the active browser shall be fetched.</td>\n</tr>\n</table>\n<p>Example:</p>\n<pre>\nTest Case\n    <a href=\"#New%20Page\" class=\"name\">New Page</a>    <a href=\"https://www.imbus.de\">https://www.imbus.de</a>\n    <a href=\"#New%20Page\" class=\"name\">New Page</a>    <a href=\"https://www.reaktor.com\">https://www.reaktor.com</a>\n    ${current_page}=   <a href=\"#Get%20Page%20Ids\" class=\"name\">Get Page IDs</a>    ACTIVE    ACTIVE    ACTIVE\n    Log                Current page ID is: ${current_page}[0]\n    ${all_pages}=      <a href=\"#Get%20Page%20Ids\" class=\"name\">Get Page IDs</a>    CURRENT   CURRENT   ALL\n    Log Many           These are all Page IDs    @{all_pages}\n</pre>\n<p>Example to count open pages of a specific context:</p>\n<pre>\nTest Case\n   <a href=\"#New%20Browser\" class=\"name\">New Browser</a>    firefox\n   ${context}=    <a href=\"#New%20Context\" class=\"name\">New Context</a>\n   <a href=\"#New%20Page\" class=\"name\">New Page</a>    <a href=\"https://www.imbus.de\">https://www.imbus.de</a>\n   <a href=\"#New%20Page\" class=\"name\">New Page</a>    <a href=\"https://www.op.fi\">https://www.op.fi</a>\n   <a href=\"#New%20Context\" class=\"name\">New Context</a>\n   <a href=\"#New%20Page\" class=\"name\">New Page</a>    <a href=\"https://www.robocon.io\">https://www.robocon.io</a>\n   ${page_count}=    <a href=\"#Get%20Page%20Ids\" class=\"name\">Get Page IDs</a>    ALL    ${context}    ALL    then    len(value)\n   Should Be Equal As Integers    ${page_count}    2\n</pre>\n<p>The ACTIVE page of the ACTIVE context of the ACTIVE Browser is the <code>Current</code> Page.</p>\n<p><a href=\"https://forum.robotframework.org/t//4274\">Comment &gt;&gt;</a></p>",
       "shortdoc": "Returns a list of page ids based on the context and browser selection. See `Browser, Context and Page` for more information about Page and related concepts.",
       "tags": [
+        "Assertion",
         "BrowserControl",
         "Getter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 1502
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 1583
     },
     {
       "name": "Get Page Source",
@@ -4759,8 +5190,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 90
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 146
     },
     {
       "name": "Get Property",
@@ -4883,8 +5314,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 218
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 274
     },
     {
       "name": "Get Scroll Position",
@@ -5033,8 +5464,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 1271
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 1327
     },
     {
       "name": "Get Scroll Size",
@@ -5189,8 +5620,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 1215
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 1271
     },
     {
       "name": "Get Select Options",
@@ -5307,8 +5738,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 440
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 496
     },
     {
       "name": "Get Selected Options",
@@ -5433,8 +5864,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 499
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 555
     },
     {
       "name": "Get Style",
@@ -5622,8 +6053,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 1061
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 1117
     },
     {
       "name": "Get Table Cell Element",
@@ -5680,8 +6111,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 702
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 758
     },
     {
       "name": "Get Table Cell Index",
@@ -5791,8 +6222,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 757
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 813
     },
     {
       "name": "Get Table Row Index",
@@ -5902,8 +6333,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 800
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 856
     },
     {
       "name": "Get Text",
@@ -6013,8 +6444,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 166
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 222
     },
     {
       "name": "Get Title",
@@ -6111,8 +6542,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 130
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 186
     },
     {
       "name": "Get Url",
@@ -6209,8 +6640,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 60
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 116
     },
     {
       "name": "Get Viewport Size",
@@ -6333,8 +6764,8 @@
         "BrowserControl",
         "Getter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\getters.py",
-      "lineno": 651
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\getters.py",
+      "lineno": 707
     },
     {
       "name": "Go Back",
@@ -6346,8 +6777,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 60
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 61
     },
     {
       "name": "Go Forward",
@@ -6359,8 +6790,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 50
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 51
     },
     {
       "name": "Go To",
@@ -6425,8 +6856,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 70
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 71
     },
     {
       "name": "Grant Permissions",
@@ -6478,8 +6909,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 606
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 610
     },
     {
       "name": "Handle Future Dialogs",
@@ -6517,8 +6948,8 @@
       "tags": [
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 830
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 848
     },
     {
       "name": "Highlight Elements",
@@ -6617,7 +7048,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\evaluation.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\evaluation.py",
       "lineno": 82
     },
     {
@@ -6722,8 +7153,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 483
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 495
     },
     {
       "name": "Http",
@@ -6818,7 +7249,7 @@
       "tags": [
         "HTTP"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\network.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\network.py",
       "lineno": 59
     },
     {
@@ -6884,8 +7315,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 1283
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 1313
     },
     {
       "name": "Keyboard Key",
@@ -6924,8 +7355,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 1254
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 1284
     },
     {
       "name": "Launch Browser Server",
@@ -7399,8 +7830,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 466
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 490
     },
     {
       "name": "LocalStorage Clear",
@@ -7439,7 +7870,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
       "lineno": 124
     },
     {
@@ -7576,7 +8007,7 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
       "lineno": 42
     },
     {
@@ -7629,7 +8060,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
       "lineno": 103
     },
     {
@@ -7695,8 +8126,138 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
       "lineno": 81
+    },
+    {
+      "name": "Merge Coverage Reports",
+      "args": [
+        {
+          "name": "input_folder",
+          "type": {
+            "name": "Path",
+            "typedoc": "Path",
+            "nested": [],
+            "union": false
+          },
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "input_folder: Path"
+        },
+        {
+          "name": "output_folder",
+          "type": {
+            "name": "Path",
+            "typedoc": "Path",
+            "nested": [],
+            "union": false
+          },
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "output_folder: Path"
+        },
+        {
+          "name": "config_file",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "Path",
+                "typedoc": "Path",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "config_file: Path | None = None"
+        },
+        {
+          "name": "name",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "str",
+                "typedoc": "string",
+                "nested": [],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "name: str | None = None"
+        },
+        {
+          "name": "reports",
+          "type": {
+            "name": "Union",
+            "typedoc": null,
+            "nested": [
+              {
+                "name": "list",
+                "typedoc": "list",
+                "nested": [
+                  {
+                    "name": "str",
+                    "typedoc": "string",
+                    "nested": [],
+                    "union": false
+                  }
+                ],
+                "union": false
+              },
+              {
+                "name": "None",
+                "typedoc": "None",
+                "nested": [],
+                "union": false
+              }
+            ],
+            "union": true
+          },
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "reports: list[str] | None = None"
+        }
+      ],
+      "returnType": {
+        "name": "Path",
+        "typedoc": "Path",
+        "nested": [],
+        "union": false
+      },
+      "doc": "<p>Combines multiple raw coverage reports to single report.</p>\n<table border=\"1\">\n<tr>\n<th>Arguments</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>input_folder</code></td>\n<td>Path to the base folder where the raw coverage reports are located.</td>\n</tr>\n<tr>\n<td><code>output_folder</code></td>\n<td>Path to the folder where the combined report is stored.</td>\n</tr>\n<tr>\n<td><code>config_file</code></td>\n<td>Optional path to <a href=\"https://www.npmjs.com/package/monocart-coverage-reports#options\">options file</a></td>\n</tr>\n<tr>\n<td><code>name</code></td>\n<td>Optional name for the combined report.</td>\n</tr>\n<tr>\n<td><code>reports</code></td>\n<td>Optional report format (default is \"v8\").</td>\n</tr>\n</table>\n<p>The input_folder argument is the base folder where the coverage reports are located. Keyword will look into each subfolder and if the subfolder contains \"raw\" folder, it will use data from the \"raw\" folder for combined reports.</p>\n<p>The output_folder argument is the folder where the combined report is saved. If folder does not exist, it is created. If folder exists, it's content is deleted before report is created.</p>\n<p>The output_folder and input_folder must be full paths to the folders.</p>\n<p>The config_file argument is optional and can be used to provide a path to a monocart-coverage-reports options file. For more details see: <a href=\"https://www.npmjs.com/package/monocart-coverage-reports#config-file\">https://www.npmjs.com/package/monocart-coverage-reports#config-file</a></p>\n<p>The name argument is optional and can be used to provide a name for the combined report.</p>\n<p>The reports argument is optional and can be used to provide a list of reporters to create. Default is 'v8'.</p>\n<p>The keyword combines only the raw reports. To get raw reports, <a href=\"#Start%20Coverage\" class=\"name\">Start Coverage</a> keyword must be called with <span class=\"name\">raw=True</span> argument. Keyword should be used when there is a need to combine multiple reports to single report. For example, when tests are run in multiple pages, the example in below demonstrates how to use the keyword.</p>\n<p>Example:</p>\n<pre>\n<a href=\"#New%20Page\" class=\"name\">New Page</a>\n<a href=\"#Start%20Coverage\" class=\"name\">Start Coverage</a>\n<a href=\"#Go%20To\" class=\"name\">Go To</a>    ${LOGIN_URL}\nTest Feature X In The Page\n<a href=\"#Stop%20Coverage\" class=\"name\">Stop Coverage</a>\n<a href=\"#New%20Page\" class=\"name\">New Page</a>\n<a href=\"#Start%20Coverage\" class=\"name\">Start Coverage</a>\n<a href=\"#Go%20To\" class=\"name\">Go To</a>    ${LOGIN_URL}\nTest Feature Y In The Page\n<a href=\"#Stop%20Coverage\" class=\"name\">Stop Coverage</a>\n<a href=\"#Merge%20Coverage%20Reports\" class=\"name\">Merge Coverage Reports</a>    ${OUTPUT_DIR}/browser/coverage    ${OUTPUT_DIR}/browser/combined-coverage\n</pre>",
+      "shortdoc": "Combines multiple raw coverage reports to single report.",
+      "tags": [
+        "Coverage",
+        "Setter"
+      ],
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\coverage.py",
+      "lineno": 119
     },
     {
       "name": "Mouse Button",
@@ -7826,8 +8387,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 985
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 1003
     },
     {
       "name": "Mouse Move",
@@ -7879,8 +8440,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 1214
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 1244
     },
     {
       "name": "Mouse Move Relative To",
@@ -7945,8 +8506,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 1174
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 1201
     },
     {
       "name": "Mouse Wheel",
@@ -7985,8 +8546,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 1234
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 1264
     },
     {
       "name": "New Browser",
@@ -8408,8 +8969,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 395
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 419
     },
     {
       "name": "New Context",
@@ -9144,8 +9705,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 553
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 577
     },
     {
       "name": "New Page",
@@ -9202,8 +9763,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 938
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 960
     },
     {
       "name": "New Persistent Context",
@@ -10203,8 +10764,8 @@
       "doc": "<p>Open a new <a href=\"https://playwright.dev/docs/api/class-browsertype#browser-type-launch-persistent-context\">persistent context</a>.</p>\n<p><a href=\"#New%20Persistent%20Context\" class=\"name\">New Persistent Context</a> does basically executes <a href=\"#New%20Browser\" class=\"name\">New Browser</a>, <a href=\"#New%20Context\" class=\"name\">New Context</a> and <a href=\"#New%20Page\" class=\"name\">New Page</a> in one step with setting a profile at the same time.</p>\n<p>This keyword returns a tuple of browser id, context id and page details. (New in Browser 15.0.0)</p>\n<table border=\"1\">\n<tr>\n<th>Argument</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>userDataDir</code></td>\n<td>Path to a User Data Directory, which stores browser session data like cookies and local storage. More details for Chromium and Firefox. Note that Chromium's user data directory is the parent directory of the \"Profile Path\" seen at <a href=\"chrome://version\">chrome://version</a>. Pass an empty string to use a temporary directory instead.</td>\n</tr>\n<tr>\n<td><code>browser</code></td>\n<td>Browser type to use. Default is Chromium.</td>\n</tr>\n<tr>\n<td><code>headless</code></td>\n<td>Whether to run browser in headless mode. Defaults to <code>True</code>.</td>\n</tr>\n<tr>\n<td>other arguments</td>\n<td>Please see <a href=\"#New%20Browser\" class=\"name\">New Browser</a>, <a href=\"#New%20Context\" class=\"name\">New Context</a> and <a href=\"#New%20Page\" class=\"name\">New Page</a> for more information about the other arguments.</td>\n</tr>\n</table>\n<p>If you want to use extensions you need to download the extension as a .zip, enable loading the extension, and load the extensions using chromium arguments like below. Extensions only work with chromium and with a headful browser.</p>\n<pre>\n${launch_args}=  Set Variable  [\"--disable-extensions-except=./ublock/uBlock0.chromium\", \"--load-extension=./ublock/uBlock0.chromium\"]\n${browserId}  ${contextId}  ${pageDetails}=  <a href=\"#New%20Persistent%20Context\" class=\"name\">New Persistent Context</a>  browser=chromium  headless=False  url=https://robocon,io  args=${launch_args}\n</pre>\n<p>Check <a href=\"#New%20Browser\" class=\"name\">New Browser</a>, <a href=\"#New%20Context\" class=\"name\">New Context</a> and <a href=\"#New%20Page\" class=\"name\">New Page</a> for the specific argument docs.</p>\n<p><a href=\"https://forum.robotframework.org/t//4309\">Comment &gt;&gt;</a></p>",
       "shortdoc": "Open a new [https://playwright.dev/docs/api/class-browsertype#browser-type-launch-persistent-context | persistent context].",
       "tags": [],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 672
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 695
     },
     {
       "name": "Open Browser",
@@ -10290,8 +10851,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 82
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 75
     },
     {
       "name": "Pause At",
@@ -10317,7 +10878,7 @@
         "Clock",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\clock.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\clock.py",
       "lineno": 69
     },
     {
@@ -10348,16 +10909,42 @@
           "kind": "VAR_POSITIONAL",
           "required": false,
           "repr": "*keys: str"
+        },
+        {
+          "name": "press_duration",
+          "type": {
+            "name": "timedelta",
+            "typedoc": "timedelta",
+            "nested": [],
+            "union": false
+          },
+          "defaultValue": "0:00:00",
+          "kind": "NAMED_ONLY",
+          "required": false,
+          "repr": "press_duration: timedelta = 0:00:00"
+        },
+        {
+          "name": "key_delay",
+          "type": {
+            "name": "timedelta",
+            "typedoc": "timedelta",
+            "nested": [],
+            "union": false
+          },
+          "defaultValue": "0:00:00",
+          "kind": "NAMED_ONLY",
+          "required": false,
+          "repr": "key_delay: timedelta = 0:00:00"
         }
       ],
       "returnType": null,
-      "doc": "<p>Types the given key combination into element found by <code>selector</code>.</p>\n<table border=\"1\">\n<tr>\n<th>Arguments</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>selector</code></td>\n<td>Selector of the text field. See the <a href=\"#Finding%20elements\" class=\"name\">Finding elements</a> section for details about the selectors.</td>\n</tr>\n<tr>\n<td><code>*keys</code></td>\n<td>Keys to be press after each other. Using + to chain combine modifiers with a single keypress <code>Control+Shift+T</code> is supported.</td>\n</tr>\n</table>\n<p>Supports values like \"a, b\" which will be automatically typed.</p>\n<p>Also supports identifiers for keys like <code>ArrowLeft</code> or <code>Backspace</code>.</p>\n<p>Keyword uses strict mode, see <a href=\"#Finding%20elements\" class=\"name\">Finding elements</a> for more details about strict mode.</p>\n<p>See playwright's documentation for a more comprehensive list of supported input keys. <a href=\"https://playwright.dev/docs/api/class-page#page-press\">Playwright docs for press.</a></p>\n<p>Example:</p>\n<pre>\n# Keyword         Selector                    *Keys\n<a href=\"#Press%20Keys\" class=\"name\">Press Keys</a>      //*[@id=\"username_field\"]    h    e   l   o   ArrowLeft   l\n</pre>\n<p><a href=\"https://forum.robotframework.org/t//4311\">Comment &gt;&gt;</a></p>",
+      "doc": "<p>Types the given key combination into element found by <code>selector</code>.</p>\n<table border=\"1\">\n<tr>\n<th>Arguments</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>selector</code></td>\n<td>Selector of the text field. See the <a href=\"#Finding%20elements\" class=\"name\">Finding elements</a> section for details about the selectors.</td>\n</tr>\n<tr>\n<td><code>*keys</code></td>\n<td>Keys to be press after each other. Using + to chain combine modifiers with a single keypress <code>Control+Shift+T</code> is supported.</td>\n</tr>\n<tr>\n<td><code>press_duration</code></td>\n<td>Delay between keydown and keyup of each key. Can be given as seconds (float) or as Robot Framework time string. Defaults to <code>0 ms</code>. Example: <code>50 ms</code></td>\n</tr>\n<tr>\n<td><code>key_delay</code></td>\n<td>Delay between key presses. Can be given as seconds (float) or as Robot Framework time string. Defaults to <code>0 ms</code>. Example: <code>50 ms</code></td>\n</tr>\n</table>\n<p>Supports values like \"a, b\" which will be automatically typed.</p>\n<p>Also supports identifiers for keys like <code>ArrowLeft</code> or <code>Backspace</code>.</p>\n<p>Keyword uses strict mode, see <a href=\"#Finding%20elements\" class=\"name\">Finding elements</a> for more details about strict mode.</p>\n<p>See playwright's documentation for a more comprehensive list of supported input keys. <a href=\"https://playwright.dev/docs/api/class-page#page-press\">Playwright docs for press.</a></p>\n<p>Example:</p>\n<pre>\n# Keyword         Selector                    *Keys\n<a href=\"#Press%20Keys\" class=\"name\">Press Keys</a>      //*[@id=\"username_field\"]    h    e   l   o   ArrowLeft   l\n</pre>\n<p><a href=\"https://forum.robotframework.org/t//4311\">Comment &gt;&gt;</a></p>",
       "shortdoc": "Types the given key combination into element found by ``selector``.",
       "tags": [
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
       "lineno": 258
     },
     {
@@ -10396,7 +10983,7 @@
       "tags": [
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\promises.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\promises.py",
       "lineno": 39
     },
     {
@@ -10423,7 +11010,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\promises.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\promises.py",
       "lineno": 268
     },
     {
@@ -10494,7 +11081,7 @@
         "BrowserControl",
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\promises.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\promises.py",
       "lineno": 140
     },
     {
@@ -10533,8 +11120,8 @@
       "tags": [
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 453
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 465
     },
     {
       "name": "Register Keyword To Run On Failure",
@@ -10603,8 +11190,8 @@
       "tags": [
         "Config"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\runonfailure.py",
-      "lineno": 31
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\runonfailure.py",
+      "lineno": 29
     },
     {
       "name": "Reload",
@@ -10656,8 +11243,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 579
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 583
     },
     {
       "name": "Remove Locator Handler",
@@ -10683,8 +11270,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\locator_handler.py",
-      "lineno": 90
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\locator_handler.py",
+      "lineno": 89
     },
     {
       "name": "Resume Clock",
@@ -10696,7 +11283,7 @@
         "Clock",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\clock.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\clock.py",
       "lineno": 57
     },
     {
@@ -10918,8 +11505,8 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\pdf.py",
-      "lineno": 43
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\pdf.py",
+      "lineno": 42
     },
     {
       "name": "Save Storage State",
@@ -10936,8 +11523,8 @@
         "BrowserControl",
         "Getter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 1587
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 1652
     },
     {
       "name": "Scroll By",
@@ -11015,8 +11602,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 592
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 607
     },
     {
       "name": "Scroll To",
@@ -11094,8 +11681,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 555
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 567
     },
     {
       "name": "Scroll To Element",
@@ -11121,8 +11708,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 629
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 647
     },
     {
       "name": "Select Options By",
@@ -11181,8 +11768,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 696
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 714
     },
     {
       "name": "SessionStorage Clear",
@@ -11221,8 +11808,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
-      "lineno": 229
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
+      "lineno": 227
     },
     {
       "name": "SessionStorage Get Item",
@@ -11358,7 +11945,7 @@
         "Getter",
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
       "lineno": 146
     },
     {
@@ -11411,7 +11998,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
       "lineno": 206
     },
     {
@@ -11477,7 +12064,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\webapp_state.py",
       "lineno": 185
     },
     {
@@ -11574,7 +12161,7 @@
       "tags": [
         "Config"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\assertion_formatter.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\assertion_formatter.py",
       "lineno": 98
     },
     {
@@ -11619,8 +12206,8 @@
         "Config",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 363
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 367
     },
     {
       "name": "Set Default Run Before Unload",
@@ -11651,8 +12238,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 336
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 360
     },
     {
       "name": "Set Geolocation",
@@ -11717,8 +12304,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 548
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 552
     },
     {
       "name": "Set Highlight On Failure",
@@ -11762,8 +12349,8 @@
         "Config",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 459
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 463
     },
     {
       "name": "Set Offline",
@@ -11789,8 +12376,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 535
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 539
     },
     {
       "name": "Set Retry Assertions For",
@@ -11834,8 +12421,8 @@
         "Config",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 395
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 399
     },
     {
       "name": "Set Selector Prefix",
@@ -11892,8 +12479,8 @@
         "Config",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 426
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 430
     },
     {
       "name": "Set Strict Mode",
@@ -11932,7 +12519,7 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\strict_mode.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\strict_mode.py",
       "lineno": 20
     },
     {
@@ -11972,7 +12559,7 @@
         "Clock",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\clock.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\clock.py",
       "lineno": 23
     },
     {
@@ -12012,8 +12599,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 509
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 513
     },
     {
       "name": "Show Keyword Banner",
@@ -12102,8 +12689,8 @@
         "Config",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 478
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 482
     },
     {
       "name": "Start Coverage",
@@ -12221,8 +12808,8 @@
         "Experimental",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\coverage.py",
-      "lineno": 26
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\coverage.py",
+      "lineno": 28
     },
     {
       "name": "Stop Coverage",
@@ -12239,8 +12826,8 @@
         "Coverage",
         "Getter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\coverage.py",
-      "lineno": 88
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\coverage.py",
+      "lineno": 90
     },
     {
       "name": "Switch Browser",
@@ -12271,8 +12858,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 1260
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 1282
     },
     {
       "name": "Switch Context",
@@ -12329,8 +12916,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 1284
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 1315
     },
     {
       "name": "Switch Page",
@@ -12348,6 +12935,12 @@
                 "union": false
               },
               {
+                "name": "SelectionType",
+                "typedoc": "SelectionType",
+                "nested": [],
+                "union": false
+              },
+              {
                 "name": "str",
                 "typedoc": "string",
                 "nested": [],
@@ -12359,7 +12952,7 @@
           "defaultValue": null,
           "kind": "POSITIONAL_OR_NAMED",
           "required": true,
-          "repr": "id: NewPageDetails | str"
+          "repr": "id: NewPageDetails | SelectionType | str"
         },
         {
           "name": "context",
@@ -12426,8 +13019,8 @@
         "BrowserControl",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
-      "lineno": 1340
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\playwright_state.py",
+      "lineno": 1368
     },
     {
       "name": "Take Screenshot",
@@ -12796,8 +13389,8 @@
       "tags": [
         "PageContent"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
-      "lineno": 132
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\browser_control.py",
+      "lineno": 136
     },
     {
       "name": "Tap",
@@ -12927,8 +13520,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 397
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 409
     },
     {
       "name": "Type Secret",
@@ -12993,7 +13586,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
       "lineno": 136
     },
     {
@@ -13059,7 +13652,7 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
       "lineno": 50
     },
     {
@@ -13099,8 +13692,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 673
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 691
     },
     {
       "name": "Upload File By Selector",
@@ -13165,8 +13758,8 @@
         "PageContent",
         "Setter"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 1331
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 1361
     },
     {
       "name": "Wait For",
@@ -13191,7 +13784,7 @@
       "tags": [
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\promises.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\promises.py",
       "lineno": 227
     },
     {
@@ -13283,8 +13876,8 @@
         "PageContent",
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 859
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 877
     },
     {
       "name": "Wait For Alerts",
@@ -13421,8 +14014,8 @@
         "PageContent",
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
-      "lineno": 909
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\interaction.py",
+      "lineno": 927
     },
     {
       "name": "Wait For All Promises",
@@ -13433,7 +14026,7 @@
       "tags": [
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\promises.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\promises.py",
       "lineno": 253
     },
     {
@@ -13530,8 +14123,8 @@
         "PageContent",
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\waiter.py",
-      "lineno": 231
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\waiter.py",
+      "lineno": 238
     },
     {
       "name": "Wait For Elements State",
@@ -13616,13 +14209,13 @@
         }
       ],
       "returnType": null,
-      "doc": "<p>Waits for the element found by <code>selector</code> to satisfy state option.</p>\n<p>Note that Browser library has <a href=\"#Implicit%20waiting\" class=\"name\">Implicit waiting</a> mechanisms. Depending on the situation you might not need to use <a href=\"#Wait%20For%20Elements%20State\" class=\"name\">Wait for Elements State</a>.</p>\n<p>State options could be either appear/disappear from dom, or become visible/hidden. If at the moment of calling the keyword, the selector already satisfies the condition, the keyword will return immediately.</p>\n<p>If the selector doesn't satisfy the condition within the timeout the keyword will FAIL.</p>\n<table border=\"1\">\n<tr>\n<th>Arguments</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>selector</code></td>\n<td>Selector of the corresponding object. See the <a href=\"#Finding%20elements\" class=\"name\">Finding elements</a> section for details about the selectors.</td>\n</tr>\n<tr>\n<td><code>state</code></td>\n<td>See <a href=\"#type-ElementState\" class=\"name\">ElementState</a> for explanation.</td>\n</tr>\n<tr>\n<td><code>timeout</code></td>\n<td>uses default timeout from library if not set.</td>\n</tr>\n<tr>\n<td><code>message</code></td>\n<td>overrides the default error message. The <code>message</code> argument accepts <span class=\"name\">{selector}</span>, <span class=\"name\">{function}</span>, and <span class=\"name\">{timeout}</span> <a href=\"https://docs.python.org/3/library/stdtypes.html#str.format\">format</a> options. The <span class=\"name\">{function}</span> formatter is same <code>state</code> argument value.</td>\n</tr>\n</table>\n<p>Keyword uses strict mode, see <a href=\"#Finding%20elements\" class=\"name\">Finding elements</a> for more details about strict mode.</p>\n<p>Example:</p>\n<pre>\n<a href=\"#Wait%20For%20Elements%20State\" class=\"name\">Wait For Elements State</a>    //h1    visible    timeout=2 s\n<a href=\"#Wait%20For%20Elements%20State\" class=\"name\">Wait For Elements State</a>    //hi    focused    1s\n</pre>\n<p><a href=\"https://forum.robotframework.org/t//4345\">Comment &gt;&gt;</a></p>",
+      "doc": "<p>Waits for the element found by <code>selector</code> to satisfy state option.</p>\n<p>Note that Browser library has <a href=\"#Implicit%20waiting\" class=\"name\">Implicit waiting</a> mechanisms. Depending on the situation you might not need to use <a href=\"#Wait%20For%20Elements%20State\" class=\"name\">Wait for Elements State</a>.</p>\n<p>If users experience reliability issues with this keyword, consider using <a href=\"#Wait%20For%20Condition\" class=\"name\">Wait for Condition</a> with <a href=\"#Get%20Element%20States\" class=\"name\">Get Element States</a> keyword instead. <a href=\"#Wait%20For%20Elements%20State\" class=\"name\">Wait For Elements State</a> uses features of Playwright to wait for element states. However, in some situations these features might not work as expected. <a href=\"#Wait%20For%20Condition\" class=\"name\">Wait for Condition</a> with <a href=\"#Get%20Element%20States\" class=\"name\">Get Element States</a> is more robust as it uses Browser library's own waiting mechanisms that actively polls the state of an element.</p>\n<p>State options could be either appear/disappear from dom, or become visible/hidden. If at the moment of calling the keyword, the selector already satisfies the condition, the keyword will return immediately.</p>\n<p>If the selector doesn't satisfy the condition within the timeout the keyword will FAIL.</p>\n<table border=\"1\">\n<tr>\n<th>Arguments</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>selector</code></td>\n<td>Selector of the corresponding object. See the <a href=\"#Finding%20elements\" class=\"name\">Finding elements</a> section for details about the selectors.</td>\n</tr>\n<tr>\n<td><code>state</code></td>\n<td>See <a href=\"#type-ElementState\" class=\"name\">ElementState</a> for explanation.</td>\n</tr>\n<tr>\n<td><code>timeout</code></td>\n<td>uses default timeout from library if not set.</td>\n</tr>\n<tr>\n<td><code>message</code></td>\n<td>overrides the default error message. The <code>message</code> argument accepts <span class=\"name\">{selector}</span>, <span class=\"name\">{function}</span>, and <span class=\"name\">{timeout}</span> <a href=\"https://docs.python.org/3/library/stdtypes.html#str.format\">format</a> options. The <span class=\"name\">{function}</span> formatter is same <code>state</code> argument value.</td>\n</tr>\n</table>\n<p>Keyword uses strict mode, see <a href=\"#Finding%20elements\" class=\"name\">Finding elements</a> for more details about strict mode.</p>\n<p>Example:</p>\n<pre>\n<a href=\"#Wait%20For%20Elements%20State\" class=\"name\">Wait For Elements State</a>    //h1    visible    timeout=2 s\n<a href=\"#Wait%20For%20Elements%20State\" class=\"name\">Wait For Elements State</a>    //hi    focused    1s\n</pre>\n<p><a href=\"https://forum.robotframework.org/t//4345\">Comment &gt;&gt;</a></p>",
       "shortdoc": "Waits for the element found by ``selector`` to satisfy state option.",
       "tags": [
         "PageContent",
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\waiter.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\waiter.py",
       "lineno": 39
     },
     {
@@ -13740,8 +14333,8 @@
         "PageContent",
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\waiter.py",
-      "lineno": 155
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\waiter.py",
+      "lineno": 162
     },
     {
       "name": "Wait For Load State",
@@ -13793,8 +14386,8 @@
         "PageContent",
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\waiter.py",
-      "lineno": 300
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\waiter.py",
+      "lineno": 307
     },
     {
       "name": "Wait For Navigation",
@@ -13872,7 +14465,7 @@
         "HTTP",
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\network.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\network.py",
       "lineno": 279
     },
     {
@@ -13943,7 +14536,7 @@
         "HTTP",
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\network.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\network.py",
       "lineno": 143
     },
     {
@@ -14027,7 +14620,7 @@
         "HTTP",
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\network.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\network.py",
       "lineno": 169
     },
     {
@@ -14067,7 +14660,7 @@
         "HTTP",
         "Wait"
       ],
-      "source": "C:\\Python313\\Lib\\site-packages\\Browser\\keywords\\network.py",
+      "source": "C:\\Projects\\robot-keywords-hub\\robot-hub-env\\Lib\\site-packages\\Browser\\keywords\\network.py",
       "lineno": 255,
       "deprecated": true
     }
@@ -14079,13 +14672,17 @@
       "doc": "<p>Any value is accepted. No conversion is done.</p>",
       "usages": [
         "Evaluate JavaScript",
+        "Get Aria Snapshot",
         "Get Attribute",
         "Get BoundingBox",
         "Get Browser Catalog",
+        "Get Browser Ids",
         "Get Client Size",
         "Get Console Log",
+        "Get Context Ids",
         "Get Download State",
         "Get Page Errors",
+        "Get Page Ids",
         "Get Page Source",
         "Get Property",
         "Get Scroll Position",
@@ -14143,21 +14740,46 @@
     },
     {
       "type": "Enum",
+      "name": "AriaSnapshotReturnType",
+      "doc": "<p>Defines the return type of the AriaSnapshot.</p>\n<table border=\"1\">\n<tr>\n<th>Value</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>dict</code></td>\n<td>returns the snapshot as a dictionary.</td>\n</tr>\n<tr>\n<td><code>yaml</code></td>\n<td>returns the snapshot as a yaml string.</td>\n</tr>\n</table>",
+      "usages": [
+        "Get Aria Snapshot"
+      ],
+      "accepts": [
+        "string"
+      ],
+      "members": [
+        {
+          "name": "dict",
+          "value": "1"
+        },
+        {
+          "name": "yaml",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "type": "Enum",
       "name": "AssertionOperator",
       "doc": "<p>Currently supported assertion operators are:</p>\n<table border=\"1\">\n<tr>\n<th>Operator</th>\n<th>Alternative Operators</th>\n<th>Description</th>\n<th>Validate Equivalent</th>\n</tr>\n<tr>\n<td><code>==</code></td>\n<td><code>equal</code>, <code>equals</code>, <code>should be</code></td>\n<td>Checks if returned value is equal to expected value.</td>\n<td><code>value == expected</code></td>\n</tr>\n<tr>\n<td><code>!=</code></td>\n<td><code>inequal</code>, <code>should not be</code></td>\n<td>Checks if returned value is not equal to expected value.</td>\n<td><code>value != expected</code></td>\n</tr>\n<tr>\n<td><code>&gt;</code></td>\n<td><code>greater than</code></td>\n<td>Checks if returned value is greater than expected value.</td>\n<td><code>value &gt; expected</code></td>\n</tr>\n<tr>\n<td><code>&gt;=</code></td>\n<td></td>\n<td>Checks if returned value is greater than or equal to expected value.</td>\n<td><code>value &gt;= expected</code></td>\n</tr>\n<tr>\n<td><code>&lt;</code></td>\n<td><code>less than</code></td>\n<td>Checks if returned value is less than expected value.</td>\n<td><code>value &lt; expected</code></td>\n</tr>\n<tr>\n<td><code>&lt;=</code></td>\n<td></td>\n<td>Checks if returned value is less than or equal to expected value.</td>\n<td><code>value &lt;= expected</code></td>\n</tr>\n<tr>\n<td><code>*=</code></td>\n<td><code>contains</code></td>\n<td>Checks if returned value contains expected value as substring.</td>\n<td><code>expected in value</code></td>\n</tr>\n<tr>\n<td></td>\n<td><code>not contains</code></td>\n<td>Checks if returned value does not contain expected value as substring.</td>\n<td><code>expected in value</code></td>\n</tr>\n<tr>\n<td><code>^=</code></td>\n<td><code>should start with</code>, <code>starts</code></td>\n<td>Checks if returned value starts with expected value.</td>\n<td><code>re.search(f\"^{expected}\", value)</code></td>\n</tr>\n<tr>\n<td><code>$=</code></td>\n<td><code>should end with</code>, <code>ends</code></td>\n<td>Checks if returned value ends with expected value.</td>\n<td><code>re.search(f\"{expected}$\", value)</code></td>\n</tr>\n<tr>\n<td><code>matches</code></td>\n<td></td>\n<td>Checks if given RegEx matches minimum once in returned value.</td>\n<td><code>re.search(expected, value)</code></td>\n</tr>\n<tr>\n<td><code>validate</code></td>\n<td></td>\n<td>Checks if given Python expression evaluates to <code>True</code>.</td>\n<td></td>\n</tr>\n<tr>\n<td><code>evaluate</code></td>\n<td><code>then</code></td>\n<td>When using this operator, the keyword does return the evaluated Python expression.</td>\n<td></td>\n</tr>\n</table>\n<p>Currently supported formatters for assertions are:</p>\n<table border=\"1\">\n<tr>\n<th>Formatter</th>\n<th>Description</th>\n</tr>\n<tr>\n<td><code>normalize spaces</code></td>\n<td>Substitutes multiple spaces to single space from the value</td>\n</tr>\n<tr>\n<td><code>strip</code></td>\n<td>Removes spaces from the beginning and end of the value</td>\n</tr>\n<tr>\n<td><code>case insensitive</code></td>\n<td>Converts value to lower case before comparing</td>\n</tr>\n<tr>\n<td><code>apply to expected</code></td>\n<td>Applies rules also for the expected value</td>\n</tr>\n</table>\n<p>Formatters are applied to the value before assertion is performed and keywords returns a value where rule is applied. Formatter is only applied to the value which keyword returns and not all rules are valid for all assertion operators. If <code>apply to expected</code> formatter is defined, then formatters are then formatter are also applied to expected value.</p>",
       "usages": [
+        "Get Aria Snapshot",
         "Get Attribute",
         "Get Attribute Names",
         "Get BoundingBox",
         "Get Browser Catalog",
+        "Get Browser Ids",
         "Get Checkbox State",
         "Get Classes",
         "Get Client Size",
         "Get Console Log",
+        "Get Context Ids",
         "Get Download State",
         "Get Element Count",
         "Get Element States",
         "Get Page Errors",
+        "Get Page Ids",
         "Get Page Source",
         "Get Property",
         "Get Scroll Position",
@@ -14829,6 +15451,8 @@
       "usages": [
         "__init__",
         "Add Locator Handler Custom",
+        "Close Page",
+        "Get Aria Snapshot",
         "Get Console Log",
         "Get Cookie",
         "Get Cookies",
@@ -14906,7 +15530,7 @@
         },
         {
           "key": "downloadID",
-          "type": "typing.Optional[str]",
+          "type": "str | None",
           "required": true
         }
       ]
@@ -15754,6 +16378,7 @@
       "usages": [
         "__init__",
         "Add Locator Handler Custom",
+        "Close Page",
         "Get Attribute Names",
         "Get Browser Catalog",
         "Get Browser Ids",
@@ -15767,6 +16392,7 @@
         "Get Select Options",
         "Get Selected Options",
         "Launch Browser Server",
+        "Merge Coverage Reports",
         "New Browser",
         "New Context",
         "New Persistent Context",
@@ -15862,6 +16488,7 @@
       "name": "NewPageDetails",
       "doc": "<p>Return value of <a href=\"#New%20Page\" class=\"name\">New Page</a> keyword.</p>\n<p><code>page_id</code> is the UUID of the opened page. <code>video_path</code> path to the video or empty string if video is not created.</p>",
       "usages": [
+        "Close Page",
         "New Page",
         "Switch Page"
       ],
@@ -15896,19 +16523,23 @@
         "Download",
         "Emulate Media",
         "Evaluate JavaScript",
+        "Get Aria Snapshot",
         "Get Attribute",
         "Get Attribute Names",
         "Get BoundingBox",
         "Get Browser Catalog",
+        "Get Browser Ids",
         "Get Checkbox State",
         "Get Classes",
         "Get Client Size",
         "Get Console Log",
+        "Get Context Ids",
         "Get Download State",
         "Get Element By Role",
         "Get Element Count",
         "Get Element States",
         "Get Page Errors",
+        "Get Page Ids",
         "Get Page Source",
         "Get Property",
         "Get Scroll Position",
@@ -15931,6 +16562,7 @@
         "LocalStorage Get Item",
         "LocalStorage Remove Item",
         "LocalStorage Set Item",
+        "Merge Coverage Reports",
         "Mouse Button",
         "New Browser",
         "New Context",
@@ -16023,6 +16655,7 @@
       "name": "Path",
       "doc": "<p>Strings are converted <a href=\"https://docs.python.org/library/pathlib.html\">Path</a> objects. On Windows <code>/</code> is converted to <code>\\</code> automatically.</p>\n<p>Examples: <code>/tmp/absolute/path</code>, <code>relative/path/to/file.ext</code>, <code>name.txt</code></p>",
       "usages": [
+        "Merge Coverage Reports",
         "New Context",
         "New Persistent Context",
         "Promise To Upload File",
@@ -16828,6 +17461,7 @@
         "Fill Secret",
         "Fill Text",
         "Focus",
+        "Get Aria Snapshot",
         "Get Attribute",
         "Get Attribute Names",
         "Get BoundingBox",
@@ -16837,6 +17471,7 @@
         "Get Classes",
         "Get Client Size",
         "Get Console Log",
+        "Get Context Ids",
         "Get Cookie",
         "Get Cookies",
         "Get Device",
@@ -16848,6 +17483,7 @@
         "Get Element States",
         "Get Elements",
         "Get Page Errors",
+        "Get Page Ids",
         "Get Page Source",
         "Get Property",
         "Get Scroll Position",
@@ -16875,6 +17511,7 @@
         "LocalStorage Get Item",
         "LocalStorage Remove Item",
         "LocalStorage Set Item",
+        "Merge Coverage Reports",
         "Mouse Move Relative To",
         "New Browser",
         "New Context",
@@ -16975,6 +17612,7 @@
         "Mouse Button",
         "New Browser",
         "New Persistent Context",
+        "Press Keys",
         "Promise To Wait For Download",
         "Reload",
         "Set Browser Timeout",

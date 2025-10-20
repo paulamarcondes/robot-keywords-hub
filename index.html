@@ -21,17 +21,16 @@
                 <a href="library.html?lib=Browser">Browser</a>
                 <a href="library.html?lib=BuiltIn">BuiltIn</a>
                 <a href="library.html?lib=Collections">Collections</a>
-                <a href="library.html?lib=Database">Database</a>
+                <a href="library.html?lib=DatabaseLibrary">DatabaseLibrary</a>
                 <a href="library.html?lib=DateTime">DateTime</a>
-                <a href="library.html?lib=FakerLibrary">Faker</a>
+                <a href="library.html?lib=FakerLibrary">FakerLibrary</a>
                 <a href="library.html?lib=OperatingSystem">OperatingSystem</a>
                 <a href="library.html?lib=Process">Process</a>
-                <a href="library.html?lib=RequestsLibrary">Requests</a>
+                <a href="library.html?lib=RequestsLibrary">RequestsLibrary</a>
                 <a href="library.html?lib=Screenshot">Screenshot</a>
                 <a href="library.html?lib=SeleniumLibrary">SeleniumLibrary</a>
                 <a href="library.html?lib=String">String</a>
                 <a href="library.html?lib=XML">XML</a>
-                <a href="all-keywords.html" class="highlight"><strong>All Keywords</strong></a>
             </div>
         </div>
     </nav>
@@ -65,13 +64,16 @@
                 <button id="copyKeyword" class="btn">Copy Keyword</button>
                 <button id="openDocs" class="btn btn-secondary">Open Official Docs</button>
             </div>
-            <div id="toast" class="toast">✅ Copied!</div>
+            <div id="toast" class="toast">Copied!</div>
         </div>
     </div>
 
     <script>
         let fuse;
         let allKeywords = [];
+        // NEW: Map to store LibraryName -> Base URL
+        let libraryUrls = {}; 
+
         const resultsDiv = document.getElementById("results");
         const searchBox = document.getElementById("searchBox");
         const searchButton = document.getElementById("searchButton");
@@ -91,11 +93,49 @@
             return summary || "No documentation available.";
         }
 
+        function initializeLibraryLinks() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            // Loop through all navigation links
+            navLinks.forEach(link => {
+                // Only process links that point to library.html (i.e., the library links)
+                if (link.href.includes("library.html?lib=")) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault(); // Stop the browser from navigating to library.html
+
+                        // Extract the library name from the query string
+                        const urlParams = new URLSearchParams(new URL(this.href).search);
+                        const libName = urlParams.get('lib');
+                        
+                        // Look up the base URL from the map
+                        const baseUrl = libraryUrls[libName];
+
+                        if (baseUrl) {
+                            window.open(baseUrl, '_blank');
+                        } else {
+                            console.error('Base URL not found for library:', libName);
+                        }
+                    });
+                }
+            });
+        }
+
         fetch('data/keywords.json')
             .then(response => response.json())
             .then(keywords => {
                 allKeywords = keywords;
                 
+                // 1. Build the unique libraryUrls map 
+                // We use the full URL from the first keyword entry for each library.
+                keywords.forEach(kw => {
+                    if (!libraryUrls[kw.library] && kw.url) {
+                        // Extract the base URL by stripping the anchor (which starts with '#')
+                        const baseUrl = kw.url.split('#')[0];
+                        libraryUrls[kw.library] = baseUrl;
+                    }
+                });
+
+                // 2. Initialize search functionality
                 fuse = new Fuse(allKeywords, {
                     keys: [
                         { name: "name", weight: 0.8 },
@@ -111,9 +151,13 @@
                     ignoreFieldNorm: true,
                     includeScore: true
                 });
+
+                // 3. Attach event listeners to navigation bar
+                initializeLibraryLinks();
             });
 
         function runSearch(query) {
+            // ... (runSearch function logic remains unchanged) ...
             const trimmed = query.trim();
             resultsDiv.innerHTML = "";
             if (trimmed.length === 0) {
@@ -157,6 +201,7 @@
         searchButton.addEventListener("click", () => runSearch(searchBox.value));
 
         function openModal(keywordOrKeywords) {
+            // ... (openModal function logic remains unchanged) ...
             let keyword;
             let availableKeywords = [];
 
@@ -185,7 +230,10 @@
                 modalLibrary.innerText = "Library: " + keyword.library;
             }
             
-            modalArgs.innerText = (keyword.requiredArgs && keyword.requiredArgs.length) ? keyword.requiredArgs.join(", ") : "None";
+            // FIX: Ensure we use requiredArgs and handle the case of no required arguments
+            modalArgs.innerText = (keyword.requiredArgs && keyword.requiredArgs.length > 0) 
+                                ? keyword.requiredArgs.join(", ") 
+                                : "None";
             
             modalDoc.innerHTML = getFirstParagraph(keyword.doc);
 
