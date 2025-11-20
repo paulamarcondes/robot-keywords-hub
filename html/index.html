@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robot Framework Keyword Hub</title>
+    <link rel="icon" href="/data/robot-logo.png" type="image/png">
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="/data/robot-logo.png" alt="Logo" class="logo-icon">
+                <span>Keyword Hub</span>
+            </a>
+            <div class="nav-links">
+                <a href="https://serhatbolsu.github.io/robotframework-appiumlibrary/AppiumLibrary.html" target="_blank" rel="noopener">AppiumLibrary</a>
+                <a href="https://marketsquare.github.io/robotframework-browser/Browser.html" target="_blank" rel="noopener">Browser</a>
+                <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html" target="_blank" rel="noopener">BuiltIn</a>
+                <a href="https://robotframework.org/robotframework/latest/libraries/Collections.html" target="_blank" rel="noopener">Collections</a>
+                <a href="https://marketsquare.github.io/Robotframework-Database-Library/" target="_blank" rel="noopener">DatabaseLibrary</a>
+                <a href="https://robotframework.org/robotframework/latest/libraries/DateTime.html" target="_blank" rel="noopener">DateTime</a>
+                <a href="https://marketsquare.github.io/robotframework-faker/" target="_blank" rel="noopener">FakerLibrary</a>
+                <a href="https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html" target="_blank" rel="noopener">OperatingSystem</a>
+                <a href="https://robotframework.org/robotframework/latest/libraries/Process.html" target="_blank" rel="noopener">Process</a>
+                <a href="https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html" target="_blank" rel="noopener">RequestsLibrary</a>
+                <a href="https://robotframework.org/robotframework/latest/libraries/Screenshot.html" target="_blank" rel="noopener">Screenshot</a>
+                <a href="https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html" target="_blank" rel="noopener">SeleniumLibrary</a>
+                <a href="https://robotframework.org/robotframework/latest/libraries/String.html" target="_blank" rel="noopener">String</a>
+                <a href="https://robotframework.org/robotframework/latest/libraries/XML.html" target="_blank" rel="noopener">XML</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <section class="hero">
+            <h1 class="hero-title">Robot Framework Keyword Hub</h1>
+            <p class="hero-subtitle">Search any keyword or select a library above</p>
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="Try 'Wait Until' or 'Get Element Attribute'..." />
+            </div>
+            <div class="results" id="results"></div>
+        </section>
+    </div>
+
+    <div id="keywordModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <div id="toast" class="toast">Copied!</div>
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <p id="modalLibrary" class="modal-library"></p>
+            <p id="modalArgsLabel" class="modal-args-label">Required Arguments:</p>
+            <p id="modalArgs" class="modal-args"></p>
+            <p id="modalDoc" class="modal-doc"></p>
+            <div class="modal-buttons">
+                <button id="copyKeyword" class="btn">Copy Keyword</button>
+                <button id="openDocs" class="btn btn-secondary">Open Official Doc</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    <script src="/js/search.js"></script>
+</body>
+</html>
