@@ -11,10 +11,11 @@ body {
   margin: 0;
   padding: 0;
   font-weight: 400;
-
-/* FIX: Force the vertical scrollbar to always be visible */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* FIX: Force the vertical scrollbar to always be visible */
   overflow-y: scroll;
-
 }
 
 /* NAVBAR */
@@ -72,13 +73,16 @@ body {
 }
 
 /* HERO */
+.main-content {
+  flex: 1 0 auto;
+  display: block;
+}
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 130px;
   padding: 0 20px;
 }
 
@@ -120,34 +124,6 @@ body {
 .search-box:focus {
   border-color: #A29EA3;
   box-shadow: 0 0 0 3px rgba(162, 158, 163, 0.2);
-}
-
-/* SEARCH BUTTON */
-.search-icon {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #252527;
-  border: none;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-}
-
-.search-icon:hover {
-  background-color: #656567;
-}
-
-.search-icon svg {
-  width: 16px;
-  height: 16px;
 }
 
 /* RESULTS */
@@ -309,7 +285,7 @@ body {
 /* TOAST */
 .toast {
   position: absolute;
-  bottom: 15px;
+  top: 18px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #E9E1E4;
@@ -320,6 +296,7 @@ body {
   transition: opacity 0.3s ease;
   font-size: 14px;
   border: 1px solid #E9E2E1;
+  z-index: 1100;
 }
 
 .toast.show {

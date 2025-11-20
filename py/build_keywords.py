@@ -8,7 +8,7 @@ It only runs the docstring fallback (Phase 2) specifically for
 RequestsLibrary keywords, which have historically poor libdoc data.
 
 Usage:
-  python build_keywords.py
+  python py/build_keywords.py
 """
 
 import os
@@ -30,6 +30,7 @@ def slugify_anchor(name):
 
 # Map library "stem" names to base documentation pages.
 LIB_DOC_BASE = {
+    'AppiumLibrary': 'https://serhatbolsu.github.io/robotframework-appiumlibrary/AppiumLibrary.html',
     'Browser': 'https://marketsquare.github.io/robotframework-browser/Browser.html',
     'BuiltIn': 'https://robotframework.org/robotframework/latest/libraries/BuiltIn.html',
     'Collections': 'https://robotframework.org/robotframework/latest/libraries/Collections.html',
