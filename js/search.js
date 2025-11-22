@@ -49,7 +49,7 @@ function initializeLibraryLinks() {
     });
 }
 
-fetch('/data/keywords.json')
+fetch('./data/keywords.json')
     .then(response => response.json())
     .then(keywords => {
         allKeywords = keywords;

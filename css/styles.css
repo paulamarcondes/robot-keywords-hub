@@ -82,7 +82,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 130px;
+  margin-top: 120px;
   padding: 0 20px;
 }
 
@@ -210,7 +210,7 @@ body {
 
 .modal-title {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: #252527;
 }
 
@@ -223,10 +223,10 @@ body {
 .modal-args-label {
   color: #252527;
   font-weight: 600;
-  margin-top: 18px;
+  margin-top: 15px;
   margin-bottom: 2px;
   border-top: 1px solid #E9E2E1;
-  padding-top: 17px;
+  padding-top: 15px;
 }
 
 .modal-divider {
