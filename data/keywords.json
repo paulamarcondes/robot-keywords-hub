@@ -12821,6 +12821,974 @@
     "url": "https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Wait%20Until%20Page%20Does%20Not%20Contain%20Element"
   },
   {
+    "name": "Add Image Path",
+    "library": "SikuliLibrary",
+    "doc": "<p>Add image path</p>",
+    "args": [
+      "path"
+    ],
+    "requiredArgs": [
+      "path"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Add%20Image%20Path"
+  },
+  {
+    "name": "Capture Region",
+    "library": "SikuliLibrary",
+    "doc": "<p>Capture region</p>\n<p>Capture region passed Examples:</p>\n<table border=\"1\">\n<tr>\n<td>${coor}</td>\n<td>Create List</td>\n<td>x</td>\n<td>y</td>\n<td>w</td>\n<td>h</td>\n</tr>\n<tr>\n<td>${screenshotname}=</td>\n<td>Capture region</td>\n<td>${coor}</td>\n<td>demo.png</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>${screenshotname}=</td>\n<td>Capture region</td>\n<td>${coor}</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n</table>",
+    "args": [
+      "coordinates",
+      "imageName="
+    ],
+    "requiredArgs": [
+      "coordinates"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Capture%20Region"
+  },
+  {
+    "name": "Capture Roi",
+    "library": "SikuliLibrary",
+    "doc": "<p>Capture Roi</p>",
+    "args": [
+      "imageName="
+    ],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Capture%20Roi"
+  },
+  {
+    "name": "Capture Screen",
+    "library": "SikuliLibrary",
+    "doc": "<p>Capture whole screen, file name is returned</p>",
+    "args": [],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Capture%20Screen"
+  },
+  {
+    "name": "Change Screen Id",
+    "library": "SikuliLibrary",
+    "doc": "<p>Change screen id For multi display, user could use this keyword to switch to the correct screen</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Change screen id</td>\n<td>1</td>\n</tr>\n</table>",
+    "args": [
+      "screenId"
+    ],
+    "requiredArgs": [
+      "screenId"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Change%20Screen%20Id"
+  },
+  {
+    "name": "Clear All Highlights",
+    "library": "SikuliLibrary",
+    "doc": "<p>Clear all highlights from screen</p>",
+    "args": [],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Clear%20All%20Highlights"
+  },
+  {
+    "name": "Clear Highlight",
+    "library": "SikuliLibrary",
+    "doc": "<p>Clear highlight from screen</p>",
+    "args": [
+      "image"
+    ],
+    "requiredArgs": [
+      "image"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Clear%20Highlight"
+  },
+  {
+    "name": "Click",
+    "library": "SikuliLibrary",
+    "doc": "<p>Click</p>\n<p>Click on an image with similarity and offset. Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Click</td>\n<td>hello.png</td>\n</tr>\n</table>",
+    "args": [
+      "image",
+      "xOffset=0",
+      "yOffset=0"
+    ],
+    "requiredArgs": [
+      "image"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Click"
+  },
+  {
+    "name": "Click In",
+    "library": "SikuliLibrary",
+    "doc": "<p>Click in. Click target image in area image.</p>",
+    "args": [
+      "areaImage",
+      "targetImage"
+    ],
+    "requiredArgs": [
+      "areaImage",
+      "targetImage"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Click%20In"
+  },
+  {
+    "name": "Click Nth",
+    "library": "SikuliLibrary",
+    "doc": "<p>Click nth</p>\n<p>Click on specific image. Optionally pass similarity and sort by column or row.</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Click on nth image in region</td>\n<td>image.png</td>\n<td>1</td>\n<td></td>\n</tr>\n<tr>\n<td>Click on nth image in region</td>\n<td>image.png</td>\n<td>1</td>\n<td>${FALSE}</td>\n</tr>\n</table>",
+    "args": [
+      "image",
+      "index",
+      "sortByColumn=true"
+    ],
+    "requiredArgs": [
+      "image",
+      "index"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Click%20Nth"
+  },
+  {
+    "name": "Click On Match",
+    "library": "SikuliLibrary",
+    "doc": "<p>Click On Match there's no offset to be configured works with the keyword Return Match From Region</p>",
+    "args": [
+      "match"
+    ],
+    "requiredArgs": [
+      "match"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Click%20On%20Match"
+  },
+  {
+    "name": "Click On Region",
+    "library": "SikuliLibrary",
+    "doc": "<p>Click On Region there's no offset to be configured works with the keyword Get Extended Region From</p>",
+    "args": [
+      "region"
+    ],
+    "requiredArgs": [
+      "region"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Click%20On%20Region"
+  },
+  {
+    "name": "Click Region",
+    "library": "SikuliLibrary",
+    "doc": "<p>Click region</p>\n<p>Click on defined region cooridinates. Optionally Wait for specified time to ensure region has changed. Also, optionally set highlight</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>${coor}</td>\n<td>Create List</td>\n<td>0</td>\n<td>0</td>\n<td>100</td>\n<td>100</td>\n</tr>\n<tr>\n<td>Click Region</td>\n<td>${coor}</td>\n<td></td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Click Region</td>\n<td>${coor}</td>\n<td>0</td>\n<td></td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Click Region</td>\n<td>${coor}</td>\n<td>0</td>\n<td>2</td>\n<td></td>\n<td></td>\n</tr>\n</table>",
+    "args": [
+      "coordinates",
+      "waitChange=0",
+      "timeout=0"
+    ],
+    "requiredArgs": [
+      "coordinates"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Click%20Region"
+  },
+  {
+    "name": "Click Text",
+    "library": "SikuliLibrary",
+    "doc": "<p>Click Text</p>\n<p>Click on text. Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Click Text</td>\n<td>Hello</td>\n</tr>\n</table>",
+    "args": [
+      "text"
+    ],
+    "requiredArgs": [
+      "text"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Click%20Text"
+  },
+  {
+    "name": "Close Application",
+    "library": "SikuliLibrary",
+    "doc": "<p>Close application</p>",
+    "args": [
+      "name"
+    ],
+    "requiredArgs": [
+      "name"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Close%20Application"
+  },
+  {
+    "name": "Double Click",
+    "library": "SikuliLibrary",
+    "doc": "<p>Double click</p>",
+    "args": [
+      "image",
+      "xOffset=0",
+      "yOffset=0"
+    ],
+    "requiredArgs": [
+      "image"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Double%20Click"
+  },
+  {
+    "name": "Double Click In",
+    "library": "SikuliLibrary",
+    "doc": "<p>Double click in. Double click target image in area image.</p>",
+    "args": [
+      "areaImage",
+      "targetImage"
+    ],
+    "requiredArgs": [
+      "areaImage",
+      "targetImage"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Double%20Click%20In"
+  },
+  {
+    "name": "Double Click On Match",
+    "library": "SikuliLibrary",
+    "doc": "<p>Double Click On Match there's no offset to be configured works with the keyword Return Match From Region</p>",
+    "args": [
+      "match"
+    ],
+    "requiredArgs": [
+      "match"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Double%20Click%20On%20Match"
+  },
+  {
+    "name": "Double Click On Region",
+    "library": "SikuliLibrary",
+    "doc": "<p>Double Click On Region there's no offset to be configured works with the keyword Get Extended Region From</p>",
+    "args": [
+      "region"
+    ],
+    "requiredArgs": [
+      "region"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Double%20Click%20On%20Region"
+  },
+  {
+    "name": "Drag And Drop",
+    "library": "SikuliLibrary",
+    "doc": "<p>Drag the source image to target image. If source image is empty, drag the last match and drop at given target</p>",
+    "args": [
+      "srcImage",
+      "targetImage"
+    ],
+    "requiredArgs": [
+      "srcImage",
+      "targetImage"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Drag%20And%20Drop"
+  },
+  {
+    "name": "Drag And Drop By Offset",
+    "library": "SikuliLibrary",
+    "doc": "<p>Drag the source image to target by offset. If source image is empty, drag the last match and drop at given target</p>",
+    "args": [
+      "srcImage",
+      "xOffset",
+      "yOffset"
+    ],
+    "requiredArgs": [
+      "srcImage",
+      "xOffset",
+      "yOffset"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Drag%20And%20Drop%20By%20Offset"
+  },
+  {
+    "name": "Exists",
+    "library": "SikuliLibrary",
+    "doc": "<p>Exists</p>\n<p>Check whether image exists in screen @image: expected image in screen @timeout: wait seconds</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>${is_exist}=</td>\n<td>Exists</td>\n<td>image.png</td>\n<td>0</td>\n</tr>\n</table>",
+    "args": [
+      "image",
+      "timeout="
+    ],
+    "requiredArgs": [
+      "image"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Exists"
+  },
+  {
+    "name": "From Region Jump To",
+    "library": "SikuliLibrary",
+    "doc": "<p>From Region Jump To Create a region and translate it related to the given region, the created region will have the exactly same height and width as the passed one ${jumps} = number of 'jumps' to move, like on a chess game, jumps will be the number of squares a piece moves ${direction} = | below | above | left | right | ${margem} = add a space between jumps, must be &gt;= 1 |${translated_region} =    |    From Region Jump To  |  ${original_region}  |    below   |   4   |    1   |</p>",
+    "args": [
+      "region",
+      "direction",
+      "jumps",
+      "margin"
+    ],
+    "requiredArgs": [
+      "region",
+      "direction",
+      "jumps",
+      "margin"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#From%20Region%20Jump%20To"
+  },
+  {
+    "name": "Get Current Screen Id",
+    "library": "SikuliLibrary",
+    "doc": "<p>Get current screen id</p>",
+    "args": [],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Get%20Current%20Screen%20Id"
+  },
+  {
+    "name": "Get Extended Region From",
+    "library": "SikuliLibrary",
+    "doc": "<p>Get extended region from Extended the given image creating a region above or below with the same width The height can change using the multiplier @number_of_times_to_repeat, if 2 is given the new region will have twice the height of the orignalge</p>",
+    "args": [
+      "image",
+      "direction",
+      "number_of_times_to_repeat"
+    ],
+    "requiredArgs": [
+      "image",
+      "direction",
+      "number_of_times_to_repeat"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Get%20Extended%20Region%20From"
+  },
+  {
+    "name": "Get Extended Region From Image",
+    "library": "SikuliLibrary",
+    "doc": "<p>Get Extended Region From Image Extended the given image creating a new region above, below, on the left or on the right side, with the same height and width The height and width can change using the multiplier @number_of_times_to_repeat If orginal if giver as arguments, the region will be exactly the same location as the image, last argument is ignored Ex: If 2 is given and direction = below the new region will have twice the height of the given image and will be located right below it |${region} =    |    Get Extended Region From Image  |  image.png  |    below   |   1   | |${region} =    |    Get Extended Region From Image  |  image.png  |    original   |   1 #this argument is ignored   |</p>",
+    "args": [
+      "image",
+      "direction",
+      "number of times to repeat"
+    ],
+    "requiredArgs": [
+      "image",
+      "direction",
+      "number of times to repeat"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Get%20Extended%20Region%20From%20Image"
+  },
+  {
+    "name": "Get Extended Region From Region",
+    "library": "SikuliLibrary",
+    "doc": "<p>Get Extended Region From Region Extended the given image creating a region above, below, in the left side or on the right, with the same height and width The height and width can change using the multiplier @number_of_times_to_repeat If 2 is given and direction = below the new region will have twice the height of the orignal and will be located right below it |${below_region} =    |    Get Extended Region From Region  |  ${another_region}  |    below   |   1   |</p>",
+    "args": [
+      "image",
+      "direction",
+      "number of times to repeat"
+    ],
+    "requiredArgs": [
+      "image",
+      "direction",
+      "number of times to repeat"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Get%20Extended%20Region%20From%20Region"
+  },
+  {
+    "name": "Get Image Coordinates",
+    "library": "SikuliLibrary",
+    "doc": "<p>Get Image Coordinates</p>\n<p>Return image coordinates, within region Examples:</p>\n<table border=\"1\">\n<tr>\n<td>${imageCoordinates}=</td>\n<td>Get Image Coordinates</td>\n<td>image.png=0.75</td>\n<td></td>\n</tr>\n<tr>\n<td>${imageCoordinates}=</td>\n<td>Get Image Coordinates</td>\n<td>image.png=0.75</td>\n<td>[x, y, w, z]</td>\n</tr>\n</table>",
+    "args": [
+      "image",
+      "coordinates=[]"
+    ],
+    "requiredArgs": [
+      "image"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Get%20Image%20Coordinates"
+  },
+  {
+    "name": "Get Match Score",
+    "library": "SikuliLibrary",
+    "doc": "<p>Get match scoreTries to find the image on the screen, returns accuracy score (0-1)</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>${score} =</td>\n<td>Get Match Score</td>\n<td>somethingThatMayExist.png</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>Run Keyword if</td>\n<td>${score} &gt; 0.95</td>\n<td>keyword1</td>\n<td>ELSE</td>\n<td>keyword2</td>\n</tr>\n</table>",
+    "args": [
+      "image"
+    ],
+    "requiredArgs": [
+      "image"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Get%20Match%20Score"
+  },
+  {
+    "name": "Get Number Of Screens",
+    "library": "SikuliLibrary",
+    "doc": "<p>Get number of screens</p>",
+    "args": [],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Get%20Number%20Of%20Screens"
+  },
+  {
+    "name": "Get Screen Coordinates",
+    "library": "SikuliLibrary",
+    "doc": "<p>Get screen coordinates</p>\n<p>Return screen coordinates for active screen</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>@{coordinates}=</td>\n<td>Get Screen Coordinates</td>\n<td>0</td>\n</tr>\n</table>",
+    "args": [],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Get%20Screen%20Coordinates"
+  },
+  {
+    "name": "Get Text",
+    "library": "SikuliLibrary",
+    "doc": "<p>Get text</p>\n<p>If image is not given, keyword will get text from whole Screen If image is given, keyword will get text from matched region Call keyword setOcrTextRead to set OcrTextRead as true, before using text recognition keywords</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Set Ocr Text Read</td>\n<td>true</td>\n</tr>\n<tr>\n<td>Get Text</td>\n<td></td>\n</tr>\n<tr>\n<td>Get Text</td>\n<td>test.png</td>\n</tr>\n</table>",
+    "args": [
+      "image="
+    ],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Get%20Text"
+  },
+  {
+    "name": "Highlight",
+    "library": "SikuliLibrary",
+    "doc": "<p>Highlight matched image. If secs is set, highlight will vanish automatically after setted seconds</p>",
+    "args": [
+      "image",
+      "secs="
+    ],
+    "requiredArgs": [
+      "image"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Highlight"
+  },
+  {
+    "name": "Highlight Region",
+    "library": "SikuliLibrary",
+    "doc": "<p>Highlight region</p>",
+    "args": [
+      "coordinates",
+      "timeout"
+    ],
+    "requiredArgs": [
+      "coordinates",
+      "timeout"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Highlight%20Region"
+  },
+  {
+    "name": "Highlight Roi",
+    "library": "SikuliLibrary",
+    "doc": "<p>Highlight ROI</p>",
+    "args": [
+      "timeout"
+    ],
+    "requiredArgs": [
+      "timeout"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Highlight%20Roi"
+  },
+  {
+    "name": "Image Count",
+    "library": "SikuliLibrary",
+    "doc": "<p>Image Count Count how many times the same picture is detected in screen.</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>${image_cnt}=</td>\n<td>Image Count</td>\n<td>test.png</td>\n</tr>\n</table>",
+    "args": [
+      "image"
+    ],
+    "requiredArgs": [
+      "image"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Image%20Count"
+  },
+  {
+    "name": "Input Text",
+    "library": "SikuliLibrary",
+    "doc": "<p>Input text. Image could be empty</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Input text</td>\n<td>image.png</td>\n<td>Sikuli</td>\n</tr>\n<tr>\n<td>Input text</td>\n<td>${EMPTY}</td>\n<td>Sikuli</td>\n</tr>\n</table>",
+    "args": [
+      "image",
+      "text"
+    ],
+    "requiredArgs": [
+      "image",
+      "text"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Input%20Text"
+  },
+  {
+    "name": "Key Down",
+    "library": "SikuliLibrary",
+    "doc": "<p>Key down Press keyboard key and hold it.</p>\n<p>For a list of possible Keys view docs for org.sikuli.script.Key .</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Key down</td>\n<td>CTRL</td>\n</tr>\n<tr>\n<td>Click</td>\n<td>textFieldWithDefaultText.png</td>\n</tr>\n</table>",
+    "args": [
+      "keyConstant"
+    ],
+    "requiredArgs": [
+      "keyConstant"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Key%20Down"
+  },
+  {
+    "name": "Key Up",
+    "library": "SikuliLibrary",
+    "doc": "<p>Key up Release keyboard key.</p>\n<p>For a list of possible Keys view docs for org.sikuli.script.Key .</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Click</td>\n<td>textFieldWithDefaultText.png</td>\n</tr>\n<tr>\n<td>Key UP</td>\n<td>CTRL</td>\n</tr>\n</table>",
+    "args": [
+      "keyConstant"
+    ],
+    "requiredArgs": [
+      "keyConstant"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Key%20Up"
+  },
+  {
+    "name": "Mouse Down",
+    "library": "SikuliLibrary",
+    "doc": "<p>Mouse down Press and hold the specified buttons</p>\n<p>@mouseButtons: Could be LEFT, MIDDLE, RIGHT</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Mouse Move</td>\n<td>test.png</td>\n<td></td>\n</tr>\n<tr>\n<td>Mouse Down</td>\n<td>LEFT</td>\n<td>RIGHT</td>\n</tr>\n<tr>\n<td>Mouse Up</td>\n<td></td>\n<td></td>\n</tr>\n</table>",
+    "args": [
+      "*mouseButtons"
+    ],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Mouse%20Down"
+  },
+  {
+    "name": "Mouse Move",
+    "library": "SikuliLibrary",
+    "doc": "<p>Mouse moveMove the mouse pointer to the target</p>\n<p>@image: if image is empty, will move mouse to the last matched.</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Mouse Move</td>\n<td>test.png</td>\n</tr>\n<tr>\n<td>Screen Should Contain</td>\n<td>test.png</td>\n</tr>\n<tr>\n<td>Mouse Move</td>\n<td></td>\n</tr>\n</table>",
+    "args": [
+      "image="
+    ],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Mouse%20Move"
+  },
+  {
+    "name": "Mouse Move Location",
+    "library": "SikuliLibrary",
+    "doc": "<p>Mouse move locationMove the mouse pointer to the target location</p>\n<p>@x: x cooridnate where mouse should move</p>\n<p>@y: y cooridnate where mouse should move</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Mouse Move Location</td>\n<td>20</td>\n<td>20</td>\n</tr>\n</table>",
+    "args": [
+      "x=0",
+      "y=0"
+    ],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Mouse%20Move%20Location"
+  },
+  {
+    "name": "Mouse Move Region",
+    "library": "SikuliLibrary",
+    "doc": "<p>Mouse move regionMove the mouse pointer to the target region</p>\n<p>@coordinates: coordinates where mouse should move</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Mouse Move region</td>\n<td>[20, 20, 20, 20]</td>\n</tr>\n</table>",
+    "args": [
+      "coordinates",
+      "highlight_timeout"
+    ],
+    "requiredArgs": [
+      "coordinates",
+      "highlight_timeout"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Mouse%20Move%20Region"
+  },
+  {
+    "name": "Mouse Up",
+    "library": "SikuliLibrary",
+    "doc": "<p>Mouse up Release the specified mouse buttons</p>\n<p>@mouseButtons: Could be LEFT, MIDDLE, RIGHT. If empty, all currently held buttons are released</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Mouse Move</td>\n<td>test.png</td>\n<td></td>\n</tr>\n<tr>\n<td>Mouse Down</td>\n<td>LEFT</td>\n<td>RIGHT</td>\n</tr>\n<tr>\n<td>Mouse Up</td>\n<td>LEFT</td>\n<td>RIGHT</td>\n</tr>\n</table>",
+    "args": [
+      "*mouseButtons"
+    ],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Mouse%20Up"
+  },
+  {
+    "name": "Open Application",
+    "library": "SikuliLibrary",
+    "doc": "<p>Open application To open app with parameters, refer: <a href=\"https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App\">https://sikulix-2014.readthedocs.io/en/latest/appclass.html#App.App</a></p>",
+    "args": [
+      "path"
+    ],
+    "requiredArgs": [
+      "path"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Open%20Application"
+  },
+  {
+    "name": "Paste Text",
+    "library": "SikuliLibrary",
+    "doc": "<p>Paste text. Image could be empty</p>",
+    "args": [
+      "image",
+      "text"
+    ],
+    "requiredArgs": [
+      "image",
+      "text"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Paste%20Text"
+  },
+  {
+    "name": "Press Special Key",
+    "library": "SikuliLibrary",
+    "doc": "<p>Press special key Presses a special keyboard key.</p>\n<p>For a list of possible Keys view docs for org.sikuli.script.Key .</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Double Click</td>\n<td>textFieldWithDefaultText.png</td>\n</tr>\n<tr>\n<td>Press Special Key</td>\n<td>DELETE</td>\n</tr>\n</table>",
+    "args": [
+      "keyConstant"
+    ],
+    "requiredArgs": [
+      "keyConstant"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Press%20Special%20Key"
+  },
+  {
+    "name": "Read Text From Region",
+    "library": "SikuliLibrary",
+    "doc": "<p>Read text from region</p>",
+    "args": [
+      "reg"
+    ],
+    "requiredArgs": [
+      "reg"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Read%20Text%20From%20Region"
+  },
+  {
+    "name": "Region Click Text",
+    "library": "SikuliLibrary",
+    "doc": "<p>Region Click Text</p>\n<p>Click on text in region. Set a region before. Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Region Click Text</td>\n<td>Hello</td>\n</tr>\n</table>",
+    "args": [
+      "text"
+    ],
+    "requiredArgs": [
+      "text"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Region%20Click%20Text"
+  },
+  {
+    "name": "Remove Image Path",
+    "library": "SikuliLibrary",
+    "doc": "<p>Remove image path</p>",
+    "args": [
+      "path"
+    ],
+    "requiredArgs": [
+      "path"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Remove%20Image%20Path"
+  },
+  {
+    "name": "Reset Roi",
+    "library": "SikuliLibrary",
+    "doc": "<p>Reset Roi Set Region of interest to full screen</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Reset roi</td>\n</tr>\n</table>",
+    "args": [],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Reset%20Roi"
+  },
+  {
+    "name": "Return Match From Region",
+    "library": "SikuliLibrary",
+    "doc": "<p>Return Match From Region expect a region (from keyword Get Extended Region From) and a target to be search for (an image.png) returns the target as a object (string), it can be used with Click On Match keywords</p>",
+    "args": [
+      "region",
+      "target"
+    ],
+    "requiredArgs": [
+      "region",
+      "target"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Return%20Match%20From%20Region"
+  },
+  {
+    "name": "Right Click",
+    "library": "SikuliLibrary",
+    "doc": "<p>Right click</p>\n<p>Click on an image with similarity and offset. Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Click</td>\n<td>hello.png</td>\n</tr>\n</table>",
+    "args": [
+      "image",
+      "xOffset=0",
+      "yOffset=0"
+    ],
+    "requiredArgs": [
+      "image"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Right%20Click"
+  },
+  {
+    "name": "Right Click In",
+    "library": "SikuliLibrary",
+    "doc": "<p>Right click in. Right click target image in area image.</p>",
+    "args": [
+      "areaImage",
+      "targetImage"
+    ],
+    "requiredArgs": [
+      "areaImage",
+      "targetImage"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Right%20Click%20In"
+  },
+  {
+    "name": "Screen Should Contain",
+    "library": "SikuliLibrary",
+    "doc": "<p>Screen should contain</p>",
+    "args": [
+      "image"
+    ],
+    "requiredArgs": [
+      "image"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Screen%20Should%20Contain"
+  },
+  {
+    "name": "Screen Should Not Contain",
+    "library": "SikuliLibrary",
+    "doc": "<p>Screen should not contain Screen should not contain image</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Screen should not contain</td>\n<td>image.png</td>\n</tr>\n</table>",
+    "args": [
+      "image"
+    ],
+    "requiredArgs": [
+      "image"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Screen%20Should%20Not%20Contain"
+  },
+  {
+    "name": "Select Region",
+    "library": "SikuliLibrary",
+    "doc": "<p>Select Region</p>\n<p>Allow user to select a region and capture it. Return array of [capturedImagePath, x, y, w, h]</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>@{SelectedRegion}=</td>\n<td>Select region</td>\n</tr>\n</table>",
+    "args": [
+      "message"
+    ],
+    "requiredArgs": [
+      "message"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Select%20Region"
+  },
+  {
+    "name": "Set Always Resize",
+    "library": "SikuliLibrary",
+    "doc": "<p>Set Always Resize A decimal value greater 0 and not equal to 1 to switch the feature on. With this setting you can tell SikuliX to generally resize all given images before a search operation using the given factor, which is applied to both width and height. The implementation internally uses the standard behavior of resizing a Java-AWT-BufferedImage.</p>\n<p>To switch the feature off again, just assign 0 or 1.</p>",
+    "args": [
+      "resize"
+    ],
+    "requiredArgs": [
+      "resize"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Set%20Always%20Resize"
+  },
+  {
+    "name": "Set Capture Folder",
+    "library": "SikuliLibrary",
+    "doc": "<p>Set captured folder</p>\n<p>Set folder for captured images Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Set captured folder</td>\n<td>PATH</td>\n</tr>\n</table>",
+    "args": [
+      "path"
+    ],
+    "requiredArgs": [
+      "path"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Set%20Capture%20Folder"
+  },
+  {
+    "name": "Set Capture Matched Image",
+    "library": "SikuliLibrary",
+    "doc": "<p>Set capture matched image</p>\n<p>Set capture matched images, the default value is true Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Set Capture Matched Image</td>\n<td>false</td>\n</tr>\n</table>",
+    "args": [
+      "value"
+    ],
+    "requiredArgs": [
+      "value"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Set%20Capture%20Matched%20Image"
+  },
+  {
+    "name": "Set Min Similarity",
+    "library": "SikuliLibrary",
+    "doc": "<p>Set min similarity (accuracy of matching elements).</p>\n<p>minSimilarity can be a decimal number between 0 and 1</p>\n<p>Example:</p>\n<table border=\"1\">\n<tr>\n<td>Set Min Similarity</td>\n<td>0.85</td>\n</tr>\n</table>",
+    "args": [
+      "minSimilarity"
+    ],
+    "requiredArgs": [
+      "minSimilarity"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Set%20Min%20Similarity"
+  },
+  {
+    "name": "Set Move Mouse Delay",
+    "library": "SikuliLibrary",
+    "doc": "<p>Set move mouse delay</p>",
+    "args": [
+      "delay"
+    ],
+    "requiredArgs": [
+      "delay"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Set%20Move%20Mouse%20Delay"
+  },
+  {
+    "name": "Set Ocr Language",
+    "library": "SikuliLibrary",
+    "doc": "<p>Set OCR language</p>\n<p>Set OCR language Three letters parameter Default : eng for English language Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Set OCR Language</td>\n<td>eng</td>\n</tr>\n<tr>\n<td>Set OCR Language</td>\n<td>fra</td>\n</tr>\n</table>",
+    "args": [
+      "ocrTextLanguage"
+    ],
+    "requiredArgs": [
+      "ocrTextLanguage"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Set%20Ocr%20Language"
+  },
+  {
+    "name": "Set Ocr Text Read",
+    "library": "SikuliLibrary",
+    "doc": "<p>OCR text read If needed use Set OCR Language before.` Default language : English (eng).</p>",
+    "args": [
+      "ocrTextRead"
+    ],
+    "requiredArgs": [
+      "ocrTextRead"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Set%20Ocr%20Text%20Read"
+  },
+  {
+    "name": "Set Roi",
+    "library": "SikuliLibrary",
+    "doc": "<p>Set ROI</p>\n<p>Set region of interest on screen Optionally pass highlight timeout.</p>\n<p>Examples:${coordinates} | set variable | @{x, y, w, h] |</p>\n<table border=\"1\">\n<tr>\n<td>Set ROI</td>\n<td>${coordinates}</td>\n<td></td>\n</tr>\n<tr>\n<td>Set ROI</td>\n<td>${coordinates}</td>\n<td>2</td>\n</tr>\n</table>",
+    "args": [
+      "coordinates",
+      "timeout=0"
+    ],
+    "requiredArgs": [
+      "coordinates"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Set%20Roi"
+  },
+  {
+    "name": "Set Show Actions",
+    "library": "SikuliLibrary",
+    "doc": "<p>Set show actions</p>",
+    "args": [
+      "showActions"
+    ],
+    "requiredArgs": [
+      "showActions"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Set%20Show%20Actions"
+  },
+  {
+    "name": "Set Slow Motion Delay",
+    "library": "SikuliLibrary",
+    "doc": "<p>Set slow motion delay Control the duration of the visual effect (seconds).</p>",
+    "args": [
+      "delay"
+    ],
+    "requiredArgs": [
+      "delay"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Set%20Slow%20Motion%20Delay"
+  },
+  {
+    "name": "Set Timeout",
+    "library": "SikuliLibrary",
+    "doc": "<p>Set timeout</p>\n<p>Set Sikuli timeout(seconds) Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Set timeout</td>\n<td>10</td>\n</tr>\n</table>",
+    "args": [
+      "timeout"
+    ],
+    "requiredArgs": [
+      "timeout"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Set%20Timeout"
+  },
+  {
+    "name": "Set Wait Scan Rate",
+    "library": "SikuliLibrary",
+    "doc": "<p>Set wait scan rate Specify the number of times actual search operations are performed per second while waiting for a pattern to appear or vanish.</p>",
+    "args": [
+      "delay"
+    ],
+    "requiredArgs": [
+      "delay"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Set%20Wait%20Scan%20Rate"
+  },
+  {
+    "name": "Start Sikuli Process",
+    "library": "SikuliLibrary",
+    "doc": "<p>This keyword is used to start sikuli java process. If library is inited with mode \"OLD\", sikuli java process is started automatically. If library is inited with mode \"NEW\", this keyword should be used.</p>\n<p>:param port: port of sikuli java process, if value is None or 0, a random free port will be used :return: None</p>",
+    "args": [
+      "port=None"
+    ],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Start%20Sikuli%20Process"
+  },
+  {
+    "name": "Stop Remote Server",
+    "library": "SikuliLibrary",
+    "doc": "<p>Stops the remote server.</p>\n<p>The server may be configured so that users cannot stop it.</p>",
+    "args": [],
+    "requiredArgs": [],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Stop%20Remote%20Server"
+  },
+  {
+    "name": "Type With Modifiers",
+    "library": "SikuliLibrary",
+    "doc": "<p>Type with modifiers</p>\n<p>Examples: |Type With Modifiers| A | CTRL |</p>",
+    "args": [
+      "text",
+      "*modifiers"
+    ],
+    "requiredArgs": [
+      "text"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Type%20With%20Modifiers"
+  },
+  {
+    "name": "Wait For Image",
+    "library": "SikuliLibrary",
+    "doc": "<p>Wait For Image</p>\n<p>Check wantedImage exist. If notWantedImage appear or timeout happened, throw exception</p>\n<p>@wantedImage: expected image in screen</p>\n<p>@notWantedImage: unexpected image in screen</p>\n<p>@timeout: wait seconds</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Wait For Image</td>\n<td>wanted.png</td>\n<td>notWanted.png</td>\n<td>5</td>\n</tr>\n</table>",
+    "args": [
+      "wantedImage",
+      "notWantedImage",
+      "timeout"
+    ],
+    "requiredArgs": [
+      "wantedImage",
+      "notWantedImage",
+      "timeout"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Wait%20For%20Image"
+  },
+  {
+    "name": "Wait For Multiple Images",
+    "library": "SikuliLibrary",
+    "doc": "<p>Wait For Multiple Images</p>\n<p>Check if images exists in expectedImages or notExpectedImages list. If image appears that is listed in notExpectedImages list or timeout happened, throw exception If image appears that is listed in expectedImageslist return succesfully.</p>\n<p>@timeout: wait seconds</p>\n<p>@pollingInterval: time in seconds between screen checks</p>\n<p>@expectedImages: list of expected images in screen</p>\n<p>@notExpectedImages: list of not expected images in screen</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>@{wanted_images} =</td>\n<td>Create List</td>\n<td>wanted_image1.png</td>\n<td>wanted_image2.png</td>\n<td></td>\n</tr>\n<tr>\n<td>@{not_wanted_images} =</td>\n<td>Create List</td>\n<td>not_wanted_image1.png</td>\n<td>not_wanted_image2.png</td>\n<td>not_wanted_image3.png</td>\n</tr>\n<tr>\n<td>Wait For Multiple Images</td>\n<td>900</td>\n<td>10</td>\n<td>${wanted_images}</td>\n<td>${not_wanted_images}</td>\n</tr>\n</table>",
+    "args": [
+      "timeout",
+      "pollingInterval",
+      "expectedImages",
+      "notExpectedImages"
+    ],
+    "requiredArgs": [
+      "timeout",
+      "pollingInterval",
+      "expectedImages",
+      "notExpectedImages"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Wait%20For%20Multiple%20Images"
+  },
+  {
+    "name": "Wait Until Screen Contain",
+    "library": "SikuliLibrary",
+    "doc": "<p>Wait until screen contain Wait until image shown in screen</p>",
+    "args": [
+      "image",
+      "timeout"
+    ],
+    "requiredArgs": [
+      "image",
+      "timeout"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Wait%20Until%20Screen%20Contain"
+  },
+  {
+    "name": "Wait Until Screen Not Contain",
+    "library": "SikuliLibrary",
+    "doc": "<p>Wait until screen not contain Wait until image not in screen</p>",
+    "args": [
+      "image",
+      "timeout"
+    ],
+    "requiredArgs": [
+      "image",
+      "timeout"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Wait%20Until%20Screen%20Not%20Contain"
+  },
+  {
+    "name": "Wheel Down",
+    "library": "SikuliLibrary",
+    "doc": "<p>Wheel down Move mouse to the target, and wheel down with give steps</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Wheel Down</td>\n<td>5</td>\n<td></td>\n</tr>\n<tr>\n<td>Wheel Down</td>\n<td>5</td>\n<td>test.png</td>\n</tr>\n</table>",
+    "args": [
+      "steps",
+      "image="
+    ],
+    "requiredArgs": [
+      "steps"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Wheel%20Down"
+  },
+  {
+    "name": "Wheel Up",
+    "library": "SikuliLibrary",
+    "doc": "<p>Wheel up Move mouse to the target, and wheel up with give steps</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>Wheel Up</td>\n<td>5</td>\n<td></td>\n</tr>\n<tr>\n<td>Wheel Up</td>\n<td>5</td>\n<td>test.png</td>\n</tr>\n</table>",
+    "args": [
+      "steps",
+      "image="
+    ],
+    "requiredArgs": [
+      "steps"
+    ],
+    "url": "https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html#Wheel%20Up"
+  },
+  {
     "name": "Convert To Lower Case",
     "library": "String",
     "doc": "<p>Converts string to lower case.</p>\n<p>Uses Python's standard <a href=\"https://docs.python.org/library/stdtypes.html#str.lower\">lower()</a> method.</p>\n<p>Examples:</p>\n<table border=\"1\">\n<tr>\n<td>${str1} =</td>\n<td>Convert To Lower Case</td>\n<td>ABC</td>\n</tr>\n<tr>\n<td>${str2} =</td>\n<td>Convert To Lower Case</td>\n<td>1A2c3D</td>\n</tr>\n<tr>\n<td>Should Be Equal</td>\n<td>${str1}</td>\n<td>abc</td>\n</tr>\n<tr>\n<td>Should Be Equal</td>\n<td>${str2}</td>\n<td>1a2c3d</td>\n</tr>\n</table>",

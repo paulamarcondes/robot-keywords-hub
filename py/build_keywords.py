@@ -42,6 +42,7 @@ LIB_DOC_BASE = {
     'RequestsLibrary': 'https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html',
     'Screenshot': 'https://robotframework.org/robotframework/latest/libraries/Screenshot.html',
     'SeleniumLibrary': 'https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html',
+    'SikuliLibrary': 'https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html',
     'String': 'https://robotframework.org/robotframework/latest/libraries/String.html',
     'XML': 'https://robotframework.org/robotframework/latest/libraries/XML.html'
 }

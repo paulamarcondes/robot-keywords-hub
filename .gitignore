@@ -1,0 +1,4 @@
+# Ignore temporary Sikuli Java stderr and stdout log files
+Sikuli_java_stderr_*.txt
+Sikuli_java_stdout_*.txt
+
